@@ -1,0 +1,5031 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["xPrint",
+ FontSlant->"Italic"]], "Chapter"],
+
+Cell["\<\
+Copyright (c) 2010-2015, under GPL
+by 
+Alessandro Stecchina\
+\>", "Chapter",
+ TextAlignment->Center],
+
+Cell[CellGroupData[{
+
+Cell["Suggestions/Bugs report", "Section"],
+
+Cell["\<\
+Please report any suggestion/bug to:
+Alessandro Stecchina
+maderri2@gmail.com\
+\>", "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section"],
+
+Cell[TextData[{
+ "Tensor algebra is ubiquitous in many branches of mathematics and physics \
+and most CAS systems have developed ad-hoc packages to master the often \
+complex resulting expressions.\[LineSeparator]\[LineSeparator]Mathematica has \
+its own fair share of specialized tensor add-ons. They differ greatly in \
+capabilities with xAct probably being the most modern and powerful of all the \
+tensor packages available on all CAS systems.\nYet all these systems share \
+the same basic limitation: tensor input in CAS is one-dimensional and \
+visually non-intuitive, while common \"handwritten\" tensors are essentially \
+bi-dimensional in nature.\nNow - for the first time in CAS history - ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " gives the user the power to write xAct tensor expressions exactly as she \
+would do it on paper, completely formatted with covariant and contravariant \
+indices.\nExploiting the powerful dynamic,  custom interface and notebook \
+programming resources of Mathematica, ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " finally offers simple, intuitive, safe and fast tensor manipulation \
+capabilities\nThe increase in input speed and clarity is enormous. The mental \
+effort that was required to translate the mathematical bi-dimensional picture \
+of an expression into an artificially complex one-dimensional messy string of \
+characters and brackets  is no longer necessary. It was a small effort - \
+perhaps - but repeated over and over ad nauseam.\nBut ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " is much more than superior tensor input: with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " you will have a completely visual interface to the most common xAct \
+commands\nSome of ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " features include:\n\[FilledSmallCircle] State-of-the-art palette interface \
+to the xAct suite of Mathematica packages\n\[FilledSmallCircle] Selection of \
+manifolds, tensors, forms, indices and derivative operators via pull-down \
+menus\n\[FilledSmallCircle] Input of abstract, basis and component indices in \
+a simple intuitive way\n\[FilledSmallCircle] Real-time wysiwyg tensor object \
+construction\n\[FilledSmallCircle] VBundle-constrained menu-driven index \
+selection\n\[FilledSmallCircle] Manifold-constrained menu-driven basis and \
+chart selection\n\[FilledSmallCircle] Real - time wysiwyg derivatives \
+expression construction\n\[FilledSmallCircle] On-the-fly syntactic and \
+semantic checking \n\[FilledSmallCircle] One-click pasting of formatted \
+tensor objects into notebooks\n\[FilledSmallCircle] Fast and comfortable \
+enhanced templates to define most xAct objects\n\[FilledSmallCircle] GUI \
+interface to the most common commands in xTensor, xCoba and xTerior"
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Installing and loading the package", "Section"],
+
+Cell["\<\
+If you are reading this document, you have probably already installed xPrint \
+correctly. 
+Anyway check the following :\
+\>", "Text"],
+
+Cell[TextData[{
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " is supplied as a ZIP file containing the xPrint folder. \
+\[LineSeparator]Extract the xPrint folder to the ",
+ StyleBox["xAct",
+  FontSlant->"Italic"],
+ " folder on your machine. ",
+ StyleBox["Do not use the ",
+  FontVariations->{"Underline"->True}],
+ StyleBox["Mathematica",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ StyleBox[" folder itself.",
+  FontVariations->{"Underline"->True}],
+ "  \nUnzip the file ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ ".ZIP using a tool that preserves the directory structure and handles long \
+names correctly, e.g. PKZIP(R)  Version 2.50 or above, or WinZip(R). "
+}], "Text"],
+
+Cell[TextData[{
+ StyleBox["Go",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["to the",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ " ",
+ ButtonBox["Getting Started",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Getting Started"],
+ " ",
+ StyleBox["section - if you are new to xPrint - otherwise go to the ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ ButtonBox["Quick start",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Quick Start"],
+ StyleBox[" section.",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text"],
+
+Cell[TextData[{
+ StyleBox["Always use \"Needs\" to load ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[".  Using \"Get\" creates - sometimes- 2 palettes and is not \
+recommended.\nPlease read this notebook sequentially from the beginning and \
+evaluate the cells as suggested.",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Quick Start (only for experienced ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " users)"
+}], "Section",
+ CellTags->"Quick Start"],
+
+Cell[TextData[{
+ "If you are new to xPrint, then proceed to the ",
+ ButtonBox["Getting Started",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Getting Started"],
+ " section below"
+}], "Text"],
+
+Cell[TextData[{
+ "If you are an experienced ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " user, and you are familiar with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " v.0.995, \nyou can quickly look up the newest features of ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " v. 1.0, v.1.1 and v. 1.2.\n",
+ StyleBox["First",
+  FontColor->GrayLevel[0]],
+ ": launch ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " and define all the needed tutorial objects in one go, by evaluating the \
+following cell"
+}], "Text"],
+
+Cell[TextData[{
+ StyleBox["Always use \"Needs\" to load ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[".  Using \"Get\" creates - sometimes- 2 palettes and is not \
+recommended.",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<xAct`xPrint`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefManifold", "[", 
+  RowBox[{"Manifold1", ",", "3", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], "}"}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"r", "[", "]"}], ",", "Manifold1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"u", "[", "a", "]"}], ",", "Manifold1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"v", "[", "a", "]"}], ",", "Manifold1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"w", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", "Manifold1"}], "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"F", "[", 
+    RowBox[{
+     RowBox[{"-", "a"}], ",", 
+     RowBox[{"-", "b"}]}], "]"}], ",", "Manifold1", ",", 
+   RowBox[{"Antisymmetric", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "a"}], ",", 
+      RowBox[{"-", "b"}]}], "}"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefManifold", "[", 
+  RowBox[{"Manifold2", ",", "4", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\[Alpha]", ",", "\[Beta]", ",", "\[Gamma]", ",", "\[Delta]", ",", 
+     "\[Epsilon]", ",", "\[Zeta]", ",", "\[Tau]", ",", "\[Theta]"}], "}"}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"vv", "[", "\[Alpha]", "]"}], ",", "Manifold2"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"FF", "[", 
+    RowBox[{
+     RowBox[{"-", "\[Alpha]"}], ",", 
+     RowBox[{"-", "\[Beta]"}]}], "]"}], ",", "Manifold2"}], "]"}], "\n", 
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"Cd1", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<;\>\"", ",", " ", "\"\<\[Del]\>\""}], "}"}]}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"CD1", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\[VerticalSeparator]\>\"", ",", " ", 
+      "\"\<\[CapitalDifferentialD]\>\""}], "}"}]}]}], "]"}], "\n", 
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"Cd2", "[", 
+    RowBox[{"-", "\[Alpha]"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<;\>\"", ",", " ", "\"\<\[Del]\>\""}], "}"}]}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"CD2", "[", 
+    RowBox[{"-", "\[Alpha]"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\[VerticalSeparator]\>\"", ",", " ", 
+      "\"\<\[CapitalDifferentialD]\>\""}], "}"}]}]}], "]"}], "\n", 
+ RowBox[{"DefParameter", "[", "time", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefParameter", "[", "tau", "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"Q", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Manifold1", ",", "time"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"P", "[", "a", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Manifold1", ",", "time"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"R", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Manifold1", ",", "tau"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"DefBasis", "[", 
+  RowBox[{"cartesian1", ",", "TangentManifold1", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"BasisColor", "\[Rule]", 
+    RowBox[{"N", "[", 
+     RowBox[{"Darker", "[", "Green", "]"}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"DefBasis", "[", 
+  RowBox[{"cartesian2", ",", "TangentManifold2", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"BasisColor", "\[Rule]", " ", "Red"}]}], "]"}], "\n", 
+ RowBox[{"DefBasis", "[", 
+  RowBox[{"polar1", ",", "TangentManifold1", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"BasisColor", "\[Rule]", " ", "Purple"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefChart", "[", 
+  RowBox[{"chp", ",", " ", "Manifold1", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x1p", "[", "]"}], ",", 
+     RowBox[{"x2p", "[", "]"}], ",", 
+     RowBox[{"x3p", "[", "]"}]}], "}"}], ",", " ", 
+   RowBox[{"ChartColor", " ", "\[Rule]", " ", "Brown"}], ",", 
+   RowBox[{"Primed", "->", "True"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"Y", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"LI", "@", "l"}], ",", 
+     RowBox[{"-", "b"}], ",", 
+     RowBox[{"-", 
+      RowBox[{"LI", "@", "m"}]}]}], "]"}], ",", "Manifold1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"YY", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"LI", "@", "l"}], ",", 
+     RowBox[{"-", "b"}], ",", 
+     RowBox[{"LI", "@", "m"}]}], "]"}], ",", "Manifold1"}], "]"}]}], "Input",
+ CellLabel->"In[1]:="],
+
+Cell[TextData[{
+ "Second: click on the following links to look at the newest features:\n",
+ StyleBox["Note: if you already evaluated the above cell, you should not try \
+to redefine the xAct objects again in the following sections.",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text"],
+
+Cell[TextData[{
+ ButtonBox["Target Notebook Display",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Target Notebook Display"],
+ "\n",
+ ButtonBox["Predefined Index Configuration",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Predefined Index Configuration"],
+ "\n",
+ ButtonBox["Initial settings",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Initial settings"],
+ "\n",
+ ButtonBox["Help Menu\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Help Menu"],
+ ButtonBox["Label indices",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Label indices"],
+ "\n",
+ ButtonBox["Derivative operators input",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Derivative operators input"],
+ "\n",
+ ButtonBox["Tensor Manipulation",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Tensor Manipulation"],
+ ButtonBox["\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Predefined Index Configuration"],
+ ButtonBox["Definitions\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Definitions"],
+ ButtonBox["Index formatting",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Index formatting"],
+ ButtonBox["\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Predefined Index Configuration"],
+ ButtonBox["Global Environment \n",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Global Environment"],
+ ButtonBox["Exported functions",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Exported functions"],
+ ButtonBox["\n",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Global Environment"],
+ ButtonBox["Quitting the Mathematica session and closing the palette",
+  BaseStyle->"Hyperlink",
+  ButtonData->"Quitting the Mathematica session and closing the palette"]
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Getting started", "Section",
+ CellTags->"Getting Started"],
+
+Cell[TextData[StyleBox["When xPrint is loaded, xCoba and xTerior are loaded \
+automatically, so you can work with forms, basis and component indices too.",
+ FontSlant->"Italic",
+ FontColor->RGBColor[0, 0, 1]]], "Text"],
+
+Cell[TextData[{
+ "Evaluate the following cell in a fresh ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " session to load ",
+ StyleBox["xPrint\n",
+  FontSlant->"Italic"],
+ StyleBox["Always use \[OpenCurlyDoubleQuote]Needs\[CloseCurlyDoubleQuote] to \
+load ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[".  Using \[OpenCurlyDoubleQuote]Get\[CloseCurlyDoubleQuote] \
+creates - sometimes- 2 palettes and is not recommended.",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<xAct`xPrint`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:="],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2014", ",", "9", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.2", ", ", {2014, 9, 28}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2014, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"Connecting to external MinGW executable...\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2014", ",", "9", ",", "28"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.1.1", ", ", {2014, 9, 28}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2014, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xCoba`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.8.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2014", ",", "9", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xCoba`  version ", "0.8.2", ", ", {2014, 9, 28}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2014, David Yllanes and Jose M. \
+Martin-Garcia, under the General Public License.\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTerior`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.8.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "7", ",", "1"}], "}"}]}],
+  SequenceForm["Package xAct`xTerior`  version ", "0.8.5", ", ", {2013, 7, 1}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"CopyRight (C) 2013, Alfonso Garcia-Parrado Gomez-Lobo and \
+Leo C. Stein, under the General Public License.\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPrint`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "4", ",", "2"}], "}"}]}],
+  SequenceForm["Package xAct`xPrint`  version ", "1.2", ", ", {2015, 4, 2}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"Copyright (C) 2010-2015, Alessandro Stecchina, under the \
+General Public License.\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Initial settings", "SubsubsectionIcon",
+ CellTags->"Initial settings"],
+
+Cell["\<\
+When you start xPrint, the following settings are enforced (the following \
+cell is not evaluatable)\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "the", " ", "following", " ", "settings", " ", "are", " ", "my", " ", 
+     "favourite"}], ",", " ", 
+    RowBox[{
+    "but", " ", "xPrint", " ", "works", " ", "well", " ", "with", " ", "any", 
+     " ", "setting"}]}], " ", "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"$DefInfoQ", " ", "=", " ", "False"}], ";"}], "  ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"No", "  ", "Def"}], "-", 
+     RowBox[{"inition", " ", "info", " ", "messages"}]}], " ", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"$UndefInfoQ", " ", "=", " ", "False"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"No", "  ", "Undef"}], "-", 
+     RowBox[{"inition", " ", "info", " ", "messages"}]}], " ", "*)"}], "\n", 
+   RowBox[{"(*", " ", 
+    RowBox[{"No", " ", "ugly", " ", "indices"}], " ", "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"$PrePrint", " ", "=", " ", "ScreenDollarIndices"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"$CovDFormat", "=", "\"\<Postfix\>\""}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"$CVVerbose", "=", "False"}]}]}]], "Input",
+ Evaluatable->False],
+
+Cell[TextData[{
+ "If you do not like these settings, you can easily change them using the ",
+ ButtonBox["General Settings",
+  BaseStyle->"Hyperlink",
+  ButtonData->"General Settings"],
+ " section of the palette"
+}], "Text"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " Palette"
+}], "Section"],
+
+Cell[TextData[{
+ "After loading ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " a palette will appear. This is the main interface to ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ ".\[LineSeparator]It can be moved, but not re-sized with the resize box.\nIt \
+can be expanded or contracted with the sections OpenerView controls"
+}], "Text"],
+
+Cell[TextData[{
+ "The palette is used to input tensors  and to issue ",
+ StyleBox["xAct",
+  FontSlant->"Italic"],
+ " commands into a notebook.\nIt is subdivided in several sections, most of \
+them collapsible."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["WARNING",
+ FontColor->RGBColor[1, 0, 0]]], "Subsubsection"],
+
+Cell["\<\
+Remember : 
+\tbefore clicking the PasteButton on the palette, select a notebook (this or \
+another) and place the cursor  in the notebook in a suitable spot.
+Actions on the palette generally create new cells in the most recently \
+selected notebook, so make sure you know where the new cell is going to go.
+Clicking on the palette does not deselect your last selected notebook, so you \
+can click on the palette (and paste into the notebook), type in the notebook, \
+click again on the palette and so on , very comfortably. 
+Just be careful if you have more than one open notebook and you often switch \
+focus from one to the other. \
+\>", "Text",
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.5, 0, 0.5]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Target Notebook display",
+ FontColor->RGBColor[1, 0, 0]]], "Subsubsection",
+ CellTags->"Target Notebook Display"],
+
+Cell[TextData[{
+ "On the right hand side of the \"Tensor Input\" header, the current Target \
+notebook name is displayed, so it always easy \nto see where the pasted input \
+will go.\nIf you wish to keep the Target notebook fixed, click on the \
+\"Lock\" checkbox once you have selected the desired Target notebook.\nIf you \
+wish later to lock another notebook, first unlock and switch to the other \
+notebook then lock again. \nYou still have to pay attention to the location \
+of the cursor in the locked notebook, as usual, \nbut if you take the habit \
+of clicking on a window frame - instead of the window body- the cursor \
+position \nwill not change from the prior selection of this window.\n\n\
+Suggested work flow:\nSuppose you have a \"working notebook\" and a \
+\"reference notebook\".\n1-select the working nb, lock it and start working \
+on it with xPrint.\n2-whenever you need to look at the reference nb, click on \
+it and read, edit, evaluate cells, etc.\n3-when you are ready to input \
+tensors again into your working nb, ",
+ StyleBox["click on its frame, ",
+  FontColor->RGBColor[1, 0, 0]],
+ "and continue working from where you left off."
+}], "Text",
+ FontWeight->"Bold",
+ FontColor->RGBColor[0.5, 0, 0.5]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Help Menu ",
+ Cell[BoxData[
+  GraphicsBox[{
+    {RGBColor[0.689647, 0.761166, 0.805478], DiskBox[{0, 0}, 0.1]}, 
+    {GrayLevel[0], CircleBox[{0, 0}, 0.1], 
+     StyleBox[
+      TagBox[InsetBox["\<\"?\"\>", {0.01, 0}],
+       "InsetString"], "Label",
+      StripOnInput->False,
+      FontSize->11]}},
+   BaselinePosition->Bottom,
+   ImageSize->{20, 20}]],
+  CellChangeTimes->{3.637486957169054*^9}]
+}], "Section",
+ CellTags->"Help Menu"],
+
+Cell[TextData[{
+ "On the upper right corner of the palette you will find the help menu button \
+",
+ Cell[BoxData[
+  GraphicsBox[{
+    {RGBColor[0.689647, 0.761166, 0.805478], DiskBox[{0, 0}, 0.1]}, 
+    {GrayLevel[0], CircleBox[{0, 0}, 0.1], 
+     StyleBox[
+      TagBox[InsetBox["\<\"?\"\>", {0.01, 0}],
+       "InsetString"], "Label",
+      StripOnInput->False,
+      FontSize->11]}},
+   BaselinePosition->Bottom,
+   ImageSize->{20, 20}]],
+  CellChangeTimes->{3.637486957169054*^9}],
+ " (a grey question mark).\nThis works exactly like the help menus buttons \
+present in the standard ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " palettes.\nThrough this menu you can access the full xAct documentation \
+files.\nClick on the button and select the documentation file you wish to \
+read\n",
+ StyleBox["Note that you can also open the ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" tutorial folder to see some sample notebooks written with ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Tensor input the way you always wanted to", "Section"],
+
+Cell[TextData[{
+ "The use of the ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " palette is very intuitive.\[LineSeparator]You need to define a manifold \
+and some tensors in order to use the ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " palette.\[LineSeparator]First we'll have an overview of the whole process, \
+then we will follow step-by-step hands-on examples."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Example 1: tensor input", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["Tensor Input overview", "Subsubsection",
+ CellGroupingRules->{"SectionGrouping", Inherited}],
+
+Cell[TextData[{
+ "The main menus and buttons are tooltipped to facilitate usage.\nSelect the ",
+ StyleBox["manifold",
+  FontColor->RGBColor[0, 0, 1]],
+ " from the ",
+ StyleBox["first",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " (top) drop down menu\nThe ",
+ StyleBox["second",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " drop down menu is for ",
+ StyleBox["derivative operators",
+  FontColor->RGBColor[0, 0, 1]],
+ ". Do not use it for now.\nNow select a ",
+ StyleBox["tensor",
+  FontColor->RGBColor[0, 0, 1]],
+ " from the ",
+ StyleBox["third",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " drop down menu  in the palette. \nOne or more index drop down menus will \
+appear on the right of the tensor menu.\nBelow each index drop down menu \
+there is one or more ",
+ StyleBox["Basis Menu. ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "Do not use it for now.\nFill out the index drop down menus.\nWhen all slots \
+are correctly filled you will see the formatted tensor on the big \
+PasteButton. \nYou can always change your mind and input other indices or \
+another tensor. \nThe palette checks for repeated indices, irregular index \
+variance, etc\nWhen you are satisfied with your input, press the PasteButton \
+and voila'... your tensor is inserted in the Target notebook ",
+ StyleBox["at the cursor position",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", neatly formatted. \n\n",
+ StyleBox["NOTE: some erroneous slot positions generate a \"red box\" in \
+place of the paste button. \nThis happens (rarely and exclusively) with \
+delta, Basis and Gdelta tensors.\nThis is some kind of uncaught error which \
+has not yet been identified. \nJust proceed with another slot selection and \
+the red box will disappear.",
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\nYou can keep typing in the same ",
+ StyleBox["notebook cell",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " and keep adding tensors with the palette, then evaluate everything.\nIf \
+you wish to ",
+ StyleBox["delete a pasted tensor",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", place the cursor ",
+ StyleBox["after ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["the offending tensor and use ",
+  FontColor->GrayLevel[0]],
+ StyleBox["backspace",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" to erase it.",
+  FontColor->GrayLevel[0]]
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Predefined index configuration", "Subsubsection",
+ CellGroupingRules->{"SectionGrouping", Inherited},
+ CellTags->"Predefined Index Configuration"],
+
+Cell[TextData[{
+ "xPrint proposes the predefined index configuration, as defined with \
+DefTensor, if no metric has been defined on the selected manifold. \nFor \
+tensors like delta, Gdelta and Basis, the standard down-up index \
+configuration is enforced, in absence of a metric.\nIf a metric is present, \
+both upper and lower indices are available.\n",
+ StyleBox["If the tensor has label indices, the labels will be always \
+displayed in the position determined by the original DefTensor definition.",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Let's do it!", "Subsubsection"],
+
+Cell["\<\
+Define a 3-manifold and some tensors on it.
+Evaluate the following cell:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"DefManifold", "[", 
+  RowBox[{"Manifold1", ",", "3", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], "}"}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"r", "[", "]"}], ",", "Manifold1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"u", "[", "a", "]"}], ",", "Manifold1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"v", "[", "a", "]"}], ",", "Manifold1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"w", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", "Manifold1"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"F", "[", 
+    RowBox[{
+     RowBox[{"-", "a"}], ",", 
+     RowBox[{"-", "b"}]}], "]"}], ",", "Manifold1", ",", 
+   RowBox[{"Antisymmetric", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "a"}], ",", 
+      RowBox[{"-", "b"}]}], "}"}], "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:="],
+
+Cell[TextData[{
+ "Select Manifold1 from the top drop down menu.\nSelect F from the third drop \
+down menu.\nIndices menus will appear.\nTry to insert wrong indices \
+(repeated, etc).\nYou will see that the PasteButton heading says that the \
+input is incorrect\nWhen you finally input a correct index sequence (2 \
+different down indices), place the cursor below (or elsewhere you wish to \
+paste)  and click the PasteButton.\nIn the cells below you can see examples \
+of ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " input"
+}], "Text"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["F", "ab", "  "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`F[-$CellContext`a, -$CellContext`b],
+  Editable->False]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["F", "bd", "  "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`F[-$CellContext`b, -$CellContext`d],
+  Editable->False]], "Input"],
+
+Cell["And now with v", "Text"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["v", " ", "a"],
+   AutoSpacing->False],
+  $CellContext`v[$CellContext`a],
+  Editable->False]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["v", " ", "c"],
+   AutoSpacing->False],
+  $CellContext`v[$CellContext`c],
+  Editable->False]], "Input"],
+
+Cell[TextData[{
+ "You can keep typing in the same notebook cell and keep adding tensors with \
+the palette, then evaluate everything.\nIf you wish to delete a pasted \
+tensor, place the cursor ",
+ StyleBox["after ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["the offending tensor and use ",
+  FontColor->GrayLevel[0]],
+ StyleBox["backspace",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" to erase it.",
+  FontColor->GrayLevel[0]]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["F", "ab", "  "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`F[-$CellContext`a, -$CellContext`b],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["v", " ", "a"],
+     AutoSpacing->False],
+    $CellContext`v[$CellContext`a],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["w", "b", " "],
+    AutoSpacing->False],
+   $CellContext`w[-$CellContext`b],
+   Editable->False]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["F", "ab", "  "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`F[-$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["v", " ", "a"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`v[$CellContext`a],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["w", "b", " "],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`w[-$CellContext`b],
+   Editable->False]}]], "Output"]
+}, Open  ]],
+
+Cell["If we examine the FullForm, it is as expected", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "//", "FullForm"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"Plus", "[", 
+    RowBox[{
+     RowBox[{"Times", "[", 
+      RowBox[{
+       RowBox[{"F", "[", 
+        RowBox[{
+         RowBox[{"Times", "[", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "a"}], "]"}], ",", 
+         RowBox[{"Times", "[", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "b"}], "]"}]}], "]"}], ",", 
+       RowBox[{"v", "[", "a", "]"}]}], "]"}], ",", 
+     RowBox[{"w", "[", 
+      RowBox[{"Times", "[", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "b"}], "]"}], "]"}]}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Predefined scalars (0 tensors) can be input with the palette too and appear \
+formatted when pasted.
+Below is an example with the scalar r[ ] defined above.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["r", "", ""],
+   AutoSpacing->False],
+  $CellContext`r[],
+  Editable->False]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["r", "", ""],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`r[],
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "//", "FullForm"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"r", "[", "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Now define a 4- manifold with other tensors and indices (Greek).
+Evaluate the following cell:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"DefManifold", "[", 
+  RowBox[{"Manifold2", ",", "4", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\[Alpha]", ",", "\[Beta]", ",", "\[Gamma]", ",", "\[Delta]", ",", 
+     "\[Epsilon]", ",", "\[Zeta]", ",", "\[Tau]", ",", "\[Theta]"}], "}"}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"vv", "[", "\[Alpha]", "]"}], ",", "Manifold2"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"FF", "[", 
+    RowBox[{
+     RowBox[{"-", "\[Alpha]"}], ",", 
+     RowBox[{"-", "\[Beta]"}]}], "]"}], ",", "Manifold2"}], "]"}]}], "Input",
+ CellLabel->"In[8]:="],
+
+Cell[TextData[{
+ "Select Manifold2 from the drop down menu, \nNow select a tensor. As you \
+see, now you can only select the tensors living on this manifold. \nThen \
+select the indices. You can only select the Greek indices living on this \
+manifold. \nPaste the tensor below.\nIn the cells below you can see examples \
+of ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " input"
+}], "Text"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["FF", "\[Gamma]\[Delta]", "  "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`FF[-$CellContext`\[Gamma], -$CellContext`\[Delta]],
+  Editable->False]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["FF", "\[Beta]\[Alpha]", "  "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`FF[-$CellContext`\[Beta], -$CellContext`\[Alpha]],
+  Editable->False]], "Input"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example 1 bis: Gdelta input", "Subsection"],
+
+Cell["\<\
+Gdelta has a variable number of slots. 
+When you select Gdelta from the tensor drop down menu, another menu appears, \
+allowing you to select the number of slot pairs.
+Select Manifold1
+Select Gdelta
+Now you can select the number of slots pairs (down and up slots). The maximum \
+number of slots pairs is equal to the manifold dimension. 
+If the dimension is symbolic, the maximum number of slot pairs is limited to \
+7. Manifold1 is 3 dimensional, so the Gdeltta slot menu offers a choice of \
+1,2 or 3 slots pairs.
+Select up and down indices and see in the paste button the different \
+automatic contractions of Gdelta, if you contract some slots.
+Paste when satisfied with your selection.
+Repeat the same exercise with Manifold2, a 4-manifold. This time you can \
+select up to 4 slots.\
+\>", "Text"],
+
+Cell["These are the gdeltas available in 3 dimensions on Manifold1", "Text"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["\[Delta]", 
+    RowBox[{"a", " "}], 
+    RowBox[{" ", "b"}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`delta[-$CellContext`a, $CellContext`b],
+  Editable->False]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["\[Delta]", 
+    RowBox[{"ab", "  "}], 
+    RowBox[{"  ", "cd"}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`Gdelta[-$CellContext`a, -$CellContext`b, $CellContext`c, \
+$CellContext`d],
+  Editable->False]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["\[Delta]", 
+    RowBox[{"abc", "   "}], 
+    RowBox[{"   ", "def"}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`Gdelta[-$CellContext`a, -$CellContext`b, -$CellContext`c, \
+$CellContext`d, $CellContext`e, $CellContext`f],
+  Editable->False]], "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example 1 ter: Label indices", "Subsection",
+ CellTags->"Label indices"],
+
+Cell["\<\
+We can define tensors with label indices.
+ Let' s define a tensor with an up and a down label\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"Y", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"LI", "@", "l"}], ",", 
+     RowBox[{"-", "b"}], ",", 
+     RowBox[{"-", 
+      RowBox[{"LI", "@", "m"}]}]}], "]"}], ",", "Manifold1"}], "]"}]], "Input",
+ CellLabel->"In[13]:="],
+
+Cell["And another with 2 up labels", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"YY", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"LI", "@", "l"}], ",", 
+     RowBox[{"-", "b"}], ",", 
+     RowBox[{"LI", "@", "m"}]}], "]"}], ",", "Manifold1"}], "]"}]], "Input",
+ CellLabel->"In[14]:="],
+
+Cell[TextData[{
+ "Now select the Y tensor.\n  As you see, besides the regular indices, you \
+get 2 ",
+ StyleBox["LI buttons",
+  FontColor->RGBColor[0, 0, 1]],
+ " (Label index buttons).\n  Press these buttons and input the desired label \
+and press OK.\n  Labels can be any expression, but ",
+ StyleBox["xAct ",
+  FontSlant->"Italic"],
+ "at the moment does not format large or long expressions very well, \n  so \
+we suggest you use very short expressions (1 to 3 characters/numbers) .\n  If \
+you wish to use special characters like \[UpArrow] or \[RightArrow] as \
+labels, you should wrap them inside \" \" to make them a string.\n  Try to \
+input"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["Y", 
+    RowBox[{"  ", 
+     RowBox[{"b", "\[UpArrow]"}]}], 
+    RowBox[{"aNew", "  "}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`Y[$CellContext`a, 
+   xAct`xTensor`LI[$CellContext`New], -$CellContext`b, -
+   xAct`xTensor`LI["\[UpArrow]"]],
+  Editable->False]], "Input",
+ CellLabel->"In[28]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["Y", 
+    RowBox[{"  ", 
+     RowBox[{"b", "\[UpArrow]"}]}], 
+    RowBox[{"aNew", "  "}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`Y[$CellContext`a, 
+   xAct`xTensor`LI[$CellContext`New], -$CellContext`b, -
+   xAct`xTensor`LI["\[UpArrow]"]],
+  Editable->False]], "Output",
+ CellLabel->"Out[28]="]
+}, Open  ]],
+
+Cell["\<\
+where the left - most label is the symbol New and the right - most label is \
+the string \"\[UpArrow]\".
+As you see xAct does not leave enough space for the New label. 
+Better would be to use a one character label in place of New, like here\
+\>", "Text"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["Y", 
+    RowBox[{"  ", 
+     RowBox[{"b", "\[UpArrow]"}]}], 
+    RowBox[{"aN", "  "}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`Y[$CellContext`a, 
+   xAct`xTensor`LI[N], -$CellContext`b, -xAct`xTensor`LI["\[UpArrow]"]],
+  Editable->False]], "Input"],
+
+Cell["An example with 2 up labels", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["YY", 
+    RowBox[{"  ", "b", " "}], 
+    RowBox[{"aN", " ", "\[UpArrow]"}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`YY[$CellContext`a, 
+   xAct`xTensor`LI[N], -$CellContext`b, 
+   xAct`xTensor`LI["\[UpArrow]"]],
+  Editable->False]], "Input",
+ CellLabel->"In[29]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["YY", 
+    RowBox[{"  ", "b", " "}], 
+    RowBox[{"aN", " ", "\[UpArrow]"}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`YY[$CellContext`a, 
+   xAct`xTensor`LI[N], -$CellContext`b, 
+   xAct`xTensor`LI["\[UpArrow]"]],
+  Editable->False]], "Output",
+ CellLabel->"Out[29]="]
+}, Open  ]],
+
+Cell["Also here a long label does not work too well.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["YY", 
+    RowBox[{"  ", "b", " "}], 
+    RowBox[{"aNew", " ", "\[UpArrow]"}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`YY[$CellContext`a, 
+   xAct`xTensor`LI[$CellContext`New], -$CellContext`b, 
+   xAct`xTensor`LI["\[UpArrow]"]],
+  Editable->False]], "Input",
+ CellLabel->"In[30]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["YY", 
+    RowBox[{"  ", "b", " "}], 
+    RowBox[{"aNew", " ", "\[UpArrow]"}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`YY[$CellContext`a, 
+   xAct`xTensor`LI[$CellContext`New], -$CellContext`b, 
+   xAct`xTensor`LI["\[UpArrow]"]],
+  Editable->False]], "Output",
+ CellLabel->"Out[30]="]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Derivative operators input", "Section",
+ CellTags->"Derivative operators input"],
+
+Cell[CellGroupData[{
+
+Cell["Derivative Input overview", "Subsubsection",
+ CellGroupingRules->{"SectionGrouping", Inherited}],
+
+Cell[TextData[{
+ "It is possible to input derivatives expressions very simply:\nSelect the ",
+ StyleBox["manifold",
+  FontColor->RGBColor[0, 0, 1]],
+ " from the ",
+ StyleBox["first",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " (top) drop down menu\nSelect a ",
+ StyleBox["covariant derivative",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " (for ex. CD) from the ",
+ StyleBox["second",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " drop down menu.\nA new ",
+ StyleBox["third",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " drop down menu appears. \nSelect an index (for ex.. a) from the ",
+ StyleBox["third",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " drop down menu.\n",
+ StyleBox["Paste the formatted derivative template in your notebook.\nThe \
+first placeholder is already selected",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nSelect a tensor or  derivative and some indices from the palette.\nPaste \
+the tensor or derivative inside the placeholder.\n",
+ StyleBox["Move from one placeholder to the next (if any) using the \[TabKey] \
+key.",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\n",
+ StyleBox["You can type any valid  tensor/derivative expression in the \
+placeholder, not just a single tensor.\nWherever necessary, xPrint will \
+parenthesize a placeholder. Do not worry about it\n\nTyping a complete \
+derivative expression is therefore a 2 step process: \n\t",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\[FilledSmallCircle]",
+ StyleBox[" First: you input and paste the derivative operator template with \
+placeholders\n\t",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\[FilledSmallCircle]",
+ StyleBox[" Second: you select a tensor or derivative and paste it inside the \
+placeholders",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text"],
+
+Cell[TextData[StyleBox["Currently the pasting of derivative operators is made \
+in Prefix notation only, \nbut the evaluated output appears in whatever style \
+one has chosen via the $CovDFormat setting",
+ FontColor->RGBColor[1, 0, 0]]], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example 2: derivative input", "Subsection"],
+
+Cell["\<\
+Continuing from Example 1, we now define covariant derivatives on Manifold1.
+Evaluate the following cell:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"Cd1", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<;\>\"", ",", " ", "\"\<\[Del]\>\""}], "}"}]}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"CD1", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\[VerticalSeparator]\>\"", ",", " ", 
+      "\"\<\[CapitalDifferentialD]\>\""}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[16]:="],
+
+Cell["\<\
+We define covariant derivatives also on Manifold2.
+Evaluate the following cell:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"Cd2", "[", 
+    RowBox[{"-", "\[Alpha]"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<;\>\"", ",", " ", "\"\<\[Del]\>\""}], "}"}]}]}], 
+  "]"}], "\n", 
+ RowBox[{"DefCovD", "[", 
+  RowBox[{
+   RowBox[{"CD2", "[", 
+    RowBox[{"-", "\[Alpha]"}], "]"}], ",", 
+   RowBox[{"SymbolOfCovD", "->", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\[VerticalSeparator]\>\"", ",", " ", 
+      "\"\<\[CapitalDifferentialD]\>\""}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[18]:="],
+
+Cell[TextData[{
+ "Example:input ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[EmptyDownTriangle]", 
+     StyleBox["a",
+      FrontFaceColor->RGBColor[0, 0, 0],
+      BackFaceColor->RGBColor[0, 0, 0],
+      GraphicsColor->RGBColor[0, 0, 0],
+      FontColor->RGBColor[0, 0, 0]]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["F", "bc", "  "],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`F[-$CellContext`b, -$CellContext`c],
+      Editable->False], ")"}]}],
+   "Cd1_AIndex_TagPrefixDown"]],
+  CellChangeTimes->{{3.482226409265625*^9, 3.482226424*^9}, {
+   3.48559715965625*^9, 3.4855971718125*^9}}],
+ " with ",
+ StyleBox["xPrint. \n1 - ",
+  FontSlant->"Italic"],
+ "Select Cd1 and the a index. Paste the template"
+}], "Text"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox["\[Del]", 
+    StyleBox["a",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]], 
+   RowBox[{"(", 
+    TagBox[
+     FrameBox["tensor"],
+     "Placeholder"], ")"}]}],
+  "Cd1_AIndex_TagPrefixDown"]], "Input"],
+
+Cell[TextData[{
+ "As you see the placeholder is enclosed within parenthesis, so you may input \
+any complex tensor expression.\n2 - The \"tensor\" placeholder is already \
+selected, so proceed with the creation and pasting of the tensor ",
+ Cell[BoxData[
+  FormBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["F", "bc", "  "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`F[-$CellContext`b, -$CellContext`c],
+    Editable->False], TraditionalForm]]],
+ ". \nThen evaluate"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox["\[Del]", 
+    StyleBox["a",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["F", "bc", "  "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`F[-$CellContext`b, -$CellContext`c],
+     Editable->False], ")"}]}],
+  "Cd1_AIndex_TagPrefixDown"]], "Input",
+ CellLabel->"In[28]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["F", 
+    RowBox[{"bc", ";", "a"}], "    "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`Cd1[-$CellContext`a][
+   $CellContext`F[-$CellContext`b, -$CellContext`c]],
+  Editable->False]], "Output",
+ CellLabel->"Out[28]="]
+}, Open  ]],
+
+Cell[TextData[{
+ "Example:input    ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[EmptyDownTriangle]", 
+     StyleBox["a",
+      FrontFaceColor->RGBColor[0, 0, 0],
+      BackFaceColor->RGBColor[0, 0, 0],
+      GraphicsColor->RGBColor[0, 0, 0],
+      FontColor->RGBColor[0, 0, 0]]], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"5", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["F", "bc", "  "],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`F[-$CellContext`b, -$CellContext`c],
+        Editable->False]}], "+", 
+      RowBox[{"3", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox[
+          RowBox[{"R", "[", "\[EmptyDownTriangle]", "]"}], "bc", "  "],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`RicciCd1[-$CellContext`b, -$CellContext`c],
+        Editable->False]}]}], ")"}]}],
+   "Cd1_AIndex_TagPrefixDown"]],
+  CellChangeTimes->{{3.485597652265625*^9, 3.485597679375*^9}}],
+ "    with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox["\[Del]", 
+    StyleBox["a",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"5", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["F", "bc", "  "],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`F[-$CellContext`b, -$CellContext`c],
+       Editable->False]}], "+", 
+     RowBox[{"3", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         RowBox[{"R", "[", "\[Del]", "]"}], "bc", "  "],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`RicciCd1[-$CellContext`b, -$CellContext`c],
+       Editable->False]}]}], ")"}]}],
+  "Cd1_AIndex_TagPrefixDown"]], "Input",
+ CellLabel->"In[29]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"5", " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["F", 
+      RowBox[{"bc", ";", "a"}], "    "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`Cd1[-$CellContext`a][
+     $CellContext`F[-$CellContext`b, -$CellContext`c]],
+    Editable->False]}], "+", 
+  RowBox[{"3", " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox[
+      RowBox[{"R", "[", "\[Del]", "]"}], 
+      RowBox[{"bc", ";", "a"}], "    "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`Cd1[-$CellContext`a][
+     $CellContext`RicciCd1[-$CellContext`b, -$CellContext`c]],
+    Editable->False]}]}]], "Output",
+ CellLabel->"Out[29]="]
+}, Open  ]],
+
+Cell["\<\
+In a similar fashion you can input PDs, Brackets and OverDots\
+\>", "Text"],
+
+Cell[TextData[{
+ "Example:input ",
+ Cell[BoxData[
+  TagBox[
+   SuperscriptBox[
+    RowBox[{"[", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["u", " ", "b"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`u[$CellContext`b],
+       Editable->False], ",", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["v", " ", "b"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`v[$CellContext`b],
+       Editable->False]}], "]"}], 
+    StyleBox["a",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]],
+   "BracketTagUp"]],
+  CellChangeTimes->{{3.485599529765625*^9, 3.485599551359375*^9}}],
+ "  with ",
+ StyleBox["xPrint\n",
+  FontSlant->"Italic"],
+ "1 -",
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "Select Bracket and the a index. Paste the template"
+}], "Text"],
+
+Cell[BoxData[
+ TagBox[
+  SuperscriptBox[
+   RowBox[{"[", 
+    TagBox[
+     FrameBox["vect1"],
+     "Placeholder"], ",", 
+    TagBox[
+     FrameBox["vect2"],
+     "Placeholder"], "]"}], 
+   StyleBox["a",
+    FrontFaceColor->RGBColor[0, 0, 0],
+    BackFaceColor->RGBColor[0, 0, 0],
+    GraphicsColor->RGBColor[0, 0, 0],
+    FontColor->RGBColor[0, 0, 0]]],
+  "Bracket_AIndex_TagUp"]], "Input"],
+
+Cell[TextData[{
+ "2 - The \"vect1\" placeholder is already selected, so proceed with the \
+creation and pasting of vector ",
+ Cell[BoxData[
+  FormBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["u", " ", "b"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`u[$CellContext`b],
+    Editable->False], TraditionalForm]]],
+ " \nthen press the \[TabKey] key to move to the \"vect2\" placeholder and \
+create and paste vector ",
+ Cell[BoxData[
+  FormBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["v", " ", "b"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`v[$CellContext`b],
+    Editable->False], TraditionalForm]]],
+ "\nThen evaluate"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  SuperscriptBox[
+   RowBox[{"[", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["u", " ", "b"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`u[$CellContext`b],
+      Editable->False], ",", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["v", " ", "b"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`v[$CellContext`b],
+      Editable->False]}], "]"}], 
+   StyleBox["a",
+    FrontFaceColor->RGBColor[0, 0, 0],
+    BackFaceColor->RGBColor[0, 0, 0],
+    GraphicsColor->RGBColor[0, 0, 0],
+    FontColor->RGBColor[0, 0, 0]]],
+  "Bracket_AIndex_TagUp"]], "Input",
+ CellLabel->"In[23]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SuperscriptBox[
+    RowBox[{"[", 
+     SubsuperscriptBox["u", " ", "b"], ",", 
+     SubsuperscriptBox["v", " ", "b"], "]"}], "a"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`Bracket[$CellContext`a][
+   $CellContext`u[$CellContext`b], 
+   $CellContext`v[$CellContext`b]],
+  Editable->False]], "Output",
+ CellLabel->"Out[23]="]
+}, Open  ]],
+
+Cell["\<\
+\"vect1\" and \"vect2\" can be arbitrary vector expressions.
+For example\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  SuperscriptBox[
+   RowBox[{"[", 
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["r", "", ""],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["u", " ", "b"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`u[$CellContext`b],
+       Editable->False]}], ",", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["u", " ", "b"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`u[$CellContext`b],
+       Editable->False], "+", 
+      RowBox[{"6", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["v", " ", "b"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`v[$CellContext`b],
+        Editable->False]}]}]}], "]"}], 
+   StyleBox["a",
+    FrontFaceColor->RGBColor[0, 0, 0],
+    BackFaceColor->RGBColor[0, 0, 0],
+    GraphicsColor->RGBColor[0, 0, 0],
+    FontColor->RGBColor[0, 0, 0]]],
+  "Bracket_AIndex_TagUp"]], "Input",
+ CellLabel->"In[28]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["u", " ", "a"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`u[$CellContext`a],
+     Editable->False]}], " ", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["\[PartialD]", "u"], 
+      SubsuperscriptBox["r", "", ""]}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`PD[
+     xAct`xTensor`Dir[
+      $CellContext`u[$CellContext`b]]][
+     $CellContext`r[]],
+    Editable->False]}], "+", 
+  RowBox[{"6", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["r", "", ""],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox[
+        SuperscriptBox[
+         RowBox[{"[", 
+          SubsuperscriptBox["u", " ", "b"], ",", 
+          SubsuperscriptBox["v", " ", "b"], "]"}], "a"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTensor`Bracket[$CellContext`a][
+        $CellContext`u[$CellContext`b], 
+        $CellContext`v[$CellContext`b]],
+       Editable->False]}], "-", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["u", " ", "a"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`u[$CellContext`a],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SubscriptBox["\[PartialD]", "v"], 
+         SubsuperscriptBox["r", "", ""]}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTensor`PD[
+        xAct`xTensor`Dir[
+         $CellContext`v[$CellContext`b]]][
+        $CellContext`r[]],
+       Editable->False]}]}], ")"}]}]}]], "Output",
+ CellLabel->"Out[28]="]
+}, Open  ]],
+
+Cell["Now try with PD", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox["\[PartialD]", 
+    StyleBox["b",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["F", "ac", "  "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`F[-$CellContext`a, -$CellContext`c],
+     Editable->False], ")"}]}],
+  "PD_AIndex_TagPrefixDown"]], "Input",
+ CellLabel->"In[10]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["F", 
+    RowBox[{"ac", ",", "b"}], "    "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`PD[-$CellContext`b][
+   $CellContext`F[-$CellContext`a, -$CellContext`c]],
+  Editable->False]], "Output",
+ CellLabel->"Out[10]="]
+}, Open  ]],
+
+Cell["and OverDot", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ OverscriptBox[
+  RowBox[{"(", 
+   SuperscriptBox["r", "2"], ")"}], "."]], "Input",
+ CellLabel->"In[41]:="],
+
+Cell[BoxData[
+ RowBox[{"2", " ", "r", " ", 
+  OverscriptBox["r", "."]}]], "Output",
+ CellLabel->"Out[41]="]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example 3 : Lie derivative and ParamD", "Subsection"],
+
+Cell[TextData[{
+ "It is possible to input LieD expressions in a similar way:\nSelect \
+Manifold1.\nSelect LieD.\nPaste the ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", 
+     TagBox[
+      FrameBox["v"],
+      "Placeholder"]], 
+    RowBox[{"(", 
+     TagBox[
+      FrameBox["tensor"],
+      "Placeholder"], ")"}]}],
+   "LieTag"]]],
+ " template\n",
+ StyleBox["The first placeholder is already selected",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nSelect a vector and an upper index.\nPaste the vector.\n",
+ StyleBox["Now move the cursor to the second placeholder pressing the \
+\[TabKey] key.",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nSelect a tensor and some indices.\nPaste the tensor inside the \
+placeholder."
+}], "Text"],
+
+Cell[TextData[{
+ "Example:input ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["v", " ", "a"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`v[$CellContext`a],
+      Editable->False]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["F", "ab", "  "],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`F[-$CellContext`a, -$CellContext`b],
+      Editable->False], ")"}]}],
+   "LieTag"]],
+  CellChangeTimes->{{3.485600218890625*^9, 3.485600232171875*^9}}],
+ " with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " in Manifold1."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["\[ScriptCapitalL]",
+     FontColor->GrayLevel[0]], 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["v", " ", "a"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`v[$CellContext`a],
+     Editable->False]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["F", "ab", "  "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`F[-$CellContext`a, -$CellContext`b],
+     Editable->False], ")"}]}],
+  "LieTag"]], "Input",
+ CellLabel->"In[26]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", "v"], 
+    SubsuperscriptBox["F", "ab", "  "]}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`LieD[
+   $CellContext`v[$CellContext`a]][
+   $CellContext`F[-$CellContext`a, -$CellContext`b]],
+  Editable->False]], "Output",
+ CellLabel->"Out[26]="]
+}, Open  ]],
+
+Cell[TextData[{
+ "The direction vector can be ",
+ StyleBox["any vector expression",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ".You can use ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " to fill the first bracket with the direction vector.\nExample:input ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", 
+     RowBox[{
+      RowBox[{"2", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["v", " ", "a"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`v[$CellContext`a],
+        Editable->False]}], "+", 
+      RowBox[{"5", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["u", " ", "a"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`u[$CellContext`a],
+        Editable->False]}]}]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["F", "ab", "  "],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`F[-$CellContext`a, -$CellContext`b],
+      Editable->False], ")"}]}],
+   "LieTag"]],
+  CellChangeTimes->{{3.485600342*^9, 3.485600356609375*^9}, {3.4856003915*^9, 
+   3.485600407125*^9}}],
+ " with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " in Manifold1."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["\[ScriptCapitalL]",
+     FontColor->GrayLevel[0]], 
+    RowBox[{
+     RowBox[{"2", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["v", " ", "a"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`v[$CellContext`a],
+       Editable->False]}], "+", 
+     RowBox[{"5", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["u", " ", "a"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`u[$CellContext`a],
+       Editable->False]}]}]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["F", "ab", "  "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`F[-$CellContext`a, -$CellContext`b],
+     Editable->False], ")"}]}],
+  "LieTag"]], "Input",
+ CellLabel->"In[27]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"5", " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[ScriptCapitalL]", "u"], 
+       SubsuperscriptBox["F", "ab", "  "]}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTensor`LieD[
+      $CellContext`u[$CellContext`a]][
+      $CellContext`F[-$CellContext`a, -$CellContext`b]],
+     Editable->False], ")"}]}], "+", 
+  RowBox[{"2", " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["\[ScriptCapitalL]", "v"], 
+       SubsuperscriptBox["F", "ab", "  "]}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTensor`LieD[
+      $CellContext`v[$CellContext`a]][
+      $CellContext`F[-$CellContext`a, -$CellContext`b]],
+     Editable->False], ")"}]}]}]], "Output",
+ CellLabel->"Out[27]="]
+}, Open  ]],
+
+Cell["The same technique can be used to input ParamD expressions", "Text"],
+
+Cell["\<\
+First let's define time and tau as parameters.
+Evaluate the following cell:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"DefParameter", "[", "time", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefParameter", "[", "tau", "]"}]}], "Input",
+ CellLabel->"In[21]:="],
+
+Cell["\<\
+Define time and tau dependent objects
+Evaluate the following cell:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"Q", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Manifold1", ",", "time"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"P", "[", "a", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Manifold1", ",", "time"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{"R", "[", 
+    RowBox[{"-", "a"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"Manifold1", ",", "tau"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[23]:="],
+
+Cell[TextData[{
+ "Example: :input ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"ParamD", "[", "time", "]"}], "[", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["Q", "a", " "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Q[-$CellContext`a],
+     Editable->False], 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["v", " ", "a"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`v[$CellContext`a],
+     Editable->False]}], "]"}]],
+  CellChangeTimes->{{3.4856087769375*^9, 3.48560878528125*^9}}],
+ " with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ ". \nAs soon as you choose ParamD from the Derivative menu, you can select \
+the parameter with the Parameter  menu\n1 -",
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ "Select ParamD and the parameter. Paste the template"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ParamD", "[", "time", "]"}], "[", 
+  TagBox[
+   FrameBox["tensor"],
+   "Placeholder"], "]"}]], "Input"],
+
+Cell[TextData[{
+ "2 - The \"tensor\" placeholder is already selected, so proceed with the \
+creation and pasting of tensors ",
+ Cell[BoxData[
+  StyleBox[
+   SubsuperscriptBox["Q", "a", " "],
+   AutoSpacing->False]],
+  CellChangeTimes->{{3.48007526553125*^9, 3.48007526709375*^9}, {
+   3.480075302171875*^9, 3.4800753276875*^9}}],
+ "  and  ",
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["v", " ", "a"],
+    AutoSpacing->False],
+   $CellContext`v[$CellContext`a],
+   Editable->False]],
+  CellChangeTimes->{{3.48007526553125*^9, 3.48007526709375*^9}, {
+   3.480075302171875*^9, 3.4800753276875*^9}}],
+ "\nEvaluate"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ParamD", "[", "time", "]"}], "[", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["Q", "a", " "],
+     AutoSpacing->False],
+    $CellContext`Q[-$CellContext`a],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["v", " ", "a"],
+     AutoSpacing->False],
+    $CellContext`v[$CellContext`a],
+    Editable->False]}], "]"}]], "Input",
+ CellLabel->"In[26]:="],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"v", 
+       StyleBox[GridBox[{
+          {"a"},
+          {" "}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+              Offset[0.]}}, "RowsIndexed" -> {}}],
+        FontSize->9]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`v[$CellContext`a],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["\[PartialD]", "time"], GridBox[{
+       {"Q", 
+        StyleBox[GridBox[{
+           {" "},
+           {"a"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`ParamD[$CellContext`time][
+    $CellContext`Q[-$CellContext`a]],
+   Editable->False]}]], "Output",
+ CellLabel->"Out[26]="]
+}, Open  ]],
+
+Cell["Other examples:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ParamD", "[", "time", "]"}], "[", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["r", "", ""],
+    AutoSpacing->False],
+   $CellContext`r[],
+   Editable->False], "]"}]], "Input"],
+
+Cell[BoxData["0"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ParamD", "[", "time", "]"}], "[", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["Q", "a", " "],
+     AutoSpacing->False],
+    $CellContext`Q[-$CellContext`a],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["P", " ", "a"],
+     AutoSpacing->False],
+    $CellContext`P[$CellContext`a],
+    Editable->False]}], "]"}]], "Input",
+ CellLabel->"In[46]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"Q", 
+        StyleBox[GridBox[{
+           {" "},
+           {"a"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`Q[-$CellContext`a],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["\[PartialD]", "time"], GridBox[{
+        {"P", 
+         StyleBox[GridBox[{
+            {"a"},
+            {" "}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+                Offset[0.]}}, "RowsIndexed" -> {}}],
+          FontSize->9]}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}]}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`ParamD[$CellContext`time][
+     $CellContext`P[$CellContext`a]],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"P", 
+        StyleBox[GridBox[{
+           {"a"},
+           {" "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`P[$CellContext`a],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["\[PartialD]", "time"], GridBox[{
+        {"Q", 
+         StyleBox[GridBox[{
+            {" "},
+            {"a"}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+                Offset[0.]}}, "RowsIndexed" -> {}}],
+          FontSize->9]}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
+          "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}]}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`ParamD[$CellContext`time][
+     $CellContext`Q[-$CellContext`a]],
+    Editable->False]}]}]], "Output",
+ CellLabel->"Out[46]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ParamD", "[", 
+   InterpretationBox[
+    StyleBox["tau",
+     AutoSpacing->False],
+    $CellContext`tau,
+    Editable->False], "]"}], "[", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["R", "a", " "],
+     AutoSpacing->False],
+    $CellContext`R[-$CellContext`a],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["P", " ", "a"],
+     AutoSpacing->False],
+    $CellContext`P[$CellContext`a],
+    Editable->False]}], "]"}]], "Input",
+ CellLabel->"In[47]:="],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"P", 
+       StyleBox[GridBox[{
+          {"a"},
+          {" "}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+              Offset[0.]}}, "RowsIndexed" -> {}}],
+        FontSize->9]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`P[$CellContext`a],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["\[PartialD]", "tau"], GridBox[{
+       {"R", 
+        StyleBox[GridBox[{
+           {" "},
+           {"a"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}]}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`ParamD[$CellContext`tau][
+    $CellContext`R[-$CellContext`a]],
+   Editable->False]}]], "Output",
+ CellLabel->"Out[47]="]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Note: xAct supports ParamD with multiple parameters, \
+such as ParamD[time,tau].\nCurrently this kind of function call is not \
+supported in xPrint.\nThe same effect can be achieved by nesting ParamD \
+calls.",
+ FontColor->RGBColor[1, 0, 0]]], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example 4 : Nesting derivative operators", "Subsection"],
+
+Cell["\<\
+It is possible to nest derivative operators using the same techniques \
+described before
+Just insert a derivative operator inside the placeholder of another \
+derivative operator.
+Input proceeds from the outermost to the innermost in an intuitive fashon.\
+\>", "Text"],
+
+Cell[TextData[{
+ "Example: :input   ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[EmptyDownTriangle]", 
+     StyleBox["a",
+      FrontFaceColor->RGBColor[0, 0, 0],
+      BackFaceColor->RGBColor[0, 0, 0],
+      GraphicsColor->RGBColor[0, 0, 0],
+      FontColor->RGBColor[0, 0, 0]]], 
+    RowBox[{"(", 
+     TagBox[
+      RowBox[{
+       SubscriptBox["\[EmptyDownTriangle]", 
+        StyleBox["b",
+         FrontFaceColor->RGBColor[0, 0, 0],
+         BackFaceColor->RGBColor[0, 0, 0],
+         GraphicsColor->RGBColor[0, 0, 0],
+         FontColor->RGBColor[0, 0, 0]]], 
+       RowBox[{"(", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["v", " ", "c"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`v[$CellContext`c],
+         Editable->False], ")"}]}],
+      "Cd1_AIndex_TagPrefixDown"], ")"}]}],
+   "Cd1_AIndex_TagPrefixDown"]],
+  CellChangeTimes->{{3.485609322921875*^9, 3.4856093335*^9}}],
+ " with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox["\[Del]", 
+    StyleBox["a",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]], 
+   RowBox[{"(", 
+    TagBox[
+     RowBox[{
+      SubscriptBox["\[Del]", 
+       StyleBox["b",
+        FrontFaceColor->RGBColor[0, 0, 0],
+        BackFaceColor->RGBColor[0, 0, 0],
+        GraphicsColor->RGBColor[0, 0, 0],
+        FontColor->RGBColor[0, 0, 0]]], 
+      RowBox[{"(", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["v", " ", "c"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`v[$CellContext`c],
+        Editable->False], ")"}]}],
+     "Cd1_AIndex_TagPrefixDown"], ")"}]}],
+  "Cd1_AIndex_TagPrefixDown"]], "Input",
+ CellLabel->"In[30]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["v", 
+    RowBox[{" ", 
+     RowBox[{";", "b", ";", "a"}]}], 
+    RowBox[{"c", "    "}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`Cd1[-$CellContext`a][
+   $CellContext`Cd1[-$CellContext`b][
+    $CellContext`v[$CellContext`c]]],
+  Editable->False]], "Output",
+ CellLabel->"Out[30]="]
+}, Open  ]],
+
+Cell[TextData[{
+ "Example: input  ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["v", " ", "c"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`v[$CellContext`c],
+      Editable->False]], 
+    RowBox[{"(", 
+     TagBox[
+      RowBox[{
+       SubscriptBox["\[EmptyDownTriangle]", 
+        StyleBox["b",
+         FrontFaceColor->RGBColor[0, 0, 0],
+         BackFaceColor->RGBColor[0, 0, 0],
+         GraphicsColor->RGBColor[0, 0, 0],
+         FontColor->RGBColor[0, 0, 0]]], 
+       RowBox[{"(", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["v", " ", "a"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`v[$CellContext`a],
+         Editable->False], ")"}]}],
+      "Cd1_AIndex_TagPrefixDown"], ")"}]}],
+   "LieTag"]],
+  CellChangeTimes->{{3.48560947009375*^9, 3.4856094718125*^9}, {
+   3.48560950525*^9, 3.485609523359375*^9}}],
+ " with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["\[ScriptCapitalL]",
+     FontColor->GrayLevel[0]], 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["v", " ", "c"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`v[$CellContext`c],
+     Editable->False]], 
+   RowBox[{"(", 
+    TagBox[
+     RowBox[{
+      SubscriptBox["\[Del]", 
+       StyleBox["b",
+        FrontFaceColor->RGBColor[0, 0, 0],
+        BackFaceColor->RGBColor[0, 0, 0],
+        GraphicsColor->RGBColor[0, 0, 0],
+        FontColor->RGBColor[0, 0, 0]]], 
+      RowBox[{"(", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["v", " ", "a"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`v[$CellContext`a],
+        Editable->False], ")"}]}],
+     "Cd1_AIndex_TagPrefixDown"], ")"}]}],
+  "LieTag"]], "Input",
+ CellLabel->"In[31]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", "v"], 
+    SubsuperscriptBox["v", 
+     RowBox[{" ", 
+      RowBox[{";", "b"}]}], 
+     RowBox[{"a", "  "}]]}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`LieD[
+   $CellContext`v[$CellContext`c]][
+   $CellContext`Cd1[-$CellContext`b][
+    $CellContext`v[$CellContext`a]]],
+  Editable->False]], "Output",
+ CellLabel->"Out[31]="]
+}, Open  ]],
+
+Cell["\<\
+The direction argument in the LieD can be arbitrarily complex, as long as it \
+is a vector. 
+It does not require a parenthesis.
+If it is too complex, however, xAct will Short it. So you may not be able to \
+see it properly\
+\>", "Text"],
+
+Cell[TextData[{
+ "Example: input  ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", 
+     TagBox[
+      RowBox[{
+       SubscriptBox["\[EmptyDownTriangle]", 
+        StyleBox["a",
+         FrontFaceColor->RGBColor[0, 0, 0],
+         BackFaceColor->RGBColor[0, 0, 0],
+         GraphicsColor->RGBColor[0, 0, 0],
+         FontColor->RGBColor[0, 0, 0]]], 
+       RowBox[{"(", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["P", " ", "a"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`P[$CellContext`a],
+          Editable->False], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["P", " ", "b"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`P[$CellContext`b],
+          Editable->False]}], ")"}]}],
+      "Cd1_AIndex_TagPrefixDown"]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["Q", "c", " "],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`Q[-$CellContext`c],
+      Editable->False], ")"}]}],
+   "LieTag"]],
+  CellChangeTimes->{{3.48560988809375*^9, 3.485609931609375*^9}}],
+ "   with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["\[ScriptCapitalL]",
+     FontColor->GrayLevel[0]], 
+    TagBox[
+     RowBox[{
+      SubscriptBox["\[Del]", 
+       StyleBox["a",
+        FrontFaceColor->RGBColor[0, 0, 0],
+        BackFaceColor->RGBColor[0, 0, 0],
+        GraphicsColor->RGBColor[0, 0, 0],
+        FontColor->RGBColor[0, 0, 0]]], 
+      RowBox[{"(", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "a"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`a],
+         Editable->False], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "b"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`b],
+         Editable->False]}], ")"}]}],
+     "Cd1_AIndex_TagPrefixDown"]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["Q", "c", " "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Q[-$CellContext`c],
+     Editable->False], ")"}]}],
+  "LieTag"]], "Input",
+ CellLabel->"In[32]:="],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalL]", 
+      TagBox[
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "b"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`b],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", 
+           RowBox[{" ", 
+            RowBox[{";", "a"}]}], 
+           RowBox[{"a", "  "}]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Cd1[-$CellContext`a][
+          $CellContext`P[$CellContext`a]],
+         Editable->False]}],
+       Short]], 
+     SubsuperscriptBox["Q", "c", " "]}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`LieD[$CellContext`P[$CellContext`b] \
+$CellContext`Cd1[-$CellContext`a][
+      $CellContext`P[$CellContext`a]]][
+    $CellContext`Q[-$CellContext`c]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalL]", 
+      TagBox[
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "a"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`a],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", 
+           RowBox[{" ", 
+            RowBox[{";", "a"}]}], 
+           RowBox[{"b", "  "}]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Cd1[-$CellContext`a][
+          $CellContext`P[$CellContext`b]],
+         Editable->False]}],
+       Short]], 
+     SubsuperscriptBox["Q", "c", " "]}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`LieD[$CellContext`P[$CellContext`a] \
+$CellContext`Cd1[-$CellContext`a][
+      $CellContext`P[$CellContext`b]]][
+    $CellContext`Q[-$CellContext`c]],
+   Editable->False]}]], "Output",
+ CellLabel->"Out[32]="]
+}, Open  ]],
+
+Cell[TextData[{
+ "Everything is ok, but ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalL]", 
+     TagBox[
+      RowBox[{
+       SubscriptBox["\[EmptyDownTriangle]", 
+        StyleBox["a",
+         FrontFaceColor->RGBColor[0, 0, 0],
+         BackFaceColor->RGBColor[0, 0, 0],
+         GraphicsColor->RGBColor[0, 0, 0],
+         FontColor->RGBColor[0, 0, 0]]], 
+       RowBox[{"(", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox[
+            RowBox[{"R", "[", "\[EmptyDownTriangle]", "]"}], 
+            RowBox[{"bcd", " "}], 
+            RowBox[{"   ", "a"}]],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, \
+-$CellContext`d, $CellContext`a],
+          Editable->False], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["u", " ", "b"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`u[$CellContext`b],
+          Editable->False], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["v", " ", "c"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`v[$CellContext`c],
+          Editable->False], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["P", " ", "d"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`P[$CellContext`d],
+          Editable->False], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["P", " ", "e"],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`P[$CellContext`e],
+          Editable->False]}], ")"}]}],
+      "Cd1_AIndex_TagPrefixDown"]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["Q", "c", " "],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`Q[-$CellContext`c],
+      Editable->False], ")"}]}],
+   "LieTag"]],
+  CellChangeTimes->{
+   3.485610425953125*^9, {3.485610494296875*^9, 3.4856105408125*^9}, {
+    3.4856105748125*^9, 3.485610592703125*^9}}],
+ " does not look too good"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["\[ScriptCapitalL]",
+     FontColor->GrayLevel[0]], 
+    TagBox[
+     RowBox[{
+      SubscriptBox["\[Del]", 
+       StyleBox["a",
+        FrontFaceColor->RGBColor[0, 0, 0],
+        BackFaceColor->RGBColor[0, 0, 0],
+        GraphicsColor->RGBColor[0, 0, 0],
+        FontColor->RGBColor[0, 0, 0]]], 
+      RowBox[{"(", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           RowBox[{"R", "[", "\[Del]", "]"}], 
+           RowBox[{"bcd", " "}], 
+           RowBox[{"   ", "a"}]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, \
+-$CellContext`d, $CellContext`a],
+         Editable->False], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["u", " ", "b"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`u[$CellContext`b],
+         Editable->False], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["v", " ", "c"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`v[$CellContext`c],
+         Editable->False], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "d"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`d],
+         Editable->False], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "e"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`e],
+         Editable->False]}], ")"}]}],
+     "Cd1_AIndex_TagPrefixDown"]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["Q", "c", " "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Q[-$CellContext`c],
+     Editable->False], ")"}]}],
+  "LieTag"]], "Input",
+ CellLabel->"In[34]:="],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalL]", 
+      TagBox[
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "e"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`e],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           RowBox[{"R", "[", "\[Del]", "]"}], 
+           RowBox[{"bcd", " "}], 
+           RowBox[{"   ", "a"}]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, \
+-$CellContext`d, $CellContext`a],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["u", " ", "b"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`u[$CellContext`b],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["v", " ", "c"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`v[$CellContext`c],
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", 
+           RowBox[{" ", 
+            RowBox[{";", "a"}]}], 
+           RowBox[{"d", "  "}]],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Cd1[-$CellContext`a][
+          $CellContext`P[$CellContext`d]],
+         Editable->False]}],
+       Short]], 
+     SubsuperscriptBox["Q", "c", " "]}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`LieD[((($CellContext`P[$CellContext`e] \
+$CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, -$CellContext`d, \
+$CellContext`a]) $CellContext`u[$CellContext`b]) \
+$CellContext`v[$CellContext`c]) $CellContext`Cd1[-$CellContext`a][
+      $CellContext`P[$CellContext`d]]][
+    $CellContext`Q[-$CellContext`c]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalL]", 
+      TagBox[
+       RowBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["P", " ", "d"],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`P[$CellContext`d],
+         Editable->False], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox[
+              RowBox[{"R", "[", "\[Del]", "]"}], 
+              RowBox[{"bcd", " "}], 
+              RowBox[{"   ", "a"}]],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, \
+-$CellContext`d, $CellContext`a],
+            Editable->False], " ", 
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["u", " ", "b"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`u[$CellContext`b],
+            Editable->False], " ", 
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["v", " ", "c"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`v[$CellContext`c],
+            Editable->False], " ", 
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["P", 
+              RowBox[{" ", 
+               RowBox[{";", "a"}]}], 
+              RowBox[{"e", "  "}]],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Cd1[-$CellContext`a][
+             $CellContext`P[$CellContext`e]],
+            Editable->False]}], "+", 
+          RowBox[{
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["P", " ", "e"],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`P[$CellContext`e],
+            Editable->False], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              InterpretationBox[
+               StyleBox[
+                RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`u[$CellContext`b],
+               Editable->False], " ", 
+              InterpretationBox[
+               StyleBox[
+                RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`v[$CellContext`c],
+               Editable->False], " ", 
+              InterpretationBox[
+               StyleBox[
+                RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}],
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`Cd1[-$CellContext`a][
+                $CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, \
+-$CellContext`d, $CellContext`a]],
+               Editable->False]}], "+", 
+             RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+            ")"}]}]}], ")"}]}],
+       Short]], 
+     SubsuperscriptBox["Q", "c", " "]}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`LieD[$CellContext`P[$CellContext`d] \
+((($CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, -$CellContext`d, \
+$CellContext`a] $CellContext`u[$CellContext`b]) \
+$CellContext`v[$CellContext`c]) $CellContext`Cd1[-$CellContext`a][
+        $CellContext`P[$CellContext`e]] + $CellContext`P[$CellContext`e] \
+(($CellContext`u[$CellContext`b] $CellContext`v[$CellContext`c]) \
+$CellContext`Cd1[-$CellContext`a][
+          $CellContext`RiemannCd1[-$CellContext`b, -$CellContext`c, \
+-$CellContext`d, $CellContext`a]] + $CellContext`RiemannCd1[-$CellContext`b, \
+-$CellContext`c, -$CellContext`d, $CellContext`a] \
+($CellContext`v[$CellContext`c] $CellContext`Cd1[-$CellContext`a][
+            $CellContext`u[$CellContext`b]] + $CellContext`u[$CellContext`b] \
+$CellContext`Cd1[-$CellContext`a][
+            $CellContext`v[$CellContext`c]])))][
+    $CellContext`Q[-$CellContext`c]],
+   Editable->False]}]], "Output",
+ CellLabel->"Out[34]="]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Skeleton",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " objects appear."
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example 5 : Syntax checking derivative expressions", "Subsection"],
+
+Cell[TextData[{
+ "If you build up a wrong expression using cds or pds and tensors, ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " cannot catch that, but it will be caught by the usual Validate checks.\n\
+For ex. ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " will let you input ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[PartialD]", 
+     StyleBox["b",
+      FrontFaceColor->RGBColor[0, 0, 0],
+      BackFaceColor->RGBColor[0, 0, 0],
+      GraphicsColor->RGBColor[0, 0, 0],
+      FontColor->RGBColor[0, 0, 0]]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["F", "bc", "  "],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`F[-$CellContext`b, -$CellContext`c],
+      Editable->False], ")"}]}],
+   "PD_AIndex_TagPrefixDown"]],
+  CellChangeTimes->{3.48561082084375*^9}],
+ ", but as soon as you try to evaluate it, Validate will complain"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox["\[PartialD]", 
+    StyleBox["b",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["F", "bc", "  "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`F[-$CellContext`b, -$CellContext`c],
+     Editable->False], ")"}]}],
+  "PD_AIndex_TagPrefixDown"]], "Input",
+ CellLabel->"In[29]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Validate", "::", "\<\"repeated\"\>"}], ":", 
+  " ", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Found indices with the same name \\\
+\\\\\"\\\", \\\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\!\\(\\\"-b\\\"\\), \\\
+\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\\"\\\\\\\".\\\\\\\"\\\", \
+\\\"MT\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[29]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Throw", "::", "\<\"nocatch\"\>"}], ":", 
+  " ", "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Uncaught \\\\\\\"\\\", \
+\\\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\!\\(Throw[Null]\\), \
+\\\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\\"\\\\\\\" returned to top level.\
+\\\\\\\"\\\", \\\"MT\\\"]\\) \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Throw/nocatch\\\", ButtonNote -> \
+\\\"Throw::nocatch\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[29]:="],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Throw", "[", "Null", "]"}], "]"}]], "Output",
+ CellLabel->"Out[29]="]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example 6 : Switching manifolds", "Subsection"],
+
+Cell["\<\
+If you switch to Manifold2 you will be able to select the covariant \
+derivatives present there, with their appropriate indices.\
+\>", "Text"],
+
+Cell[TextData[{
+ "Example:input ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox["\[EmptyDownTriangle]", 
+     StyleBox["\[Beta]",
+      FrontFaceColor->RGBColor[0, 0, 0],
+      BackFaceColor->RGBColor[0, 0, 0],
+      GraphicsColor->RGBColor[0, 0, 0],
+      FontColor->RGBColor[0, 0, 0]]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["FF", "\[Gamma]\[Delta]", "  "],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`FF[-$CellContext`\[Gamma], -$CellContext`\[Delta]],
+      Editable->False], ")"}]}],
+   "Cd2_AIndex_TagPrefixDown"]],
+  CellChangeTimes->{3.485610965140625*^9}],
+ " with ",
+ StyleBox["xPrint. ",
+  FontSlant->"Italic"],
+ "Do not forget to switch to Manifold2"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox["\[Del]", 
+    StyleBox["\[Beta]",
+     FrontFaceColor->RGBColor[0, 0, 0],
+     BackFaceColor->RGBColor[0, 0, 0],
+     GraphicsColor->RGBColor[0, 0, 0],
+     FontColor->RGBColor[0, 0, 0]]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["FF", "\[Gamma]\[Delta]", "  "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`FF[-$CellContext`\[Gamma], -$CellContext`\[Delta]],
+     Editable->False], ")"}]}],
+  "Cd2_AIndex_TagPrefixDown"]], "Input",
+ CellLabel->"In[35]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["FF", 
+    RowBox[{"\[Gamma]\[Delta]", ";", "\[Beta]"}], "    "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`Cd2[-$CellContext`\[Beta]][
+   $CellContext`FF[-$CellContext`\[Gamma], -$CellContext`\[Delta]]],
+  Editable->False]], "Output",
+ CellLabel->"Out[35]="]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Working with bases and charts", "Section"],
+
+Cell[TextData[{
+ StyleBox["When xPrint is loaded, xCoba is loaded too",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", so we can use its functions.\nSo far we have worked with abstract \
+indices.\n",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " can work with bases too.\nYou have a ",
+ StyleBox["Basis menu",
+  FontColor->RGBColor[0, 0, 1]],
+ ", below the indices menu.\nThe black dot present in the Basis Menu means \
+that you input abstract indices so far.\nSelect some indices and note that \
+they are black in the button area. \nWe have not defined any basis yet, so we \
+could only input abstract indices."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Example 7 : Input basis and component indices", "Subsection"],
+
+Cell["Let's define a green and a red basis in the 2 manifolds.", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"DefBasis", "[", 
+  RowBox[{"cartesian1", ",", "TangentManifold1", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"BasisColor", "\[Rule]", " ", 
+    RowBox[{"N", "[", 
+     RowBox[{"Darker", "[", "Green", "]"}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"DefBasis", "[", 
+  RowBox[{"cartesian2", ",", "TangentManifold2", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"BasisColor", "\[Rule]", " ", "Red"}]}], "]"}]}], "Input",
+ CellLabel->"In[28]:="],
+
+Cell[TextData[{
+ "Select Manifold1 and a tensor.\nClick on the OpenerView in the ",
+ StyleBox["Bases and Charts section",
+  FontColor->RGBColor[0, 0, 1]],
+ "\n",
+ StyleBox["Reset Basis",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " ",
+ StyleBox["buttons",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " and ",
+ StyleBox["Available Bases buttons",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " appear. \[LineSeparator]\nThe ",
+ StyleBox["Available Bases buttons",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " are just a visual reminder of the available bases/colors and a paste \
+button for the basis name.\nThe abstract base button will paste \"AIndex\", \
+the name of the abstract holonomic base\nThe others when clicked will paste \
+the basis name into a notebook (further functionalities are foreseen in \
+future versions)\n\nThe ",
+ StyleBox["Reset Basis",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " ",
+ StyleBox["buttons",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " when clicked will set ",
+ StyleBox["all",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " Basis Menus to the specified basis (or to abstract  ).\n\nSelect a tensor \
+with some indices, for ex. F.\nSelect the green dot from the basis menu for \
+an index of your choice. \nNow select an index. As you see, ",
+ StyleBox["you can now choose b-indices (symbols)  and c-indices (numbers) in \
+the index menus.",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nNote that",
+ StyleBox[" the color of the index in the button area changes too",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", you are now inputting b or c indices (green in the button area).\nWhen \
+you are finished, paste the tensor.\nExample:input the following expressions \
+with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"]
+}], "Text"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["F", 
+    StyleBox[
+     RowBox[{"b", "c"}],
+     FontColor->RGBColor[0, 1, 0]], "  "],
+   AutoSpacing->False],
+  $CellContext`F[{-$CellContext`b, -$CellContext`cartesian1}, \
+{-$CellContext`c, -$CellContext`cartesian1}],
+  Editable->False]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["F", 
+    RowBox[{"b", 
+     StyleBox["c",
+      FontColor->RGBColor[0, 1, 0]]}], "  "],
+   AutoSpacing->False],
+  $CellContext`F[-$CellContext`b, {-$CellContext`c, -$CellContext`cartesian1}],
+  Editable->False]], "Input"],
+
+Cell["\<\
+Choose  the delta and see what happens as you change color of the indices. 
+delta becomes Basis, or simplifies.\
+\>", "Text"],
+
+Cell["Now define another base (purple) in Manifold1.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefBasis", "[", 
+  RowBox[{"polar1", ",", "TangentManifold1", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"BasisColor", "\[Rule]", " ", "Purple"}]}], "]"}]], "Input",
+ CellLabel->"In[30]:="],
+
+Cell["\<\
+Select Manifold1 and a tensor
+Mix and play with green, purple and abstract indices.cartesian1\
+\>", "Text"],
+
+Cell[TextData[{
+ "Example: we can find the 1,2 component in the green basis, starting from \
+the purple basis.\nWith ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " we can input (",
+ StyleBox["you can even",
+  FontColor->RGBColor[0, 0, 1]],
+ " ",
+ StyleBox["use delta to input the Basis objects, if you find it more \
+intuitive",
+  FontColor->RGBColor[0, 0, 1]],
+ ")"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["F", 
+     StyleBox[
+      RowBox[{"a", "b"}],
+      FontColor->RGBColor[0.5, 0, 0.5]], "  "],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`F[{-$CellContext`a, -$CellContext`polar1}, {-$CellContext`b, \
+-$CellContext`polar1}],
+   Editable->False], 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{
+      StyleBox["1",
+       FontColor->RGBColor[0, 1, 0]], " "}], 
+     RowBox[{" ", 
+      StyleBox["a",
+       FontColor->RGBColor[0.5, 0, 0.5]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[{
+    1, -$CellContext`cartesian1}, {$CellContext`a, $CellContext`polar1}],
+   Editable->False], 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{
+      StyleBox["2",
+       FontColor->RGBColor[0, 1, 0]], " "}], 
+     RowBox[{" ", 
+      StyleBox["b",
+       FontColor->RGBColor[0.5, 0, 0.5]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[{
+    2, -$CellContext`cartesian1}, {$CellContext`b, $CellContext`polar1}],
+   Editable->False]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{
+      StyleBox["1",
+       FontColor->RGBColor[0, 1, 0]], " "}], 
+     RowBox[{" ", 
+      StyleBox["a",
+       FontColor->RGBColor[0.5, 0, 0.5]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[{
+    1, -$CellContext`cartesian1}, {$CellContext`a, $CellContext`polar1}],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{
+      StyleBox["2",
+       FontColor->RGBColor[0, 1, 0]], " "}], 
+     RowBox[{" ", 
+      StyleBox["b",
+       FontColor->RGBColor[0.5, 0, 0.5]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[{
+    2, -$CellContext`cartesian1}, {$CellContext`b, $CellContext`polar1}],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["F", 
+     StyleBox[
+      RowBox[{"a", "b"}],
+      FontColor->RGBColor[0.5, 0, 0.5]], "  "],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`F[{-$CellContext`a, -$CellContext`polar1}, {-$CellContext`b, \
+-$CellContext`polar1}],
+   Editable->False]}]], "Output"]
+}, Open  ]],
+
+Cell["and then contract the bases", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "//", "ContractBasis"}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["F", 
+    StyleBox[
+     RowBox[{"1", "2"}],
+     FontColor->RGBColor[0, 1, 0]], "  "],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`F[{1, -$CellContext`cartesian1}, {2, -$CellContext`cartesian1}],
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "If you want to set ",
+ StyleBox["all",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " Indices to a specified basis (or to abstract) use the ",
+ StyleBox["Reset Basis",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " ",
+ StyleBox["buttons",
+  FontColor->GrayLevel[0]],
+ StyleBox[".\nb and c indices can be selected for derivative operators too.\n\
+As soon as you define some basis, the corresponding parallel derivative is \
+automatically selectable",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text"],
+
+Cell[TextData[{
+ "Example: input ",
+ Cell[BoxData[
+  TagBox[
+   RowBox[{
+    SubscriptBox[
+     StyleBox["\[ScriptCapitalD]",
+      FontColor->RGBColor[0., 0.666667, 0.]], 
+     StyleBox["a",
+      FrontFaceColor->RGBColor[0., 0.6666666666666666, 0.],
+      BackFaceColor->RGBColor[0., 0.6666666666666666, 0.],
+      GraphicsColor->RGBColor[0., 0.6666666666666666, 0.],
+      FontColor->RGBColor[0., 0.6666666666666666, 0.]]], 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox["P", " ", "b"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`P[$CellContext`b],
+      Editable->False], ")"}]}],
+   "PDcartesian1_cartesian1_TagPrefixDown"]], "Input",
+  CellChangeTimes->{{3.485611437875*^9, 3.4856114534375*^9}}],
+ " (PDcartesian1) with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["\[ScriptCapitalD]",
+     FontColor->RGBColor[0., 0.666667, 0.]], 
+    StyleBox["a",
+     FrontFaceColor->RGBColor[0., 0.6666666666666666, 0.],
+     BackFaceColor->RGBColor[0., 0.6666666666666666, 0.],
+     GraphicsColor->RGBColor[0., 0.6666666666666666, 0.],
+     FontColor->RGBColor[0., 0.6666666666666666, 0.]]], 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["P", " ", "b"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`P[$CellContext`b],
+     Editable->False], ")"}]}],
+  "PDcartesian1_cartesian1_TagPrefixDown"]], "Input",
+ CellLabel->"In[31]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["P", 
+    RowBox[{" ", 
+     StyleBox[
+      RowBox[{"\[Cedilla]", "a"}],
+      FontColor->RGBColor[0., 0.666667, 0.]]}], 
+    RowBox[{"b", "  "}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`PDcartesian1[{-$CellContext`a, -$CellContext`cartesian1}][
+   $CellContext`P[$CellContext`b]],
+  Editable->False]], "Output",
+ CellLabel->"Out[31]="]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Example 8 : Switching manifolds", "Subsection"],
+
+Cell[TextData[{
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " offers Manifold-constrained menu-driven basis and chart selection.\nIf you \
+switch to Manifold2, you will see the red basis available there.\nThe bases \
+available in Manifold1 are no longer displayed."
+}], "Text"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Tensor Manipulation", "Section",
+ CellTags->"Tensor Manipulation"],
+
+Cell[TextData[{
+ "This section offers many convenient buttons to perform common tensor \
+manipulations.\nThe buttons will paste commands in postfix notation, \
+including the double slash (//) command.\nThe checkbox ",
+ StyleBox["Simple",
+  FontColor->RGBColor[0, 0, 1]],
+ " (automatically checked at the start of the program) selects whether the \
+pasted function will be very basic \n(as shown on the button label) or will \
+be pasted with several options.\nWhen the ",
+ StyleBox["Simple",
+  FontColor->RGBColor[0, 0, 1]],
+ " checkbox is unchecked, the affected buttons will display with a yellow \
+background to remind the user \nthat a yellow template will appear upon \
+pasting.\nSome commands - for example ToCanonical - offer several options and \
+each option can take several values. \nWhen this is the case, the yellow \
+Placeholder in the template will suggest the default value for an option, \
+followed by the other accepted values.\nThe default value is suggested \
+primarily as a mnemonic aid. Obviously it is not necessary to use an optional \
+argument with a default value.\n",
+ StyleBox["Checking or unchecking the \"Simple\" checkbox does not produce \
+any output. It is only an xPrint internal status flag.",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Example 9 : ContractBasis", "Subsection"],
+
+Cell["Suppose you have input the following expression:", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["v", " ", "a"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`v[$CellContext`a],
+   Editable->False], 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["w", 
+     StyleBox["b",
+      FontColor->RGBColor[0, 1, 0]], " "],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`w[{-$CellContext`b, -$CellContext`cartesian1}],
+   Editable->False], 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{"a", " "}], 
+     RowBox[{" ", 
+      StyleBox["c",
+       FontColor->RGBColor[0, 1, 0]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[-$CellContext`a, {$CellContext`c, \
+$CellContext`cartesian1}],
+   Editable->False], 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{"e", " "}], 
+     RowBox[{" ", 
+      StyleBox["b",
+       FontColor->RGBColor[0, 1, 0]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[-$CellContext`e, {$CellContext`b, \
+$CellContext`cartesian1}],
+   Editable->False]}]], "Input"],
+
+Cell[TextData[{
+ "Now place the cursor at the right hand side of the expression, that is ",
+ StyleBox["after ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["the expression, and click on the \"ContractBasis\" button.\nIf the \
+checkbox \"Simple\" is checked, then you will get the following postfix \
+function",
+  FontColor->GrayLevel[0]]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["v", " ", "a"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`v[$CellContext`a],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w", 
+      StyleBox["b",
+       FontColor->RGBColor[0, 1, 0]], " "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w[{-$CellContext`b, -$CellContext`cartesian1}],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      RowBox[{"a", " "}], 
+      RowBox[{" ", 
+       StyleBox["c",
+        FontColor->RGBColor[0, 1, 0]]}]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`Basis[-$CellContext`a, {$CellContext`c, \
+$CellContext`cartesian1}],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      RowBox[{"e", " "}], 
+      RowBox[{" ", 
+       StyleBox["b",
+        FontColor->RGBColor[0, 1, 0]]}]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`Basis[-$CellContext`e, {$CellContext`b, \
+$CellContext`cartesian1}],
+    Editable->False]}], "//", "ContractBasis"}]], "Input",
+ CellLabel->"In[22]:="],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["v", " ", 
+     StyleBox["c",
+      FontColor->RGBColor[0, 1, 0]]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`v[{$CellContext`c, $CellContext`cartesian1}],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["w", "e", " "],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`w[-$CellContext`e],
+   Editable->False]}]], "Output",
+ CellLabel->"Out[22]="]
+}, Open  ]],
+
+Cell["\<\
+while, if you uncheck the \"Simple\" checkbox, you will get a template\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["v", " ", "a"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`v[$CellContext`a],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w", 
+      StyleBox["b",
+       FontColor->RGBColor[0, 1, 0]], " "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w[{-$CellContext`b, -$CellContext`cartesian1}],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      RowBox[{"a", " "}], 
+      RowBox[{" ", 
+       StyleBox["c",
+        FontColor->RGBColor[0, 1, 0]]}]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`Basis[-$CellContext`a, {$CellContext`c, \
+$CellContext`cartesian1}],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      RowBox[{"e", " "}], 
+      RowBox[{" ", 
+       StyleBox["b",
+        FontColor->RGBColor[0, 1, 0]]}]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`Basis[-$CellContext`e, {$CellContext`b, \
+$CellContext`cartesian1}],
+    Editable->False]}], "//", 
+  RowBox[{
+   RowBox[{"ContractBasis", "[", 
+    RowBox[{"#", ",", 
+     TagBox[
+      FrameBox["indices"],
+      "Placeholder"], ",", 
+     RowBox[{"OverDerivatives", "\[Rule]", 
+      TagBox[
+       FrameBox[
+        RowBox[{"False", "/", "True"}]],
+       "Placeholder"]}]}], "]"}], "&"}]}]], "Input",
+ CellLabel->"In[23]:="],
+
+Cell["\<\
+which you can fill with the name of one of the available bases, for example...\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["v", " ", "a"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`v[$CellContext`a],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w", 
+      StyleBox["b",
+       FontColor->RGBColor[0, 1, 0]], " "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w[{-$CellContext`b, -$CellContext`cartesian1}],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      RowBox[{"a", " "}], 
+      RowBox[{" ", 
+       StyleBox["c",
+        FontColor->RGBColor[0, 1, 0]]}]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`Basis[-$CellContext`a, {$CellContext`c, \
+$CellContext`cartesian1}],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      RowBox[{"e", " "}], 
+      RowBox[{" ", 
+       StyleBox["b",
+        FontColor->RGBColor[0, 1, 0]]}]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTensor`Basis[-$CellContext`e, {$CellContext`b, \
+$CellContext`cartesian1}],
+    Editable->False]}], "//", 
+  RowBox[{
+   RowBox[{"ContractBasis", "[", 
+    RowBox[{"#", ",", "cartesian1"}], "]"}], "&"}]}]], "Input",
+ CellLabel->"In[24]:="],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{"a", " "}], 
+     RowBox[{" ", 
+      StyleBox["c",
+       FontColor->RGBColor[0, 1, 0]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[-$CellContext`a, {$CellContext`c, \
+$CellContext`cartesian1}],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["v", " ", "a"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`v[$CellContext`a],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["w", "e", " "],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`w[-$CellContext`e],
+   Editable->False]}]], "Output",
+ CellLabel->"Out[24]="]
+}, Open  ]],
+
+Cell[TextData[{
+ "where we also have erased ",
+ Cell[BoxData[
+  RowBox[{"OverDerivatives", "\[Rule]", 
+   TagBox[
+    FrameBox[
+     RowBox[{"False", "/", "True"}]],
+    "Placeholder"]}]],
+  CellChangeTimes->{{3.484999359625*^9, 3.484999417046875*^9}, {
+    3.484999452171875*^9, 3.484999458875*^9}, 3.485001043296875*^9, {
+    3.485002575375*^9, 3.48500258834375*^9}, 3.485259565484375*^9}],
+ ", which was not relevant in this case.\nThe first value (False)  in the \
+placeholder ",
+ Cell[BoxData[
+  TagBox[
+   FrameBox[
+    RowBox[{"False", "/", "True"}]],
+   "Placeholder"]],
+  CellChangeTimes->{{3.484999359625*^9, 3.484999417046875*^9}, {
+    3.484999452171875*^9, 3.484999458875*^9}, 3.485001043296875*^9, {
+    3.485002575375*^9, 3.48500258834375*^9}, 3.485259565484375*^9}],
+ " refers to the default value for OverDerivatives.\nThere is no need to \
+write ",
+ Cell[BoxData[
+  RowBox[{"OverDerivatives", "\[Rule]", "False"}]],
+  CellChangeTimes->{{3.484999359625*^9, 3.484999417046875*^9}, {
+    3.484999452171875*^9, 3.484999458875*^9}, 3.485001043296875*^9, {
+    3.485002575375*^9, 3.48500258834375*^9}, 3.485259565484375*^9}],
+ ", since this is the default value anyway, so it is just simpler to erase \
+the whole optional argument."
+}], "Text"],
+
+Cell[TextData[{
+ "You can paste the basis name using the ",
+ StyleBox["Available Basis buttons",
+  FontColor->RGBColor[0, 0, 1]],
+ " present in the ",
+ StyleBox["Bases and Charts section",
+  FontColor->RGBColor[0, 0, 1]],
+ " (see below).\nWhen the \"Simple\" checkbox is unchecked, the affected \
+buttons will display with a yellow background to remind the user \nthat a \
+yellow template will appear upon pasting."
+}], "Text"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["General Settings ", "Section",
+ CellTags->"General Settings"],
+
+Cell[TextData[{
+ "Open the ",
+ StyleBox["General Settings",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ " section by clicking on its OpenerView triangle.\nYou will see various \
+checkboxes.\n",
+ StyleBox["Each time you click on a checkbox the corresponding command or \
+switch is pasted and executed on the notebook.\nYou always have in your \
+notebook a written record of any change you have made to your switches.",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text"],
+
+Cell["\<\
+Example: click on the AutomaticBasisContraction check box so you start \
+automatic basis contraction\
+\>", "Text"],
+
+Cell["AutomaticBasisContractionStart[]", "Input"],
+
+Cell["\<\
+Then type the following expression and see the automatic contraction upon \
+evaluation\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{"a", " "}], 
+     RowBox[{" ", 
+      StyleBox["b",
+       FontColor->RGBColor[0, 1, 0]]}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[-$CellContext`a, {$CellContext`b, \
+$CellContext`cartesian1}],
+   Editable->False], 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["e", 
+     RowBox[{
+      StyleBox["c",
+       FontColor->RGBColor[0, 1, 0]], " "}], 
+     RowBox[{" ", "a"}]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTensor`Basis[{-$CellContext`c, -$CellContext`cartesian1}, \
+$CellContext`a],
+   Editable->False]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["e", 
+    RowBox[{
+     StyleBox["c",
+      FontColor->RGBColor[0, 1, 0]], " "}], 
+    RowBox[{" ", 
+     StyleBox["b",
+      FontColor->RGBColor[0, 1, 0]]}]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  xAct`xTensor`Basis[{-$CellContext`c, -$CellContext`cartesian1}, \
+{$CellContext`b, $CellContext`cartesian1}],
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Example: clicking on \"Start\" or \"Stop\" Automatic CovD commutation, will \
+display/select the applicable CovD.
+If you select PD, for instance\
+\>", "Text"],
+
+Cell["SortCovDsStart[PD]", "Input",
+ CellLabel->"In[34]:="],
+
+Cell[CellGroupData[{
+
+Cell["SortCovDsStop[PD]", "Input",
+ CellLabel->"In[26]:="],
+
+Cell[BoxData["\<\"Note that $CommuteCovDsOnScalars is still True.\"\>"], \
+"Print",
+ CellLabel->"During evaluation of In[26]:="]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Global Environment", "Section",
+ CellTags->"Global Environment"],
+
+Cell[TextData[{
+ "Several buttons provide quick access to the different collections of ",
+ StyleBox["xAct",
+  FontSlant->"Italic"],
+ " objects."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Example 10 : Examining the environment", "Subsection"],
+
+Cell["\<\
+Click on the $Manifolds and $Tensors buttons.$Tensors to get a list of the \
+corresponding objects\
+\>", "Text"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Definitions", "Section",
+ CellTags->"Definitions"],
+
+Cell[TextData[{
+ "In the Definitions section you can easily define most ",
+ StyleBox["xAct",
+  FontSlant->"Italic"],
+ " objects using ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["enhanced template technology.",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nWhen you click on a button, you will paste a template on the input \
+notebook.\n",
+ StyleBox["The template resembles the one you get by pressing \[ControlKey]-\
+\[ShiftKey]-K or \[CommandKey]-\[ShiftKey] -K (on MacOS) at the right of the \
+function head,\nbut the template provided by ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" is an enhanced version and is not the same standard one generated \
+by the ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["xAct",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" usage message.\n",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["An example will clarify the typical use of this section",
+  FontColor->GrayLevel[0]]
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Example 11 : Define a Manifold, a tensor with symmetries and a Basis/Chart\
+\>", "Subsection"],
+
+Cell["Click on the \"Def Manfold\" button. You will get", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefManifold", "[", 
+  RowBox[{
+   TagBox[
+    FrameBox["manifold"],
+    "Placeholder"], ",", " ", 
+   TagBox[
+    FrameBox["dim"],
+    "Placeholder"], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      FrameBox["index1"],
+      "Placeholder"], ",", " ", 
+     TagBox[
+      FrameBox["index2"],
+      "Placeholder"]}], "}"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["You can fill the placeholders with your data and quickly jump from \
+one placeholder to the next, using the \[TabKey] key.\nNote that: when there \
+are lists of arguments (as in the case of the index list above), only 2 \
+elements in the list are proposed and no ellipsis. \nThis is a ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" convention.\nIf you need to add elements to the list, simply type \
+them after inside the list, adding the necessary commas.\nIf you wish to \
+delete a placeholder, just use the normal text input facilities (Backspace or \
+Delete, for example). ",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nAfter you have defined a manifold, click on the \"Def Tensor\" button. \
+You will get"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     FrameBox["tensor"],
+     "Placeholder"], "[", 
+    RowBox[{
+     TagBox[
+      FrameBox[
+       RowBox[{"\[PlusMinus]", " ", "index1"}]],
+      "Placeholder"], ",", " ", 
+     TagBox[
+      FrameBox[
+       RowBox[{"\[PlusMinus]", " ", "index2"}]],
+      "Placeholder"]}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      FrameBox["manifold1"],
+      "Placeholder"], ",", 
+     TagBox[
+      FrameBox["manifold2"],
+      "Placeholder"], ",", 
+     TagBox[
+      FrameBox["parameter"],
+      "Placeholder"]}], "}"}], ",", 
+   TagBox[
+    FrameBox["symmetry"],
+    "Placeholder"]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "here again you can quickly navigate (with \[TabKey]) and edit the template. \
+\nYou can insert one or more indices (only 2 are indicated, as per ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " convention).\nYou can insert one or more manifolds (only 2 are indicated, \
+as per ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " convention) and a parameter.\nIf the tensor is endowed with a symmetry, \
+place and click the cursor on the ",
+ Cell[BoxData[
+  TagBox[
+   FrameBox["symmetry"],
+   "Placeholder"]]],
+ " placeholder.\nThen click on the \"Symmetric\", \"Antisymmetric\" or \
+\"RiemannSymmetric\" button. You will get something like"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefTensor", "[", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     FrameBox["tensor"],
+     "Placeholder"], "[", 
+    RowBox[{
+     TagBox[
+      FrameBox[
+       RowBox[{"\[PlusMinus]", " ", "index1"}]],
+      "Placeholder"], ",", " ", 
+     TagBox[
+      FrameBox[
+       RowBox[{"\[PlusMinus]", " ", "index2"}]],
+      "Placeholder"]}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      FrameBox["manifold1"],
+      "Placeholder"], ",", 
+     TagBox[
+      FrameBox["manifold2"],
+      "Placeholder"], ",", 
+     TagBox[
+      FrameBox["parameter"],
+      "Placeholder"]}], "}"}], ",", 
+   RowBox[{"Symmetric", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        FrameBox["p1"],
+        "Placeholder"], ",", " ", 
+       TagBox[
+        FrameBox["p2"],
+        "Placeholder"]}], "}"}], ",", " ", 
+     TagBox[
+      FrameBox["notation"],
+      "Placeholder"]}], "]"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "so you can easily insert the appropriate symmetry.\nStarting with ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " 1.1, you can define also ",
+ StyleBox["label indices",
+  FontColor->RGBColor[0, 0, 1]],
+ " by typing \[PlusMinus]LI@.... in an index slot.\n",
+ StyleBox["You can also click on the \"PrintAs ->...\" button at the bottom \
+of the section, to add an optional PrintAs string or function \nto the \
+definition of the tensor (or other objects)\n",
+  FontColor->RGBColor[1, 0, 0]],
+ "\nSimilarly, click on the \"Def Basis\" or \"Def Chart\" button. You will \
+get"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefBasis", "[", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     FrameBox["basis"],
+     "Placeholder"], ",", " ", 
+    TagBox[
+     FrameBox["vbundle"],
+     "Placeholder"], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      TagBox[
+       FrameBox["cnumber1"],
+       "Placeholder"], ",", 
+      TagBox[
+       FrameBox["cnumber2"],
+       "Placeholder"]}], "}"}]}], ",", " ", 
+   RowBox[{"BasisColor", " ", "\[Rule]", " ", 
+    TagBox[
+     FrameBox["color"],
+     "Placeholder"]}]}], "]"}]], "Input"],
+
+Cell["or", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefChart", "[", 
+  RowBox[{
+   TagBox[
+    FrameBox["chart"],
+    "Placeholder"], ",", " ", 
+   TagBox[
+    FrameBox["manifold"],
+    "Placeholder"], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      FrameBox["cnumber1"],
+      "Placeholder"], ",", 
+     TagBox[
+      FrameBox["cnumber2"],
+      "Placeholder"]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      TagBox[
+       FrameBox["x1"],
+       "Placeholder"], "[", "]"}], ",", 
+     RowBox[{
+      TagBox[
+       FrameBox["x2"],
+       "Placeholder"], "[", "]"}]}], "}"}], ",", " ", 
+   RowBox[{"ChartColor", " ", "\[Rule]", " ", 
+    TagBox[
+     FrameBox["color"],
+     "Placeholder"]}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "You only need to insert the ",
+ StyleBox["head",
+  FontColor->RGBColor[0, 0, 1]],
+ " of the coordinates fields in the DefChart template.\nYou can also easily \
+insert a BasisColor."
+}], "Text"],
+
+Cell["\<\
+Click on the \"color\" placeholder, then click on one of the \"BasisColor\" \
+buttons. 
+You will get something like\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefBasis", "[", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     FrameBox["basis"],
+     "Placeholder"], ",", " ", 
+    TagBox[
+     FrameBox["vbundle"],
+     "Placeholder"], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      TagBox[
+       FrameBox["cnumber1"],
+       "Placeholder"], ",", 
+      TagBox[
+       FrameBox["cnumber2"],
+       "Placeholder"]}], "}"}]}], ",", " ", 
+   RowBox[{"BasisColor", " ", "\[Rule]", " ", "Magenta"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "if you click on the \"Magenta\" button for example.\n",
+ StyleBox["Note: some colors (ex. Darker Green) require a N[...] wrapper to \
+function properly.\nThis is done automatically by ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Index formatting", "Subsection",
+ CellTags->"Index formatting"],
+
+Cell[TextData[{
+ "It is also possible to format the basis and chart indices with primes or \
+double-primes.\nJust ",
+ StyleBox["first",
+  FontSlant->"Italic"],
+ " select from the RadioButtonBar the desired format (unprimed is the \
+default) and ",
+ StyleBox["then",
+  FontSlant->"Italic"],
+ " press the appropriate Def button.\n",
+ StyleBox["xPrint",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" has defined two new options for DefChart and DefBasis: Primed and \
+DoublePrimed.",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nBy default they are set to False. When set to True, indices will be \
+formatted with primes or double primes.\n",
+ StyleBox["The symbols appear in the xCoba context.",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nNote that the Def Basis and Def Chart templates change to reflect your \
+formatting choice, by adding the Primed and DoublePrimed options set to True."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Example of chart with primed indices", "Subsubsection"],
+
+Cell["\<\
+Select the radio button a'. 
+Press the DefChart button.
+The DefChart template with the appropriate option set\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefChart", "[", 
+  RowBox[{
+   TagBox[
+    FrameBox["chart"],
+    "Placeholder"], ",", " ", 
+   TagBox[
+    FrameBox["manifold"],
+    "Placeholder"], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      FrameBox["cnumber1"],
+      "Placeholder"], ",", 
+     TagBox[
+      FrameBox["cnumber2"],
+      "Placeholder"]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      TagBox[
+       FrameBox["x1"],
+       "Placeholder"], "[", "]"}], ",", 
+     RowBox[{
+      TagBox[
+       FrameBox["x2"],
+       "Placeholder"], "[", "]"}]}], "}"}], ",", " ", 
+   RowBox[{"ChartColor", " ", "\[Rule]", " ", 
+    TagBox[
+     FrameBox["color"],
+     "Placeholder"]}], ",", 
+   RowBox[{"Primed", "\[Rule]", "True"}]}], "]"}]], "Input"],
+
+Cell["Fill the template as follows and evaluate", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DefChart", "[", 
+  RowBox[{"chp2", ",", " ", "Manifold1", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x1p", "[", "]"}], ",", 
+     RowBox[{"x2p", "[", "]"}], ",", 
+     RowBox[{"x3p", "[", "]"}]}], "}"}], ",", 
+   RowBox[{"ChartColor", " ", "\[Rule]", " ", "Brown"}], ",", 
+   RowBox[{"Primed", " ", "\[Rule]", " ", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[71]:="],
+
+Cell["Now you can paste primed indices of chp, for example", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[GridBox[{
+     {"P", 
+      StyleBox[GridBox[{
+         {
+          StyleBox[
+           RowBox[{"a", "'"}],
+           FontColor->RGBColor[1., 0., 0.]]},
+         {" "}
+        },
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+             Offset[0.]}}, "RowsIndexed" -> {}}],
+       FontSize->9]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.034999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`P[{$CellContext`a, $CellContext`chp2}],
+  Editable->False]], "Input",
+ CellLabel->"In[39]:="],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[GridBox[{
+     {"P", 
+      StyleBox[GridBox[{
+         {
+          StyleBox[
+           RowBox[{"a", "'"}],
+           FontColor->RGBColor[1., 0., 0.]]},
+         {" "}
+        },
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+             Offset[0.]}}, "RowsIndexed" -> {}}],
+       FontSize->9]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.034999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`P[{$CellContext`a, $CellContext`chp2}],
+  Editable->False]], "Output",
+ CellLabel->"Out[39]="]
+}, Open  ]],
+
+Cell["\<\
+If you want double - primed indices, select the radio button a'' and define a \
+basis or a chart\
+\>", "Text"]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Perturbations", "Section",
+ CellTags->"Perturbations"],
+
+Cell["\<\
+Currently under development.\[LineSeparator]At the moment it only provides a \
+convenience button to load xPert.m\
+\>", "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Exterior Forms", "Section",
+ CellTags->"Perturbations"],
+
+Cell["\<\
+Currently under development.\[LineSeparator]At the moment it only provides a \
+convenience button to load xTerior.m\
+\>", "Text"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Exported functions", "Section",
+ CellTags->"Exported functions"],
+
+Cell[TextData[{
+ "There are a few exported (public) functions and symbols in ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ ": "
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["xPrintValidQ",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection"],
+
+Cell[TextData[{
+ "is used by ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " for controlling the contents of the PasteButton label."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "xPrintValidQ"}]], "Input",
+ CellLabel->"In[74]:="],
+
+Cell[BoxData[
+ StyleBox["\<\"xPrintValidQ[expr] returns True if expr is syntactically \
+correct and False otherwise.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3635948568-2501137"]
+}, Open  ]],
+
+Cell[TextData[{
+ "It is just a simple query function using the Validate facilities provided \
+by ",
+ StyleBox["xAct",
+  FontSlant->"Italic"],
+ ". "
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"xPrintValidQ", "[", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["\[Delta]", 
+     RowBox[{"a", " "}], 
+     RowBox[{" ", "b"}]],
+    AutoSpacing->False],
+   xAct`xTensor`delta[-$CellContext`a, $CellContext`b],
+   Editable->False], "]"}]], "Input",
+ CellLabel->"In[75]:="],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[75]="]
+}, Open  ]],
+
+Cell["\<\
+delta[a,-b] is not acceptable if a metric has not been defined on a manifold, \
+so the following expression was typed in manually\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"xPrintValidQ", "[", 
+  RowBox[{"delta", "[", 
+   RowBox[{"a", ",", 
+    RowBox[{"-", "b"}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[76]:="],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[76]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"xPrintValidQ", "[", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["P", " ", "b"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`P[$CellContext`b],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["P", " ", "b"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`P[$CellContext`b],
+    Editable->False]}], "]"}]], "Input",
+ CellLabel->"In[77]:="],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[77]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"xPrintValidQ", "[", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["P", " ", "b"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`P[$CellContext`b],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["P", " ", "b"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`P[$CellContext`b],
+    Editable->False]}], "]"}]], "Input",
+ CellLabel->"In[78]:="],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[78]="]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Primed and DoublePrimed",
+ FontColor->RGBColor[0, 0, 1]]], "Subsection"],
+
+Cell["\<\
+are options for DefBasis and DefChart. they are False by default.
+When set to True, indices will be formatted with primes or double primes.
+The symbols appear in the xCoba context.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Primed"}]], "Input",
+ CellLabel->"In[26]:="],
+
+Cell[BoxData[
+ StyleBox["\<\"Primed is an option of DefBasis and DefChart. If True, basis \
+or chart indices are printed with a prime. Default is False\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3636590068-7671866"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "DoublePrimed"}]], "Input",
+ CellLabel->"In[27]:="],
+
+Cell[BoxData[
+ StyleBox["\<\"DoublePrimed is an option of DefBasis and DefChart. If True, \
+basis or chart indices are printed with a double-prime. Default is False\"\>",
+   "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3636590071-7671866"]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Quitting the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " session and closing the palette"
+}], "Section",
+ CellTags->"Quitting the Mathematica session and closing the palette"],
+
+Cell[TextData[{
+ "If you terminate the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " session using Quit or Exit, the ",
+ StyleBox["xPrint",
+  FontSlant->"Italic"],
+ " palette will close automatically, so you can start a new session with a \
+clear screen.\nOf course you can always close the palette manually, if you so \
+wish, by clicking on the close button on the xPrint palette."
+}], "Text"]
+}, Closed]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+Selectable->True,
+WindowSize->{783, 606},
+WindowMargins->{{143, Automatic}, {Automatic, 40}},
+WindowFrame->"Normal",
+Visible->True,
+DockedCells->FEPrivate`FrontEndResource["FEExpressions", "HelpViewerToolbar"],
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PageHeaders->{{Inherited, Inherited, 
+   Cell[
+    TextData[{"The Super Widget Package"}], "PageHeader"]}, {
+   Cell[
+    TextData[{"The Super Widget Package"}], "PageHeader"], Inherited, 
+   Inherited}},
+PageFooters->{{Inherited, 
+   Cell[
+    TextData[{"\[Copyright]2006 David Bailey"}], "PageFooter"], Inherited}, {
+  Inherited, 
+   Cell[
+    TextData[{"\[Copyright]2006 David Bailey"}], "PageFooter"], Inherited}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+ShowCellBracket->True,
+ShowSelection->True,
+TaggingRules->{
+ "SearchTextTranslated" -> "", "SearchText" -> "", "LinkTrails" -> ""},
+ShowCellLabel->False,
+TrackCellChangeTimes->False,
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"HelpBrowser.nb",
+PrivateNotebookOptions -> {"ShortBoxForm" -> False}
+]
