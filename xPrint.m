@@ -19,7 +19,7 @@
 
 
 
-xAct`xPrint`$Version={"1.3",{2015,4,8}};
+xAct`xPrint`$Version={"1.4",{2015,4,15}};
 xAct`xPrint`$xPermVersionExpected={"1.0.3",{2009,9,9}};
 
 
@@ -65,12 +65,15 @@ You should have received a copy of the GNU General Public License
 (* :Copyright: Alessandro Stecchina (2010-2015) *)
 
 (* :History:
-Vers. 1.3
-	8 Apr 2015
-	Help menu with access to tutorials
+Vers. 1.4
+	17 Apr 2015
+	All sectons have the same width as the maipulation section
+	Many new buttons in Tensor manipulation section
+	TabView in Tensor manipulation section
+	Help menu with access to xPrint tutorials
 	xPrint is now in a single folder with documentation files
 	xTerior is loaded automatically with xPrint
-	algebraic operations buttons added
+	Algebraic operations buttons added
 	Exterior forms section added
 	Gdelta Menu supprts symbolic dimension
 	Gdelta bug fixed
@@ -653,7 +656,7 @@ Delimiter,
  "Spinors Doc":>NotebookOpen[FileNameJoin[{First@FileNames["xAct",$Path],"Documentation","English","SpinorsDoc.nb"}]],
 Delimiter,
  "xPrint site":>SystemOpen["http://sites.google.com/site/xprintforxact/"],
- "xAct site":>SystemOpen["http://metric.iem.csic.es/Martin-Garcia/xAct/index.html"],
+ "xAct site":>SystemOpen["http://xAct.es.html"](*SystemOpen["http://metric.iem.csic.es/Martin-Garcia/xAct/index.html"]*) ,
  "xAct group":>SystemOpen["http://groups.google.com/group/xact/topics?hl=en"],
 Delimiter,
 "About xPrint...":>DisplaySplash[5]}
@@ -826,7 +829,7 @@ pastebutton[cdchoice_]:=Tooltip[PasteButton[nb,
 DisplaySplash[t_]:=(splashnb=CreateWindow[DocumentNotebook[{
 TextCell["xPrint for xAct", "Title", TextAlignment->Center,FontColor->White,FontSlant->Italic],
 TextCell["Version "<>First@xAct`xPrint`$Version,"Subtitle",TextAlignment->Center,FontColor->White],TextCell["created\n by\nAlessandro Stecchina","Subtitle",TextAlignment->Center,FontColor->White],TextCell["Copyright (C) 2009-"<>DateString["Year"]<>" by Alessandro Stecchina\nunder the General Public License\n
-These packages come with ABSOLUTELY NO WARRANTY;\n for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the General Public License for details.","Section",FontColor->White](*,Style[DefaultButton[],TextAlignment\[Rule]Center]*)}],ShowCellBracket->False,Deployed->True,ShowGroupOpener->False,WindowSize->{752,600},WindowMovable->False, WindowElements->{},WindowFrame->"ThinFrame",Background->Black,WindowTitle->"Splash and Copyright Notice"(*,StyleDefinitions\[Rule]FrontEnd`FileName[{"Creative"},"PastelColor.nb",CharacterEncoding\[Rule]"WindowsANSI"]*)];
+These packages come with ABSOLUTELY NO WARRANTY;\n for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the General Public License for details.","Section",FontColor->White]}],ShowCellBracket->False,Deployed->True,ShowGroupOpener->False,WindowSize->{752,600},WindowMovable->False, WindowElements->{},WindowFrame->"ThinFrame",Background->Black,WindowTitle->"Splash and Copyright Notice"];
 Pause[t];
 NotebookClose[splashnb];)
 
@@ -834,64 +837,166 @@ NotebookClose[splashnb];)
 ManifoldMenu:=Item[Dynamic[Tooltip[PopupMenu[Dynamic[manifold],Union@$Manifolds,Alignment->Right,BaseStyle->"puL",Appearance->ActionMenu,ImageSize->{Automatic,20},FrameMargins->Small],"Manifold Menu"],UpdateInterval->5 ],Alignment->Center]
 
 
-TensorManipulationsection :=Grid[{{Row[{Item[Style["   Tensor Manipulation   ",13(*,Bold*)],Alignment->Left],Tooltip[Row[{Checkbox[Dynamic[SimpleManipulationQ]],Style[" Simple ",10(*,Bold*)]}],"Simple or complex (with options) manipulation"],"   ",Tooltip[ButtonBar[{
-" + ":>NotebookWrite[nb,Cell[" + ", "Input"],After]," - ":>NotebookWrite[nb,Cell[" - ", "Input"],After]," \[Wedge] ":>NotebookWrite[nb,Cell[" \[Wedge] ", "Input"],After]}],"Algebraic operations"]}]},
-{Dynamic@Row[{Button["//ToCanonical"//ButtonLabelStyle,
+SortCovDsButton:=Button["//SortCovDs"//ButtonLabelStyle,
 Switch[SimpleManipulationQ,
-True,NotebookWrite[nb,Cell["//ToCanonical", "Input"],After],False,
+True,NotebookWrite[nb,Cell["//SortCovDs", "Input"],After],False,
 NotebookWrite[nb,
 Cell[BoxData[
  RowBox[{"//", 
   RowBox[{
-   RowBox[{"ToCanonical", "[", 
-    RowBox[{"#", ",", 
-     RowBox[{"UseMetricOnVBundle", "\[Rule]", 
-      TagBox[
-       FrameBox[
-        RowBox[{
-         RowBox[{"All", "/", "none"}], "/", "VBundleList"}]],
-       "Placeholder"]}], ",", 
-     RowBox[{"ExpandChristoffel", "\[Rule]", TagBox[
-    FrameBox["False/True"],
-    "Placeholder"]}], ",", 
-     RowBox[{"Method", "->", TagBox[
-    FrameBox["ChangeCovD/Implode"],
-    "Placeholder"]}]}], "]"}], "&"}]}]], "Input"],After]]
+   RowBox[{"SortCovDs", "[", 
+    RowBox[{ TagBox[
+    FrameBox["#"],
+    "Placeholder"]
+  , ",",TagBox[
+    FrameBox["covd"],
+    "Placeholder"] 
+     }], "]"}], "&"}]}]], "Input"],After]]
 ,ImageSize->85,
-Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]],Button["//ContractBasis"//ButtonLabelStyle,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+BracketToCovDButton:=Button["//BracketToCovD"//ButtonLabelStyle,
 Switch[SimpleManipulationQ,
-True,NotebookWrite[nb,Cell["//ContractBasis", "Input"],After],False,
-NotebookWrite[nb,
-Cell[BoxData[
- RowBox[{"//","ContractBasis", "[", 
-  RowBox[{
-   "#", ",", 
-   TagBox[
-    FrameBox["indices"],
-    "Placeholder"]}],",",RowBox[{"OverDerivatives", "\[Rule]", TagBox[
-    FrameBox["False/True"],
-    "Placeholder"]}], "]","&"}]], "Input"],After]]
-,ImageSize->85,
-Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]],Button["//ContractMetric"//ButtonLabelStyle,
-Switch[SimpleManipulationQ,
-True,NotebookWrite[nb,Cell["//ContractMetric", "Input"],After],False,
+True,NotebookWrite[nb,Cell["//BracketToCovD", "Input"],After],False,
 NotebookWrite[nb,
 Cell[BoxData[
  RowBox[{"//", 
   RowBox[{
-   RowBox[{"ContractMetric", "[", 
+   RowBox[{"BracketToCovD", "[", 
+    RowBox[{ TagBox[
+    FrameBox["#"],
+    "Placeholder"]
+  , ",",TagBox[
+    FrameBox["covd"],
+    "Placeholder"] 
+     }], "]"}], "&"}]}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+ChangeCovDButton:=Button["//ChangeCovD"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,NotebookWrite[nb,Cell["//ChangeCovD", "Input"],After],False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//", 
+  RowBox[{
+   RowBox[{"ChangeCovD", "[", 
     RowBox[{"#", ",", TagBox[
-    FrameBox["metric"],
-    "Placeholder"], ",", 
-     RowBox[{"AllowUpperDerivatives", "\[Rule]", TagBox[
-    FrameBox["False/True"],
-    "Placeholder"]}], ",", 
-     RowBox[{"OverDerivatives", "\[Rule]", TagBox[
-    FrameBox["False/True"],
-    "Placeholder"]}]}], "]"}], "&"}]}]], "Input"],After]]
+    FrameBox["from covd1"],
+    "Placeholder"]
+  , ",",TagBox[
+    FrameBox["to covd2"],
+    "Placeholder"] 
+     }], "]"}], "&"}]}]], "Input"],After]]
 ,ImageSize->85,
-Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]}]},
-{Dynamic@Row[{Button["//Simplification"//ButtonLabelStyle,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+TraceBasisDummyButton:=Button["//TrBasisDummy"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,
+NotebookWrite[nb,Cell[BoxData[
+ RowBox[{"//","TraceBasisDummy"}]], "Input"],After],
+False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//","TraceBasisDummy", "[", 
+   "#", ",", TagBox[
+    FrameBox["indices"],
+    "Placeholder"], "]","&"}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+ToBasisButton:=Button["//ToBasis"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,
+NotebookWrite[nb,Cell[BoxData[
+ RowBox[{"//","ToBasis", "[", 
+  TagBox[
+   FrameBox["basis"],
+   "Placeholder"], "]"}]], "Input"],After],
+False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//","ToBasis", "[", 
+  TagBox[
+   FrameBox["basis"],
+   "Placeholder"], "]", "[", 
+  RowBox[{
+   "#", ",", TagBox[
+    FrameBox["indices"],
+    "Placeholder"], "]","&"}]}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+FreeToBasisButton:=Button["//FreeToBasis"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,
+NotebookWrite[nb,Cell[BoxData[
+ RowBox[{"//","FreeToBasis", "[", 
+  TagBox[
+   FrameBox["basis"],
+   "Placeholder"], "]"}]], "Input"],After],
+False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//","FreeToBasis", "[", 
+  TagBox[
+   FrameBox["basis"],
+   "Placeholder"], "]", "[", 
+  RowBox[{
+   "#", ",", TagBox[
+    FrameBox["indices"],
+    "Placeholder"], "]","&"}]}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+DummyToBasisButton:=Button["//DummyToBasis"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,
+NotebookWrite[nb,Cell[BoxData[
+ RowBox[{"//","DummyToBasis", "[", 
+  TagBox[
+   FrameBox["basis"],
+   "Placeholder"], "]"}]], "Input"],After],
+False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//","DummyToBasis", "[", 
+  TagBox[
+   FrameBox["basis"],
+   "Placeholder"], "]", "[", 
+  RowBox[{
+   "#", ",", TagBox[
+    FrameBox["indices"],
+    "Placeholder"], "]","&"}]}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+SeparateBasisButton:=Button["//SeparateBasis"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,NotebookWrite[nb,Cell["//SeparateBasis", "Input"],After],False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//","SeparateBasis", "[", 
+  TagBox[
+   FrameBox["basis"],
+   "Placeholder"], "]", "[", 
+  RowBox[{
+   "#", ",", TagBox[
+    FrameBox["indices"],
+    "Placeholder"], "]","&"}]}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+SimplificationButton:=Button["//Simplification"//ButtonLabelStyle,
 Switch[SimpleManipulationQ,
 True,NotebookWrite[nb,Cell["//Simplification", "Input"],After],False,
 NotebookWrite[nb,
@@ -913,56 +1018,107 @@ Cell[BoxData[
     FrameBox["ChangeCovD/Implode"],
     "Placeholder"]}]}], "]"}], "&"}]}]], "Input"],After]]
 ,ImageSize->85,
-Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]],Button["//SeparateBasis"//ButtonLabelStyle,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+ContractMetricButton:=Button["//ContractMetric"//ButtonLabelStyle,
 Switch[SimpleManipulationQ,
-True,NotebookWrite[nb,Cell["//SeparateBasis", "Input"],After],False,
+True,NotebookWrite[nb,Cell["//ContractMetric", "Input"],After],False,
 NotebookWrite[nb,
 Cell[BoxData[
- RowBox[{"//","SeparateBasis", "[", 
-  TagBox[
-   FrameBox["basis"],
-   "Placeholder"], "]", "[", 
+ RowBox[{"//", 
   RowBox[{
-   "#", ",", TagBox[
-    FrameBox["indices"],
-    "Placeholder"], "]","&"}]}]], "Input"],After]]
+   RowBox[{"ContractMetric", "[", 
+    RowBox[{"#", ",", TagBox[
+    FrameBox["metric"],
+    "Placeholder"], ",", 
+     RowBox[{"AllowUpperDerivatives", "\[Rule]", TagBox[
+    FrameBox["False/True"],
+    "Placeholder"]}], ",", 
+     RowBox[{"OverDerivatives", "\[Rule]", TagBox[
+    FrameBox["False/True"],
+    "Placeholder"]}]}], "]"}], "&"}]}]], "Input"],After]]
 ,ImageSize->85,
-Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]}]}
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+ContractBasisButton:=Button["//ContractBasis"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,NotebookWrite[nb,Cell["//ContractBasis", "Input"],After],False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//","ContractBasis", "[", 
+  RowBox[{
+   "#", ",", 
+   TagBox[
+    FrameBox["indices"],
+    "Placeholder"]}],",",RowBox[{"OverDerivatives", "\[Rule]", TagBox[
+    FrameBox["False/True"],
+    "Placeholder"]}], "]","&"}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+CanonicalButton:=Button["//ToCanonical"//ButtonLabelStyle,
+Switch[SimpleManipulationQ,
+True,NotebookWrite[nb,Cell["//ToCanonical", "Input"],After],False,
+NotebookWrite[nb,
+Cell[BoxData[
+ RowBox[{"//", 
+  RowBox[{
+   RowBox[{"ToCanonical", "[", 
+    RowBox[{"#", ",", 
+     RowBox[{"UseMetricOnVBundle", "\[Rule]", 
+      TagBox[
+       FrameBox[
+        RowBox[{
+         RowBox[{"All", "/", "none"}], "/", "VBundleList"}]],
+       "Placeholder"]}], ",", 
+     RowBox[{"ExpandChristoffel", "\[Rule]", TagBox[
+    FrameBox["False/True"],
+    "Placeholder"]}], ",", 
+     RowBox[{"Method", "->", TagBox[
+    FrameBox["ChangeCovD/Implode"],
+    "Placeholder"]}]}], "]"}], "&"}]}]], "Input"],After]]
+,ImageSize->85,
+Background->Switch[SimpleManipulationQ,True,Automatic,False,Yellow]]
+
+
+TensorManipulationsection :=Grid[{{Row[{Item[Style["   Tensor Manipulation   ",13(*,Bold*)],Alignment->Left],Tooltip[Row[{Checkbox[Dynamic[SimpleManipulationQ]],Style[" Basic ",10(*,Bold*)]}],"Basic or advanced (with options) manipulation"],"   ",Tooltip[ButtonBar[{
+" + ":>NotebookWrite[nb,Cell[" + ", "Input"],After]," - ":>NotebookWrite[nb,Cell[" - ", "Input"],After]," \[Wedge] ":>NotebookWrite[nb,Cell[" \[Wedge] ", "Input"],After]}],"Algebraic operations"]}]},
+{TabView[{
+"Normalize"-> Dynamic@Row[{CanonicalButton,SimplificationButton}], "Basis"->Grid[{
+{Dynamic@Row[{TraceBasisDummyButton}]},{Dynamic@Row[{ContractBasisButton,SeparateBasisButton}]},{Dynamic@Row[{ToBasisButton,FreeToBasisButton,DummyToBasisButton}]}}], "Metric"->Dynamic@Row[{ContractMetricButton}],"CovD"->Dynamic@Row[{ChangeCovDButton,BracketToCovDButton,SortCovDsButton}]}]}
 },Alignment->Left]
 
 
 GeneralSettingssection:= OpenerView[{Style["General Settings",13(*,Bold*)],
-Grid[{
-(* 1st line *)
-{Checkbox[Dynamic[$CommuteCovDsOnScalars,($CommuteCovDsOnScalars=#;If[$CommuteCovDsOnScalars,NotebookWrite[nb,Cell["$CommuteCovDsOnScalars=True","Input"],All];
-SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$CommuteCovDsOnScalars=False","Input"],All];
-SelectionEvaluateCreateCell[nb]])&]],Style["Commute CovD on Scalars",10(*,Bold*)],Checkbox[Dynamic[$DefInfoQ,($DefInfoQ=#;If[$DefInfoQ,NotebookWrite[nb,Cell["$DefInfoQ=True","Input"],All];
+TabView[{"Verbosity"->Column[{
+Row@{Checkbox[Dynamic[$DefInfoQ,($DefInfoQ=#;If[$DefInfoQ,NotebookWrite[nb,Cell["$DefInfoQ=True","Input"],All];
 SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$DefInfoQ=False","Input"],All];
-SelectionEvaluateCreateCell[nb]])&]],Style["Definition Info",10],
-Checkbox[Dynamic[ABCOnQ,(ABCOnQ=#;If[ABCOnQ,NotebookWrite[nb,Cell["AutomaticBasisContractionStart[]","Input"],All];
-SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["AutomaticBasisContractionStop[]","Input"],All];
-SelectionEvaluateCreateCell[nb]])&]],Style["Automatic Basis Contraction  ",10]},
-(* 2nd line *)
-{Checkbox[Dynamic[PostfixStyleQ,(PostfixStyleQ=#;If[PostfixStyleQ,NotebookWrite[nb,Cell["$CovDFormat =\"\<Postfix\>\"","Input"],All];
-SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$CovDFormat =\"\<Prefix\>\"","Input"],All];
-SelectionEvaluateCreateCell[nb]])&]],Style["CovD Postfix notation",10],Checkbox[Dynamic[$UndefInfoQ,($UndefInfoQ=#;If[$UndefInfoQ,NotebookWrite[nb,Cell["$UndefInfoQ=True","Input"],All];
+SelectionEvaluateCreateCell[nb]])&]],Style["  Definition Info",10]},Row@{Checkbox[Dynamic[$UndefInfoQ,($UndefInfoQ=#;If[$UndefInfoQ,NotebookWrite[nb,Cell["$UndefInfoQ=True","Input"],All];
 SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$UndefInfoQ=False","Input"],All];
-SelectionEvaluateCreateCell[nb]])&]],Style["Un-Definition Info",10]},
-(* 3rd line *)
-{Column[{Dynamic@ActionMenu["Start",(#:>(NotebookWrite[nb,Cell["SortCovDsStart["<>ToString[#]<>"]","Input"],All];SelectionEvaluateCreateCell[nb]))&/@commderivativesmenuselection[manifold],Appearance->None],Dynamic@ActionMenu["Stop",(#:>(NotebookWrite[nb,Cell["SortCovDsStop["<>ToString[#]<>"]","Input"],All];SelectionEvaluateCreateCell[nb]))&/@commderivativesmenuselection[manifold],Appearance->None]}],Style["Automatic CovD commutation",10],Checkbox[Dynamic[IndicesScreenedQ,(IndicesScreenedQ=#;If[IndicesScreenedQ,NotebookWrite[nb,Cell["$PrePrint=ScreenDollarIndices","Input"],All];
+SelectionEvaluateCreateCell[nb]])&]],Style["  Un-Definition Info",10]},
+Row@{Checkbox[Dynamic[IndicesScreenedQ,(IndicesScreenedQ=#;If[IndicesScreenedQ,NotebookWrite[nb,Cell["$PrePrint=ScreenDollarIndices","Input"],All];
 SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$PrePrint=.","Input"],All];
-SelectionEvaluateCreateCell[nb]])&]],Style["Screen Dollar Indices",10]},
-(* 4th line *)
-{Invisible["A"],Invisible["A"],Checkbox[Dynamic[$CVVerbose,($CVVerbose=#;If[$CVVerbose,NotebookWrite[nb,Cell["$CVVerbose = True","Input"],All];
+SelectionEvaluateCreateCell[nb]])&]],Style["  Screen Dollar Indices",10]},
+Row@{Checkbox[Dynamic[$CVVerbose,($CVVerbose=#;If[$CVVerbose,NotebookWrite[nb,Cell["$CVVerbose = True","Input"],All];
 SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$CVVerbose = False","Input"],All];
-SelectionEvaluateCreateCell[nb]])&]],Style["Component Value verbose  ",10]}
-(* 5th line *)}
-,Alignment->Left]
+SelectionEvaluateCreateCell[nb]])&]],Style["  Component Value verbose  ",10]}}],"CovD"->Column[{
+Row@{Checkbox[Dynamic[$CommuteCovDsOnScalars,($CommuteCovDsOnScalars=#;If[$CommuteCovDsOnScalars,NotebookWrite[nb,Cell["$CommuteCovDsOnScalars=True","Input"],All];
+SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$CommuteCovDsOnScalars=False","Input"],All];
+SelectionEvaluateCreateCell[nb]])&]],Style["  Commute CovD on Scalars",10(*,Bold*)]},Row@{Checkbox[Dynamic[PostfixStyleQ,(PostfixStyleQ=#;If[PostfixStyleQ,NotebookWrite[nb,Cell["$CovDFormat =\"\<Postfix\>\"","Input"],All];
+SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$CovDFormat =\"\<Prefix\>\"","Input"],All];
+SelectionEvaluateCreateCell[nb]])&]],Style["  CovD Postfix notation",10]},
+Row@{Column[{Dynamic@ActionMenu["Start",(#:>(NotebookWrite[nb,Cell["SortCovDsStart["<>ToString[#]<>"]","Input"],All];SelectionEvaluateCreateCell[nb]))&/@commderivativesmenuselection[manifold],Appearance->None],Dynamic@ActionMenu["Stop",(#:>(NotebookWrite[nb,Cell["SortCovDsStop["<>ToString[#]<>"]","Input"],All];SelectionEvaluateCreateCell[nb]))&/@commderivativesmenuselection[manifold],Appearance->None]}],Style["Automatic CovD commutation",10]}}],"Bases"->Column[{
+Row@{Checkbox[Dynamic[IndicesScreenedQ,(IndicesScreenedQ=#;If[IndicesScreenedQ,NotebookWrite[nb,Cell["$PrePrint=ScreenDollarIndices","Input"],All];
+SelectionEvaluateCreateCell[nb],NotebookWrite[nb,Cell["$PrePrint=.","Input"],All];
+SelectionEvaluateCreateCell[nb]])&]],Style["  Automatic Basis Contraction  ",10]}}]}]
 }]
 
 
 GlobalEnvironmentsection:=OpenerView[{Style["Global Environment",13],
-Column[{PasteButton["$ConstantSymbols"//ButtonLabelStyle,Defer@$ConstantSymbols,Appearance->Button,ImageSize->95],Row@{PasteButton["$Manifolds"//ButtonLabelStyle,Defer@$Manifolds,Appearance->Button,ImageSize->95],PasteButton["$ProductManifolds"//ButtonLabelStyle,Defer@$ProductManifolds,Appearance->Button,ImageSize->95]},Row@{PasteButton["$VBundles"//ButtonLabelStyle,Defer@$VBundles,Appearance->Button,ImageSize->95],PasteButton["$SumVBundles"//ButtonLabelStyle,Defer@$SumVBundles,Appearance->Button,ImageSize->95],PasteButton["$CovDs"//ButtonLabelStyle,Defer@$CovDs,Appearance->Button,ImageSize->95],PasteButton["$Tensors"//ButtonLabelStyle,Defer@$Tensors,Appearance->Button,ImageSize->95],PasteButton["$Parameters"//ButtonLabelStyle,Defer@$Parameters,Appearance->Button,ImageSize->95]},
+Column[{Row@{PasteButton["$ConstantSymbols"//ButtonLabelStyle,Defer@$ConstantSymbols,Appearance->Button,ImageSize->95],PasteButton["$Parameters"//ButtonLabelStyle,Defer@$Parameters,Appearance->Button,ImageSize->95]},Row@{PasteButton["$Manifolds"//ButtonLabelStyle,Defer@$Manifolds,Appearance->Button,ImageSize->95],PasteButton["$ProductManifolds"//ButtonLabelStyle,Defer@$ProductManifolds,Appearance->Button,ImageSize->95]},Row@{PasteButton["$VBundles"//ButtonLabelStyle,Defer@$VBundles,Appearance->Button,ImageSize->95],PasteButton["$SumVBundles"//ButtonLabelStyle,Defer@$SumVBundles,Appearance->Button,ImageSize->95]},Row@{PasteButton["$CovDs"//ButtonLabelStyle,Defer@$CovDs,Appearance->Button,ImageSize->95],PasteButton["$Tensors"//ButtonLabelStyle,Defer@$Tensors,Appearance->Button,ImageSize->95]},
 Row@{PasteButton["$Metrics"//ButtonLabelStyle,Defer@$Metrics,Appearance->Button,ImageSize->95],PasteButton["$ProductMetrics"//ButtonLabelStyle,Defer@$ProductMetrics,Appearance->Button,ImageSize->95]},Row@{PasteButton["$Bases"//ButtonLabelStyle,Defer@$Bases,Appearance->Button,ImageSize->95],PasteButton["$Charts"//ButtonLabelStyle,Defer@$Charts,Appearance->Button,ImageSize->95]}},Center]
 }]
 
@@ -1098,8 +1254,7 @@ NotebookWrite[nb,Cell[BoxData[
 TagBox[
     FrameBox["symmetry"],
     "Placeholder"]}], "]"}]], "Input"],After]
-],Item[Tooltip[Panel[Row[{Button[Style["Symmetric",Small],
-NotebookWrite[nb,Cell[BoxData[
+],ActionMenu["    Symmetry    "//ButtonLabelStyle,{"Symmetric":>NotebookWrite[nb,Cell[BoxData[
  RowBox[{"Symmetric", "[", 
   RowBox[{
    RowBox[{"{", 
@@ -1109,9 +1264,7 @@ NotebookWrite[nb,Cell[BoxData[
       "Placeholder"], ",", " ", 
      TagBox[
       FrameBox["p2"],
-      "Placeholder"]}], "}"}]}], "]"}]], "Input"],After]
-,Appearance->"Palette"],Button[Style["Antisymmetric",Small],
-NotebookWrite[nb,Cell[BoxData[
+      "Placeholder"]}], "}"}]}], "]"}]], "Input"],After],"Antisymmetric":>NotebookWrite[nb,Cell[BoxData[
  RowBox[{"Antisymmetric", "[", 
   RowBox[{
    RowBox[{"{", 
@@ -1124,9 +1277,7 @@ NotebookWrite[nb,Cell[BoxData[
       "Placeholder"]}], "}"}](*, ",", " ", 
    TagBox[
     FrameBox["notation"],
-    "Placeholder"]*)}], "]"}]], "Input"],After]
-,Appearance->"Palette"],Button[Style["RiemannSymmetric",Small],
-NotebookWrite[nb,Cell[BoxData[
+    "Placeholder"]*)}], "]"}]], "Input"],After],"RiemannSymmetric":>NotebookWrite[nb,Cell[BoxData[
  RowBox[{"RiemannSymmetric", "[", 
   RowBox[{
    RowBox[{"{", 
@@ -1145,8 +1296,7 @@ NotebookWrite[nb,Cell[BoxData[
       "Placeholder"]}], "}"}], ",", " ", 
    TagBox[
     FrameBox["notation"],
-    "Placeholder"]}], "]"}]], "Input"],After]
-,Appearance->"Palette"]}],FrameMargins->1],"Symmetry type"],Alignment->Left],SpanFromLeft},{Button["Def Cov. Derivative"//ButtonLabelStyle,
+    "Placeholder"]}], "]"}]], "Input"],After]},Appearance->"PopupMenu"]},{Button["Def Cov. Derivative"//ButtonLabelStyle,
 NotebookWrite[nb,Cell[BoxData[
  RowBox[{"DefCovD", "[", 
   RowBox[{
@@ -1259,9 +1409,7 @@ Switch[indexform,unprimed,NotebookWrite[nb,Cell[BoxData[
       "Placeholder"]}], "}"}]}],","," BasisColor \[Rule] " ,TagBox[
       FrameBox["color"],
       "Placeholder"],","," DoublePrimed \[Rule] True", "]"}]], "Input"],After]],ImageSize->{120,Automatic}
-],Item[Tooltip[Panel[Row[{PasteButton[Style["Red",Small],Defer@Red,Background->Red],PasteButton[Style["Magenta",Small],Defer@Magenta,Background->Magenta],PasteButton[Style["Green",Small],Defer@Green,Background->Green],
-PasteButton[Style["D.Green",Small],Defer@N@Darker@Green,Background->Darker@Green],PasteButton[Style["Blue",Small],Defer@Blue,Background->Blue],
-PasteButton[Style["Cyan",Small],Defer@Cyan,Background->Cyan],PasteButton[Style["Purple",Small],Defer@Purple,Background->Purple],PasteButton[Style["Brown",Small],Defer@Brown,Background->Brown],PasteButton[Style["Yellow",Small],Defer@Yellow,Background->Yellow]}],FrameMargins->1],"BasisColor"],Alignment->{Left,Center}],SpanFromLeft},{Tooltip[RadioButtonBar[Dynamic[indexform],{unprimed->"a",primed->"a'",doubleprimed->"a''"}],"unprimed, primed, doubleprimed"],SpanFromAbove,SpanFromBoth},{Dynamic@Button["DefChart"//ButtonLabelStyle,
+]},{Tooltip[RadioButtonBar[Dynamic[indexform],{unprimed->"a",primed->"a'",doubleprimed->"a''"}],"unprimed, primed, doubleprimed"],ActionMenu["       Color       "//ButtonLabelStyle,{"Red":>Paste@Defer@Red,"Magenta":>Paste@Defer@Magenta,"Green":>Paste@Defer@Green,"D.Green":>Paste@Defer@N@Darker@Green,"Blue":>Paste@Defer@Blue,"Cyan":>Paste@Defer@Cyan,"Purple":>Paste@Defer@Purple,"Brown":>Paste@Defer@Brown,"Yellow":>Paste@Defer@Yellow},Appearance->"PopupMenu"]},{Dynamic@Button["DefChart"//ButtonLabelStyle,
 Switch[indexform,unprimed,NotebookWrite[nb,Cell[BoxData[
  RowBox[{"DefChart", "[", 
   RowBox[{
@@ -1353,7 +1501,7 @@ Switch[indexform,unprimed,NotebookWrite[nb,Cell[BoxData[
     TagBox[
      FrameBox["color"],
      "Placeholder"],","," DoublePrimed \[Rule] True"}]}], "]"}]], "Input"],After]]
-,ImageSize->{120,Automatic}],SpanFromAbove,SpanFromBoth},
+,ImageSize->{120,Automatic}]},
 {Invisible["A"],Button["PrintAs ->..."//ButtonLabelStyle,
 NotebookWrite[nb,Cell[BoxData[
  RowBox[{"PrintAs", "->", 
@@ -1375,7 +1523,7 @@ Column[{PasteButton["Load xPert",Defer@(<<xAct`xPert`),Background-> LightGray,Ap
 
 ExteriorFormssection:=
 OpenerView[{Style["Exterior Forms",13],
-Column[{PasteButton["Load xTerior",Defer@(<<xAct`xTerior`),Background-> LightGray,Appearance->Button],Invisible@"I"},Center]
+Column[{"Under development",Invisible@"I"},Center]
 }]
 
 
@@ -1386,7 +1534,11 @@ ww=300; (* spacer size *)
 www=3.1im;
 LockednbQ=False;
 (* Initialize options *)
+space15="               "; (* a string of 15 spaces *)
 nb:=If[LockednbQ,Lockednb,InputNotebook[]]
+nbtitle:="WindowTitle"/.NotebookInformation[nb]
+nbtitlepadded:=StringJoin[nbtitle,space15]
+DisplayTargetNb:=StringTake[nbtitlepadded,15]
 basisreset[AIndex]; (* initialize the first 10 basis indices to AIndex *)
 cup[1]="";
 cdown[1]="";
@@ -1400,7 +1552,7 @@ gdslots=1;
 
 
 (* Palette contents *)
-xPrintpaste:=Grid[{{Item[Row[{Style["   Tensor Input   ",13(*,Bold*)],Dynamic@(Panel[(Row[{"Target \[Rule] "//ButtonLabelStyle,"WindowTitle"/.NotebookInformation[nb]//ButtonLabelStyle}]),FrameMargins->Tiny]),Invisible["A"],Tooltip[Row[{Checkbox[Dynamic[LockednbQ,(LockednbQ=#;If[LockednbQ,Lockednb=InputNotebook[]])&]],Style[" Lock",10(*,Bold*)]}],"Lock current InputNotebook"]}],Alignment->Left],
+xPrintpaste:=Grid[{{Item[Row[{Style["   Target nb \[Rule]   ",13(*,Bold*)],Dynamic@(Tooltip[Panel[(Row[{DisplayTargetNb//ButtonLabelStyle}]),FrameMargins->Tiny,ImageSize->100],nbtitle]),Invisible["A"],Tooltip[Row[{Checkbox[Dynamic[LockednbQ,(LockednbQ=#;If[LockednbQ,Lockednb=InputNotebook[]])&]],Style[" Lock",10(*,Bold*)]}],"Lock current InputNotebook"]}],Alignment->Left],
 (* Help Menu *)
 Item[Row[{HelpMenu,Invisible["I"]}],Alignment->Right]},
 (* Manifold Menu *)

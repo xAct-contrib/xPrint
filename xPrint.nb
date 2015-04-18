@@ -26,15 +26,15 @@ Cell["1.0. TODO LIST", "Subsection"],
 
 Cell[CellGroupData[{
 
-Cell["1.1. Preliminary definitins", "Subsection"],
+Cell["1.1. Preliminary definitions and version", "Subsection"],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{"xAct`xPrint`$Version", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<1.3\>\"", ",", 
+    RowBox[{"\"\<1.4\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2015", ",", "4", ",", "8"}], "}"}]}], "}"}]}], ";"}], "\n", 
+      RowBox[{"2015", ",", "4", ",", "15"}], "}"}]}], "}"}]}], ";"}], "\n", 
  RowBox[{
   RowBox[{"xAct`xPrint`$xPermVersionExpected", "=", 
    RowBox[{"{", 
@@ -144,12 +144,15 @@ menus
 (* :Copyright: Alessandro Stecchina (2010-2015) *)
 
 (* :History:
-Vers. 1.3
-\t8 Apr 2015
-\tHelp menu with access to tutorials
+Vers. 1.4
+\t17 Apr 2015
+\tAll sectons have the same width as the maipulation section
+\tMany new buttons in Tensor manipulation section
+\tTabView in Tensor manipulation section
+\tHelp menu with access to xPrint tutorials
 \txPrint is now in a single folder with documentation files
 \txTerior is loaded automatically with xPrint
-\talgebraic operations buttons added
+\tAlgebraic operations buttons added
 \tExterior forms section added
 \tGdelta Menu supprts symbolic dimension
 \tGdelta bug fixed
@@ -436,7 +439,9 @@ with double-primed indices. It passes all its arguments to DefChart\>\""}],
 
 Cell[CellGroupData[{
 
-Cell["1.4.5 xTensor blue index problem fix", "Subsection"],
+Cell["\<\
+1.4.5 xTensor blue index problem fix (no longer necessary/active)\
+\>", "Subsection"],
 
 Cell["\<\
 This is necessary to fix the blue index problem.
@@ -1904,9 +1909,9 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{"--", 
-                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}], "*)"}]}], "\[IndentingNewLine]", 
+                    RowBox[{
+                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"basisreset", "[", "basis_", "]"}], ":=", 
@@ -2019,9 +2024,9 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+                    RowBox[{"--", 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"idxdown", "[", 
    RowBox[{"cdown_", ",", "basis_"}], "]"}], ":=", 
@@ -3082,7 +3087,7 @@ Cell[BoxData[{
        "\"\<Postfix\>\""}], "\[IndentingNewLine]", "StringTagsListPostfix"}], 
      ":=", 
      RowBox[{"StringTagPostfix", "/@", "$CovDs"}]}]}], "\[IndentingNewLine]", 
-   "*)"}], "\n", 
+   "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -3114,12 +3119,12 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+}]}]}]}]}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"ButtonLabelStyle", "[", "x_", "]"}], ":=", 
    RowBox[{"Style", "[", 
-    RowBox[{"x", ",", "10"}], "]"}]}], "\n", 
+    RowBox[{"x", ",", "10"}], "]"}]}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -3151,7 +3156,7 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+}]}]}]}]}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"PrimedIndexForm", "[", "basis_", "]"}], ":=", 
@@ -4028,10 +4033,12 @@ Cell[BoxData[
      "SystemOpen", "[", "\"\<http://sites.google.com/site/xprintforxact/\>\"",
        "]"}]}], ",", "\[IndentingNewLine]", " ", 
     RowBox[{"\"\<xAct site\>\"", ":>", 
+     RowBox[{"SystemOpen", "[", "\"\<http://xAct.es.html\>\"", "]"}]}], 
+    RowBox[{"(*", 
      RowBox[{
      "SystemOpen", "[", 
       "\"\<http://metric.iem.csic.es/Martin-Garcia/xAct/index.html\>\"", 
-      "]"}]}], ",", "\[IndentingNewLine]", " ", 
+      "]"}], "*)"}], " ", ",", "\[IndentingNewLine]", " ", 
     RowBox[{"\"\<xAct group\>\"", ":>", 
      RowBox[{
      "SystemOpen", "[", 
@@ -4944,14 +4951,8 @@ Cell[BoxData[
 Disclaimer[]. This is free software, and you are welcome to redistribute it \
 under certain conditions. See the General Public License for details.\>\""}], 
             ",", "\"\<Section\>\"", ",", 
-            RowBox[{"FontColor", "\[Rule]", "White"}]}], "]"}]}], 
-         RowBox[{"(*", 
-          RowBox[{",", 
-           RowBox[{"Style", "[", 
-            RowBox[{
-             RowBox[{"DefaultButton", "[", "]"}], ",", 
-             RowBox[{"TextAlignment", "\[Rule]", "Center"}]}], "]"}]}], 
-          "*)"}], "}"}], "]"}], ",", 
+            RowBox[{"FontColor", "\[Rule]", "White"}]}], "]"}]}], "}"}], 
+        "]"}], ",", 
        RowBox[{"ShowCellBracket", "\[Rule]", "False"}], ",", 
        RowBox[{"Deployed", "\[Rule]", "True"}], ",", 
        RowBox[{"ShowGroupOpener", "\[Rule]", "False"}], ",", 
@@ -4965,15 +4966,7 @@ under certain conditions. See the General Public License for details.\>\""}],
        RowBox[{"Background", "\[Rule]", "Black"}], ",", 
        RowBox[{
        "WindowTitle", "\[Rule]", "\"\<Splash and Copyright Notice\>\""}]}], 
-      RowBox[{"(*", 
-       RowBox[{",", 
-        RowBox[{"StyleDefinitions", "\[Rule]", 
-         RowBox[{"FrontEnd`FileName", "[", 
-          RowBox[{
-           RowBox[{"{", "\"\<Creative\>\"", "}"}], ",", 
-           "\"\<PastelColor.nb\>\"", ",", 
-           RowBox[{"CharacterEncoding", "\[Rule]", "\"\<WindowsANSI\>\""}]}], 
-          "]"}]}]}], "*)"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "]"}]}], ";", "\[IndentingNewLine]", 
     RowBox[{"Pause", "[", "t", "]"}], ";", "\[IndentingNewLine]", 
     RowBox[{"NotebookClose", "[", "splashnb", "]"}], ";"}], ")"}]}]], "Input",
  
@@ -5011,7 +5004,7 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell["Tensor Manipulation section", "Subsubsection"],
+Cell["Tensor Manipulation section v. 1.3 Now old inactive", "Subsubsection"],
 
 Cell[BoxData[
  RowBox[{"TensorManipulationsection", " ", ":=", 
@@ -5039,10 +5032,10 @@ Cell[BoxData[
                 RowBox[{"Dynamic", "[", "SimpleManipulationQ", "]"}], "]"}], 
                ",", 
                RowBox[{"Style", "[", 
-                RowBox[{"\"\< Simple \>\"", ",", "10"}], 
+                RowBox[{"\"\< Basic \>\"", ",", "10"}], 
                 RowBox[{"(*", 
                  RowBox[{",", "Bold"}], "*)"}], "]"}]}], "}"}], "]"}], ",", 
-            "\"\<Simple or complex (with options) manipulation\>\""}], "]"}], 
+            "\"\<Basic or advanced (with options) manipulation\>\""}], "]"}], 
           ",", "\"\<   \>\"", ",", 
           RowBox[{"Tooltip", "[", 
            RowBox[{
@@ -5421,8 +5414,901 @@ Cell[BoxData[
               RowBox[{"Switch", "[", 
                RowBox[{
                "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", 
+                "False", ",", "Yellow"}], "]"}]}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Button", "[", 
+            RowBox[{
+             RowBox[{"\"\<//ChangeCovD\>\"", "//", "ButtonLabelStyle"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Switch", "[", 
+              RowBox[{
+              "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+               
+               RowBox[{"NotebookWrite", "[", 
+                RowBox[{"nb", ",", 
+                 RowBox[{"Cell", "[", 
+                  RowBox[{"\"\<//ChangeCovD\>\"", ",", " ", "\"\<Input\>\""}],
+                   "]"}], ",", "After"}], "]"}], ",", "False", ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"NotebookWrite", "[", 
+                RowBox[{"nb", ",", "\[IndentingNewLine]", 
+                 RowBox[{"Cell", "[", 
+                  RowBox[{
+                   RowBox[{"BoxData", "[", "\n", " ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<//\>\"", ",", " ", "\n", "  ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", "\n", "   ", 
+                    RowBox[{
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<ChangeCovD\>\"", ",", " ", "\"\<[\>\"", ",", " ", 
+                    "\n", "    ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<from covd1\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}], "\n", "  ",
+                     ",", " ", "\"\<,\>\"", ",", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<to covd2\>\"", "]"}], ",", 
+                    "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], " ", "\n",
+                     "     ", "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
+                    "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+                    "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", 
+                 "After"}], "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+             RowBox[{"ImageSize", "\[Rule]", "85"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Background", "->", 
+              RowBox[{"Switch", "[", 
+               RowBox[{
+               "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", 
                 "False", ",", "Yellow"}], "]"}]}]}], "]"}]}], "}"}], "]"}]}], 
        "}"}]}], "\[IndentingNewLine]", "}"}], ",", 
+    RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}]], "Input"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Tensor Manipulation Buttons", "Subsubsection"],
+
+Cell[BoxData[
+ RowBox[{"SortCovDsButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//SortCovDs\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//SortCovDs\>\"", ",", " ", "\"\<Input\>\""}], "]"}], 
+        ",", "After"}], "]"}], ",", "False", ",", "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<//\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{
+                 RowBox[{"RowBox", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<SortCovDs\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n",
+                     "    ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", " ", 
+                    RowBox[{
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<#\>\"", "]"}], ",", "\n", 
+                    "    ", "\"\<Placeholder\>\""}], "]"}], "\n", "  ", ",", 
+                    " ", "\"\<,\>\"", ",", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<covd\>\"", "]"}], ",", "\n",
+                     "    ", "\"\<Placeholder\>\""}], "]"}]}], " ", "\n", 
+                    "     ", "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
+                  "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"BracketToCovDButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//BracketToCovD\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//BracketToCovD\>\"", ",", " ", "\"\<Input\>\""}], 
+         "]"}], ",", "After"}], "]"}], ",", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<//\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{
+                 RowBox[{"RowBox", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<BracketToCovD\>\"", ",", " ", "\"\<[\>\"", ",", " ", 
+                    "\n", "    ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", " ", 
+                    RowBox[{
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<#\>\"", "]"}], ",", "\n", 
+                    "    ", "\"\<Placeholder\>\""}], "]"}], "\n", "  ", ",", 
+                    " ", "\"\<,\>\"", ",", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<covd\>\"", "]"}], ",", "\n",
+                     "    ", "\"\<Placeholder\>\""}], "]"}]}], " ", "\n", 
+                    "     ", "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
+                  "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"ChangeCovDButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//ChangeCovD\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//ChangeCovD\>\"", ",", " ", "\"\<Input\>\""}], "]"}], 
+        ",", "After"}], "]"}], ",", "False", ",", "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<//\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{
+                 RowBox[{"RowBox", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<ChangeCovD\>\"", ",", " ", "\"\<[\>\"", ",", " ", 
+                    "\n", "    ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<from covd1\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}], "\n", "  ",
+                     ",", " ", "\"\<,\>\"", ",", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<to covd2\>\"", "]"}], ",", 
+                    "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], " ", "\n",
+                     "     ", "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
+                  "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"TraceBasisDummyButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//TrBasisDummy\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{
+     "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<//\>\"", ",", "\"\<TraceBasisDummy\>\""}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}], ",", "\n", "False", ",", "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<TraceBasisDummy\>\"", ",", " ", 
+              "\"\<[\>\"", ",", " ", "\n", "   ", "\"\<#\>\"", ",", " ", 
+              "\"\<,\>\"", ",", " ", 
+              RowBox[{"TagBox", "[", "\n", "    ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<indices\>\"", "]"}], ",", "\n", 
+                "    ", "\"\<Placeholder\>\""}], "]"}], ",", " ", "\"\<]\>\"",
+               ",", "\"\<&\>\""}], "}"}], "]"}], "]"}], ",", " ", 
+          "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}]}], "]"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"ToBasisButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//ToBasis\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{
+     "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<ToBasis\>\"", ",", " ", "\"\<[\>\"", ",",
+               " ", "\n", "  ", 
+              RowBox[{"TagBox", "[", "\n", "   ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", "\n", 
+                "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+              "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", " ", "\"\<Input\>\""}],
+          "]"}], ",", "After"}], "]"}], ",", "\n", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<ToBasis\>\"", ",", " ", "\"\<[\>\"", ",",
+               " ", "\n", "  ", 
+              RowBox[{"TagBox", "[", "\n", "   ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", "\n", 
+                "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", "\"\<]\>\"", 
+              ",", " ", "\"\<[\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
+                 RowBox[{"TagBox", "[", "\n", "    ", 
+                  RowBox[{
+                   RowBox[{"FrameBox", "[", "\"\<indices\>\"", "]"}], ",", 
+                   "\n", "    ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+                 "\"\<]\>\"", ",", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"FreeToBasisButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//FreeToBasis\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{
+     "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<FreeToBasis\>\"", ",", " ", "\"\<[\>\"", 
+              ",", " ", "\n", "  ", 
+              RowBox[{"TagBox", "[", "\n", "   ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", "\n", 
+                "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+              "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", " ", "\"\<Input\>\""}],
+          "]"}], ",", "After"}], "]"}], ",", "\n", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<FreeToBasis\>\"", ",", " ", "\"\<[\>\"", 
+              ",", " ", "\n", "  ", 
+              RowBox[{"TagBox", "[", "\n", "   ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", "\n", 
+                "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", "\"\<]\>\"", 
+              ",", " ", "\"\<[\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
+                 RowBox[{"TagBox", "[", "\n", "    ", 
+                  RowBox[{
+                   RowBox[{"FrameBox", "[", "\"\<indices\>\"", "]"}], ",", 
+                   "\n", "    ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+                 "\"\<]\>\"", ",", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"DummyToBasisButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//DummyToBasis\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{
+     "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<DummyToBasis\>\"", ",", " ", "\"\<[\>\"",
+               ",", " ", "\n", "  ", 
+              RowBox[{"TagBox", "[", "\n", "   ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", "\n", 
+                "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+              "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", " ", "\"\<Input\>\""}],
+          "]"}], ",", "After"}], "]"}], ",", "\n", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<DummyToBasis\>\"", ",", " ", "\"\<[\>\"",
+               ",", " ", "\n", "  ", 
+              RowBox[{"TagBox", "[", "\n", "   ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", "\n", 
+                "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", "\"\<]\>\"", 
+              ",", " ", "\"\<[\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
+                 RowBox[{"TagBox", "[", "\n", "    ", 
+                  RowBox[{
+                   RowBox[{"FrameBox", "[", "\"\<indices\>\"", "]"}], ",", 
+                   "\n", "    ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+                 "\"\<]\>\"", ",", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"SeparateBasisButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//SeparateBasis\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//SeparateBasis\>\"", ",", " ", "\"\<Input\>\""}], 
+         "]"}], ",", "After"}], "]"}], ",", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<SeparateBasis\>\"", ",", " ", 
+              "\"\<[\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"TagBox", "[", "\n", "   ", 
+               RowBox[{
+                RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", "\n", 
+                "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", "\"\<]\>\"", 
+              ",", " ", "\"\<[\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
+                 RowBox[{"TagBox", "[", "\n", "    ", 
+                  RowBox[{
+                   RowBox[{"FrameBox", "[", "\"\<indices\>\"", "]"}], ",", 
+                   "\n", "    ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+                 "\"\<]\>\"", ",", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"SimplificationButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//Simplification\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//Simplification\>\"", ",", " ", "\"\<Input\>\""}], 
+         "]"}], ",", "After"}], "]"}], ",", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<//\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{
+                 RowBox[{"RowBox", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<Simplification\>\"", ",", " ", "\"\<[\>\"", ",", " ", 
+                    "\n", "    ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", "\n", 
+                    "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<UseMetricOnVBundle\>\"", ",", " ", "\"\<\[Rule]\>\"",
+                     ",", " ", "\n", "      ", 
+                    RowBox[{"TagBox", "[", "\n", "       ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\n", "        ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", "\n", "         ", 
+                    RowBox[{
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<All\>\"", ",", " ", "\"\</\>\"", ",", " ", 
+                    "\"\<none\>\""}], "}"}], "]"}], ",", " ", "\"\</\>\"", 
+                    ",", " ", "\"\<VBundleList\>\""}], "}"}], "]"}], "]"}], 
+                    ",", "\n", "       ", "\"\<Placeholder\>\""}], "]"}]}], 
+                    "}"}], "]"}], ",", " ", "\"\<,\>\"", ",", " ", "\n", 
+                    "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<ExpandChristoffel\>\"", ",", " ", "\"\<\[Rule]\>\"", 
+                    ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<False/True\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+                    "]"}], ",", " ", "\"\<,\>\"", ",", " ", "\n", "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<Method\>\"", ",", " ", "\"\<->\>\"", ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{
+                    "FrameBox", "[", "\"\<ChangeCovD/Implode\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+                    "]"}]}], "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
+                  "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"ContractMetricButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//ContractMetric\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//ContractMetric\>\"", ",", " ", "\"\<Input\>\""}], 
+         "]"}], ",", "After"}], "]"}], ",", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<//\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{
+                 RowBox[{"RowBox", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<ContractMetric\>\"", ",", " ", "\"\<[\>\"", ",", " ", 
+                    "\n", "    ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<metric\>\"", "]"}], ",", 
+                    "\n", "    ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
+                    "\"\<,\>\"", ",", " ", "\n", "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<AllowUpperDerivatives\>\"", ",", " ", 
+                    "\"\<\[Rule]\>\"", ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<False/True\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+                    "]"}], ",", " ", "\"\<,\>\"", ",", " ", "\n", "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<OverDerivatives\>\"", ",", " ", "\"\<\[Rule]\>\"", 
+                    ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<False/True\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+                    "]"}]}], "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
+                  "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"ContractBasisButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//ContractBasis\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//ContractBasis\>\"", ",", " ", "\"\<Input\>\""}], 
+         "]"}], ",", "After"}], "]"}], ",", "False", ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<//\>\"", ",", "\"\<ContractBasis\>\"", ",", " ", 
+              "\"\<[\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{
+                "\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", "\n", "   ", 
+                 RowBox[{"TagBox", "[", "\n", "    ", 
+                  RowBox[{
+                   RowBox[{"FrameBox", "[", "\"\<indices\>\"", "]"}], ",", 
+                   "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+               "]"}], ",", "\"\<,\>\"", ",", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<OverDerivatives\>\"", ",", " ", "\"\<\[Rule]\>\"", ",", 
+                 " ", 
+                 RowBox[{"TagBox", "[", "\n", "    ", 
+                  RowBox[{
+                   RowBox[{"FrameBox", "[", "\"\<False/True\>\"", "]"}], ",", 
+                   "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+               "]"}], ",", " ", "\"\<]\>\"", ",", "\"\<&\>\""}], "}"}], "]"}],
+            "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{"CanonicalButton", ":=", 
+  RowBox[{"Button", "[", 
+   RowBox[{
+    RowBox[{"\"\<//ToCanonical\>\"", "//", "ButtonLabelStyle"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Switch", "[", 
+     RowBox[{"SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"Cell", "[", 
+         RowBox[{"\"\<//ToCanonical\>\"", ",", " ", "\"\<Input\>\""}], "]"}], 
+        ",", "After"}], "]"}], ",", "False", ",", "\[IndentingNewLine]", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", "\n", " ", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"\"\<//\>\"", ",", " ", "\n", "  ", 
+              RowBox[{"RowBox", "[", 
+               RowBox[{"{", "\n", "   ", 
+                RowBox[{
+                 RowBox[{"RowBox", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<ToCanonical\>\"", ",", " ", "\"\<[\>\"", ",", " ", 
+                    "\n", "    ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", "\n", 
+                    "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<UseMetricOnVBundle\>\"", ",", " ", "\"\<\[Rule]\>\"",
+                     ",", " ", "\n", "      ", 
+                    RowBox[{"TagBox", "[", "\n", "       ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\n", "        ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", "\n", "         ", 
+                    RowBox[{
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<All\>\"", ",", " ", "\"\</\>\"", ",", " ", 
+                    "\"\<none\>\""}], "}"}], "]"}], ",", " ", "\"\</\>\"", 
+                    ",", " ", "\"\<VBundleList\>\""}], "}"}], "]"}], "]"}], 
+                    ",", "\n", "       ", "\"\<Placeholder\>\""}], "]"}]}], 
+                    "}"}], "]"}], ",", " ", "\"\<,\>\"", ",", " ", "\n", 
+                    "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<ExpandChristoffel\>\"", ",", " ", "\"\<\[Rule]\>\"", 
+                    ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{"FrameBox", "[", "\"\<False/True\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+                    "]"}], ",", " ", "\"\<,\>\"", ",", " ", "\n", "     ", 
+                    RowBox[{"RowBox", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<Method\>\"", ",", " ", "\"\<->\>\"", ",", " ", 
+                    RowBox[{"TagBox", "[", "\n", "    ", 
+                    RowBox[{
+                    RowBox[{
+                    "FrameBox", "[", "\"\<ChangeCovD/Implode\>\"", "]"}], ",",
+                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
+                    "]"}]}], "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
+                  "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
+            "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}], 
+       "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+    RowBox[{"ImageSize", "\[Rule]", "85"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Background", "->", 
+     RowBox[{"Switch", "[", 
+      RowBox[{
+      "SimpleManipulationQ", ",", "True", ",", "Automatic", ",", "False", ",",
+        "Yellow"}], "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Tensor Manipulation section", "Subsubsection"],
+
+Cell[BoxData[
+ RowBox[{"TensorManipulationsection", " ", ":=", 
+  RowBox[{"Grid", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Item", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<   Tensor Manipulation   \>\"", ",", "13"}], 
+             RowBox[{"(*", 
+              RowBox[{",", "Bold"}], "*)"}], "]"}], ",", 
+            RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}], ",", 
+          RowBox[{"Tooltip", "[", 
+           RowBox[{
+            RowBox[{"Row", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Checkbox", "[", 
+                RowBox[{"Dynamic", "[", "SimpleManipulationQ", "]"}], "]"}], 
+               ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\< Basic \>\"", ",", "10"}], 
+                RowBox[{"(*", 
+                 RowBox[{",", "Bold"}], "*)"}], "]"}]}], "}"}], "]"}], ",", 
+            "\"\<Basic or advanced (with options) manipulation\>\""}], "]"}], 
+          ",", "\"\<   \>\"", ",", 
+          RowBox[{"Tooltip", "[", 
+           RowBox[{
+            RowBox[{"ButtonBar", "[", 
+             RowBox[{"{", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"\"\< + \>\"", "\[RuleDelayed]", 
+                RowBox[{"NotebookWrite", "[", 
+                 RowBox[{"nb", ",", 
+                  RowBox[{"Cell", "[", 
+                   RowBox[{"\"\< + \>\"", ",", " ", "\"\<Input\>\""}], "]"}], 
+                  ",", "After"}], "]"}]}], ",", 
+               RowBox[{"\"\< - \>\"", "\[RuleDelayed]", 
+                RowBox[{"NotebookWrite", "[", 
+                 RowBox[{"nb", ",", 
+                  RowBox[{"Cell", "[", 
+                   RowBox[{"\"\< - \>\"", ",", " ", "\"\<Input\>\""}], "]"}], 
+                  ",", "After"}], "]"}]}], ",", 
+               RowBox[{"\"\< \[Wedge] \>\"", "\[RuleDelayed]", 
+                RowBox[{"NotebookWrite", "[", 
+                 RowBox[{"nb", ",", 
+                  RowBox[{"Cell", "[", 
+                   RowBox[{"\"\< \[Wedge] \>\"", ",", " ", "\"\<Input\>\""}], 
+                   "]"}], ",", "After"}], "]"}]}]}], "}"}], "]"}], ",", 
+            "\"\<Algebraic operations\>\""}], "]"}]}], "}"}], "]"}], "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"TabView", "[", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"\"\<Normalize\>\"", "\[Rule]", " ", 
+           RowBox[{"Dynamic", "@", 
+            RowBox[{"Row", "[", 
+             RowBox[{"{", 
+              RowBox[{"CanonicalButton", ",", "SimplificationButton"}], "}"}],
+              "]"}]}]}], ",", " ", 
+          RowBox[{"\"\<Basis\>\"", "\[Rule]", 
+           RowBox[{"Grid", "[", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"Dynamic", "@", 
+                RowBox[{"Row", "[", 
+                 RowBox[{"{", "TraceBasisDummyButton", "}"}], "]"}]}], "}"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"Dynamic", "@", 
+                RowBox[{"Row", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"ContractBasisButton", ",", "SeparateBasisButton"}],
+                   "}"}], "]"}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"Dynamic", "@", 
+                RowBox[{"Row", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "ToBasisButton", ",", "FreeToBasisButton", ",", 
+                   "DummyToBasisButton"}], "}"}], "]"}]}], "}"}]}], "}"}], 
+            "]"}]}], ",", " ", 
+          RowBox[{"\"\<Metric\>\"", "\[Rule]", 
+           RowBox[{"Dynamic", "@", 
+            RowBox[{"Row", "[", 
+             RowBox[{"{", "ContractMetricButton", "}"}], "]"}]}]}], ",", 
+          RowBox[{"\"\<CovD\>\"", "\[Rule]", 
+           RowBox[{"Dynamic", "@", 
+            RowBox[{"Row", "[", 
+             RowBox[{"{", 
+              RowBox[{
+              "ChangeCovDButton", ",", "BracketToCovDButton", ",", 
+               "SortCovDsButton"}], "}"}], "]"}]}]}]}], "}"}], "]"}], "}"}]}],
+      "\[IndentingNewLine]", "}"}], ",", 
     RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}]], "Input",
  InitializationCell->True]
 }, Closed]],
@@ -5440,24 +6326,164 @@ Cell[BoxData[
       RowBox[{"\"\<General Settings\>\"", ",", "13"}], 
       RowBox[{"(*", 
        RowBox[{",", "Bold"}], "*)"}], "]"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Grid", "[", 
-      RowBox[{
-       RowBox[{"{", "\[IndentingNewLine]", 
-        RowBox[{"(*", " ", 
-         RowBox[{"1", "st", " ", "line"}], " ", "*)"}], "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"Checkbox", "[", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"$CommuteCovDsOnScalars", ",", 
+     RowBox[{"TabView", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<Verbosity\>\"", "\[Rule]", 
+         RowBox[{"Column", "[", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Row", "@", 
+             RowBox[{"{", 
               RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"$CommuteCovDsOnScalars", "=", "#"}], ";", 
-                 RowBox[{"If", "[", 
-                  RowBox[{"$CommuteCovDsOnScalars", ",", 
-                   RowBox[{
+               RowBox[{"Checkbox", "[", 
+                RowBox[{"Dynamic", "[", 
+                 RowBox[{"$DefInfoQ", ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"$DefInfoQ", "=", "#"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"$DefInfoQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"\"\<$DefInfoQ=True\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"\"\<$DefInfoQ=False\>\"", ",", "\"\<Input\>\""}],
+                     "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                    "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<  Definition Info\>\"", ",", "10"}], "]"}]}], 
+              "}"}]}], ",", 
+            RowBox[{"Row", "@", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Checkbox", "[", 
+                RowBox[{"Dynamic", "[", 
+                 RowBox[{"$UndefInfoQ", ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"$UndefInfoQ", "=", "#"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"$UndefInfoQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$UndefInfoQ=True\>\"", ",", "\"\<Input\>\""}], "]"}],
+                     ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$UndefInfoQ=False\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                    "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<  Un-Definition Info\>\"", ",", "10"}], "]"}]}], 
+              "}"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Row", "@", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Checkbox", "[", 
+                RowBox[{"Dynamic", "[", 
+                 RowBox[{"IndicesScreenedQ", ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"IndicesScreenedQ", "=", "#"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"IndicesScreenedQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$PrePrint=ScreenDollarIndices\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"\"\<$PrePrint=.\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                    "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<  Screen Dollar Indices\>\"", ",", "10"}], 
+                "]"}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Row", "@", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Checkbox", "[", 
+                RowBox[{"Dynamic", "[", 
+                 RowBox[{"$CVVerbose", ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"$CVVerbose", "=", "#"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"$CVVerbose", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$CVVerbose = True\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$CVVerbose = False\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                    "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<  Component Value verbose  \>\"", ",", "10"}], 
+                "]"}]}], "}"}]}]}], "}"}], "]"}]}], ",", 
+        RowBox[{"\"\<CovD\>\"", "\[Rule]", 
+         RowBox[{"Column", "[", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Row", "@", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Checkbox", "[", 
+                RowBox[{"Dynamic", "[", 
+                 RowBox[{"$CommuteCovDsOnScalars", ",", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"$CommuteCovDsOnScalars", "=", "#"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"$CommuteCovDsOnScalars", ",", 
+                    RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5466,8 +6492,8 @@ Cell[BoxData[
                     "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
                     "\[IndentingNewLine]", 
                     RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
-                    ",", 
-                   RowBox[{
+                     ",", 
+                    RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5477,88 +6503,24 @@ Cell[BoxData[
                     "\[IndentingNewLine]", 
                     RowBox[{
                     "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
-                  "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<Commute CovD on Scalars\>\"", ",", "10"}], 
-            RowBox[{"(*", 
-             RowBox[{",", "Bold"}], "*)"}], "]"}], ",", 
-           RowBox[{"Checkbox", "[", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"$DefInfoQ", ",", 
+                    "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<  Commute CovD on Scalars\>\"", ",", "10"}], 
+                RowBox[{"(*", 
+                 RowBox[{",", "Bold"}], "*)"}], "]"}]}], "}"}]}], ",", 
+            RowBox[{"Row", "@", 
+             RowBox[{"{", 
               RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"$DefInfoQ", "=", "#"}], ";", 
-                 RowBox[{"If", "[", 
-                  RowBox[{"$DefInfoQ", ",", 
-                   RowBox[{
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{"\"\<$DefInfoQ=True\>\"", ",", "\"\<Input\>\""}], 
-                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
-                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
-                    ",", 
-                   RowBox[{
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{"\"\<$DefInfoQ=False\>\"", ",", "\"\<Input\>\""}],
-                     "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+               RowBox[{"Checkbox", "[", 
+                RowBox[{"Dynamic", "[", 
+                 RowBox[{"PostfixStyleQ", ",", 
+                  RowBox[{
+                   RowBox[{"(", 
                     RowBox[{
-                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
-                  "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<Definition Info\>\"", ",", "10"}], "]"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"Checkbox", "[", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"ABCOnQ", ",", 
-              RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"ABCOnQ", "=", "#"}], ";", 
-                 RowBox[{"If", "[", 
-                  RowBox[{"ABCOnQ", ",", 
-                   RowBox[{
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
+                    RowBox[{"PostfixStyleQ", "=", "#"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"PostfixStyleQ", ",", 
                     RowBox[{
-                    "\"\<AutomaticBasisContractionStart[]\>\"", ",", 
-                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
-                    "\[IndentingNewLine]", 
-                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
-                    ",", 
-                   RowBox[{
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{
-                    "\"\<AutomaticBasisContractionStop[]\>\"", ",", 
-                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
-                    "\[IndentingNewLine]", 
-                    RowBox[{
-                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
-                  "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<Automatic Basis Contraction  \>\"", ",", "10"}], 
-            "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-         RowBox[{"(*", " ", 
-          RowBox[{"2", "nd", " ", "line"}], " ", "*)"}], 
-         "\[IndentingNewLine]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"Checkbox", "[", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"PostfixStyleQ", ",", 
-              RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"PostfixStyleQ", "=", "#"}], ";", 
-                 RowBox[{"If", "[", 
-                  RowBox[{"PostfixStyleQ", ",", 
-                   RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5567,8 +6529,8 @@ Cell[BoxData[
                     "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
                     "\[IndentingNewLine]", 
                     RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
-                    ",", 
-                   RowBox[{
+                     ",", 
+                    RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5578,55 +6540,22 @@ Cell[BoxData[
                     "\[IndentingNewLine]", 
                     RowBox[{
                     "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
-                  "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<CovD Postfix notation\>\"", ",", "10"}], "]"}], ",", 
-           
-           RowBox[{"Checkbox", "[", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"$UndefInfoQ", ",", 
+                    "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<  CovD Postfix notation\>\"", ",", "10"}], 
+                "]"}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Row", "@", 
+             RowBox[{"{", 
               RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"$UndefInfoQ", "=", "#"}], ";", 
-                 RowBox[{"If", "[", 
-                  RowBox[{"$UndefInfoQ", ",", 
-                   RowBox[{
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{
-                    "\"\<$UndefInfoQ=True\>\"", ",", "\"\<Input\>\""}], "]"}],
-                     ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
-                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
-                    ",", 
-                   RowBox[{
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{
-                    "\"\<$UndefInfoQ=False\>\"", ",", "\"\<Input\>\""}], 
-                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
-                    RowBox[{
-                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
-                  "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<Un-Definition Info\>\"", ",", "10"}], "]"}]}], "}"}],
-          ",", "\[IndentingNewLine]", 
-         RowBox[{"(*", " ", 
-          RowBox[{"3", "rd", " ", "line"}], " ", "*)"}], 
-         "\[IndentingNewLine]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"Column", "[", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"Dynamic", "@", 
-               RowBox[{"ActionMenu", "[", 
-                RowBox[{"\"\<Start\>\"", ",", 
+               RowBox[{"Column", "[", 
+                RowBox[{"{", 
                  RowBox[{
-                  RowBox[{
-                   RowBox[{"(", 
+                  RowBox[{"Dynamic", "@", 
+                   RowBox[{"ActionMenu", "[", 
+                    RowBox[{"\"\<Start\>\"", ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
                     RowBox[{"#", "\[RuleDelayed]", 
                     RowBox[{"(", 
                     RowBox[{
@@ -5639,16 +6568,16 @@ Cell[BoxData[
                     ",", "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
                     RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
                      ")"}]}], ")"}], "&"}], "/@", 
-                  RowBox[{
-                  "commderivativesmenuselection", "[", "manifold", "]"}]}], 
-                 ",", 
-                 RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}]}], ",", 
-              RowBox[{"Dynamic", "@", 
-               RowBox[{"ActionMenu", "[", 
-                RowBox[{"\"\<Stop\>\"", ",", 
-                 RowBox[{
-                  RowBox[{
-                   RowBox[{"(", 
+                    RowBox[{
+                    "commderivativesmenuselection", "[", "manifold", "]"}]}], 
+                    ",", 
+                    RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}]}], ",", 
+                  RowBox[{"Dynamic", "@", 
+                   RowBox[{"ActionMenu", "[", 
+                    RowBox[{"\"\<Stop\>\"", ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
                     RowBox[{"#", "\[RuleDelayed]", 
                     RowBox[{"(", 
                     RowBox[{
@@ -5661,24 +6590,30 @@ Cell[BoxData[
                     ",", "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
                     RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
                      ")"}]}], ")"}], "&"}], "/@", 
-                  RowBox[{
-                  "commderivativesmenuselection", "[", "manifold", "]"}]}], 
-                 ",", 
-                 RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}]}]}], 
-             "}"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<Automatic CovD commutation\>\"", ",", "10"}], "]"}], 
-           ",", 
-           RowBox[{"Checkbox", "[", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"IndicesScreenedQ", ",", 
-              RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"IndicesScreenedQ", "=", "#"}], ";", 
-                 RowBox[{"If", "[", 
-                  RowBox[{"IndicesScreenedQ", ",", 
+                    RowBox[{
+                    "commderivativesmenuselection", "[", "manifold", "]"}]}], 
+                    ",", 
+                    RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}]}]}], 
+                 "}"}], "]"}], ",", 
+               RowBox[{"Style", "[", 
+                RowBox[{"\"\<Automatic CovD commutation\>\"", ",", "10"}], 
+                "]"}]}], "}"}]}]}], "}"}], "]"}]}], ",", 
+        RowBox[{"\"\<Bases\>\"", "\[Rule]", 
+         RowBox[{"Column", "[", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{"Row", "@", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Checkbox", "[", 
+               RowBox[{"Dynamic", "[", 
+                RowBox[{"IndicesScreenedQ", ",", 
+                 RowBox[{
+                  RowBox[{"(", 
                    RowBox[{
+                    RowBox[{"IndicesScreenedQ", "=", "#"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"IndicesScreenedQ", ",", 
+                    RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5687,8 +6622,8 @@ Cell[BoxData[
                     "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
                     "\[IndentingNewLine]", 
                     RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
-                    ",", 
-                   RowBox[{
+                     ",", 
+                    RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5696,27 +6631,303 @@ Cell[BoxData[
                     "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
                     RowBox[{
                     "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
-                  "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<Screen Dollar Indices\>\"", ",", "10"}], "]"}]}], 
-          "}"}], ",", "\[IndentingNewLine]", 
+                    "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<  Automatic Basis Contraction  \>\"", ",", "10"}],
+                "]"}]}], "}"}]}], "}"}], "]"}]}]}], "}"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], "]"}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"old", " ", "not", " ", "used"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"GeneralSettingssection", ":=", " ", 
+   RowBox[{"OpenerView", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{"\"\<General Settings\>\"", ",", "13"}], 
+       RowBox[{"(*", 
+        RowBox[{",", "Bold"}], "*)"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Grid", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
          RowBox[{"(*", " ", 
-          RowBox[{"4", "th", " ", "line"}], " ", "*)"}], 
+          RowBox[{"1", "st", " ", "line"}], " ", "*)"}], 
          "\[IndentingNewLine]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"Invisible", "[", "\"\<A\>\"", "]"}], ",", 
-           RowBox[{"Invisible", "[", "\"\<A\>\"", "]"}], ",", 
-           RowBox[{"Checkbox", "[", 
-            RowBox[{"Dynamic", "[", 
-             RowBox[{"$CVVerbose", ",", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Checkbox", "[", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"$CommuteCovDsOnScalars", ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"$CommuteCovDsOnScalars", "=", "#"}], ";", 
+                  RowBox[{"If", "[", 
+                   RowBox[{"$CommuteCovDsOnScalars", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$CommuteCovDsOnScalars=True\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$CommuteCovDsOnScalars=False\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                   "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Commute CovD on Scalars\>\"", ",", "10"}], 
+             RowBox[{"(*", 
+              RowBox[{",", "Bold"}], "*)"}], "]"}], ",", 
+            RowBox[{"Checkbox", "[", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"$DefInfoQ", ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"$DefInfoQ", "=", "#"}], ";", 
+                  RowBox[{"If", "[", 
+                   RowBox[{"$DefInfoQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"\"\<$DefInfoQ=True\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"\"\<$DefInfoQ=False\>\"", ",", "\"\<Input\>\""}],
+                     "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                   "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Definition Info\>\"", ",", "10"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Checkbox", "[", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"ABCOnQ", ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"ABCOnQ", "=", "#"}], ";", 
+                  RowBox[{"If", "[", 
+                   RowBox[{"ABCOnQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<AutomaticBasisContractionStart[]\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<AutomaticBasisContractionStop[]\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                   "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Automatic Basis Contraction  \>\"", ",", "10"}], 
+             "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"2", "nd", " ", "line"}], " ", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Checkbox", "[", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"PostfixStyleQ", ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"PostfixStyleQ", "=", "#"}], ";", 
+                  RowBox[{"If", "[", 
+                   RowBox[{"PostfixStyleQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$CovDFormat =\\\"\\<Postfix\\>\\\"\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$CovDFormat =\\\"\\<Prefix\\>\\\"\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                   "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<CovD Postfix notation\>\"", ",", "10"}], "]"}], ",", 
+            RowBox[{"Checkbox", "[", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"$UndefInfoQ", ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"$UndefInfoQ", "=", "#"}], ";", 
+                  RowBox[{"If", "[", 
+                   RowBox[{"$UndefInfoQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$UndefInfoQ=True\>\"", ",", "\"\<Input\>\""}], "]"}],
+                     ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$UndefInfoQ=False\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                   "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Un-Definition Info\>\"", ",", "10"}], "]"}]}], 
+           "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"3", "rd", " ", "line"}], " ", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Column", "[", 
+             RowBox[{"{", 
               RowBox[{
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"$CVVerbose", "=", "#"}], ";", 
-                 RowBox[{"If", "[", 
-                  RowBox[{"$CVVerbose", ",", 
+               RowBox[{"Dynamic", "@", 
+                RowBox[{"ActionMenu", "[", 
+                 RowBox[{"\"\<Start\>\"", ",", 
+                  RowBox[{
                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"#", "\[RuleDelayed]", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<SortCovDsStart[\>\"", "<>", 
+                    RowBox[{"ToString", "[", "#", "]"}], "<>", "\"\<]\>\""}], 
+                    ",", "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ")"}]}], ")"}], "&"}], "/@", 
+                   RowBox[{
+                   "commderivativesmenuselection", "[", "manifold", "]"}]}], 
+                  ",", 
+                  RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}]}], ",", 
+               RowBox[{"Dynamic", "@", 
+                RowBox[{"ActionMenu", "[", 
+                 RowBox[{"\"\<Stop\>\"", ",", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"#", "\[RuleDelayed]", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    RowBox[{"\"\<SortCovDsStop[\>\"", "<>", 
+                    RowBox[{"ToString", "[", "#", "]"}], "<>", "\"\<]\>\""}], 
+                    ",", "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ")"}]}], ")"}], "&"}], "/@", 
+                   RowBox[{
+                   "commderivativesmenuselection", "[", "manifold", "]"}]}], 
+                  ",", 
+                  RowBox[{"Appearance", "\[Rule]", "None"}]}], "]"}]}]}], 
+              "}"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Automatic CovD commutation\>\"", ",", "10"}], "]"}],
+             ",", 
+            RowBox[{"Checkbox", "[", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"IndicesScreenedQ", ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"IndicesScreenedQ", "=", "#"}], ";", 
+                  RowBox[{"If", "[", 
+                   RowBox[{"IndicesScreenedQ", ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{
+                    "\"\<$PrePrint=ScreenDollarIndices\>\"", ",", 
+                    "\"\<Input\>\""}], "]"}], ",", "All"}], "]"}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"NotebookWrite", "[", 
+                    RowBox[{"nb", ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"\"\<$PrePrint=.\>\"", ",", "\"\<Input\>\""}], 
+                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
+                   "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Screen Dollar Indices\>\"", ",", "10"}], "]"}]}], 
+           "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"4", "th", " ", "line"}], " ", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Invisible", "[", "\"\<A\>\"", "]"}], ",", 
+            RowBox[{"Invisible", "[", "\"\<A\>\"", "]"}], ",", 
+            RowBox[{"Checkbox", "[", 
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"$CVVerbose", ",", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"$CVVerbose", "=", "#"}], ";", 
+                  RowBox[{"If", "[", 
+                   RowBox[{"$CVVerbose", ",", 
+                    RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5724,8 +6935,8 @@ Cell[BoxData[
                     "\"\<$CVVerbose = True\>\"", ",", "\"\<Input\>\""}], 
                     "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
                     RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
-                    ",", 
-                   RowBox[{
+                     ",", 
+                    RowBox[{
                     RowBox[{"NotebookWrite", "[", 
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
@@ -5734,16 +6945,15 @@ Cell[BoxData[
                     "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
                     RowBox[{
                     "SelectionEvaluateCreateCell", "[", "nb", "]"}]}]}], 
-                  "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
-           RowBox[{"Style", "[", 
-            RowBox[{"\"\<Component Value verbose  \>\"", ",", "10"}], "]"}]}],
-           "}"}]}], "\[IndentingNewLine]", 
-        RowBox[{"(*", " ", 
-         RowBox[{"5", "th", " ", "line"}], " ", "*)"}], "}"}], 
-       "\[IndentingNewLine]", ",", 
-       RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}], 
-    "\[IndentingNewLine]", "}"}], "]"}]}]], "Input",
- InitializationCell->True]
+                   "]"}]}], ")"}], "&"}]}], "]"}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Component Value verbose  \>\"", ",", "10"}], 
+             "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{"5", "th", " ", "line"}], " ", "*)"}], "}"}], 
+        "\[IndentingNewLine]", ",", 
+        RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}], 
+     "\[IndentingNewLine]", "}"}], "]"}]}]}]], "Input"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -5762,13 +6972,23 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-         RowBox[{"PasteButton", "[", 
-          RowBox[{
-           RowBox[{"\"\<$ConstantSymbols\>\"", "//", "ButtonLabelStyle"}], 
-           ",", 
-           RowBox[{"Defer", "@", "$ConstantSymbols"}], ",", 
-           RowBox[{"Appearance", "\[Rule]", "Button"}], ",", 
-           RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}], ",", 
+         RowBox[{"Row", "@", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"PasteButton", "[", 
+             RowBox[{
+              RowBox[{"\"\<$ConstantSymbols\>\"", "//", "ButtonLabelStyle"}], 
+              ",", 
+              RowBox[{"Defer", "@", "$ConstantSymbols"}], ",", 
+              RowBox[{"Appearance", "\[Rule]", "Button"}], ",", 
+              RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}], ",", 
+            RowBox[{"PasteButton", "[", 
+             RowBox[{
+              RowBox[{"\"\<$Parameters\>\"", "//", "ButtonLabelStyle"}], ",", 
+              
+              RowBox[{"Defer", "@", "$Parameters"}], ",", 
+              RowBox[{"Appearance", "\[Rule]", "Button"}], ",", 
+              RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}]}], "}"}]}], ",", 
          RowBox[{"Row", "@", 
           RowBox[{"{", 
            RowBox[{
@@ -5799,7 +7019,10 @@ Cell[BoxData[
               RowBox[{"\"\<$SumVBundles\>\"", "//", "ButtonLabelStyle"}], ",", 
               RowBox[{"Defer", "@", "$SumVBundles"}], ",", 
               RowBox[{"Appearance", "\[Rule]", "Button"}], ",", 
-              RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}], ",", 
+              RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}]}], "}"}]}], ",", 
+         RowBox[{"Row", "@", 
+          RowBox[{"{", 
+           RowBox[{
             RowBox[{"PasteButton", "[", 
              RowBox[{
               RowBox[{"\"\<$CovDs\>\"", "//", "ButtonLabelStyle"}], ",", 
@@ -5810,13 +7033,6 @@ Cell[BoxData[
              RowBox[{
               RowBox[{"\"\<$Tensors\>\"", "//", "ButtonLabelStyle"}], ",", 
               RowBox[{"Defer", "@", "$Tensors"}], ",", 
-              RowBox[{"Appearance", "\[Rule]", "Button"}], ",", 
-              RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}], ",", 
-            RowBox[{"PasteButton", "[", 
-             RowBox[{
-              RowBox[{"\"\<$Parameters\>\"", "//", "ButtonLabelStyle"}], ",", 
-              
-              RowBox[{"Defer", "@", "$Parameters"}], ",", 
               RowBox[{"Appearance", "\[Rule]", "Button"}], ",", 
               RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}]}], "}"}]}], ",",
           "\[IndentingNewLine]", 
@@ -7372,25 +8588,18 @@ Cell[BoxData[
                     "]"}], ",", " ", "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", 
                 " ", "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}]}], 
            "\[IndentingNewLine]", "]"}], ",", 
-          RowBox[{"Item", "[", 
+          RowBox[{"ActionMenu", "[", 
            RowBox[{
-            RowBox[{"Tooltip", "[", 
+            RowBox[{"\"\<    Symmetry    \>\"", "//", "ButtonLabelStyle"}], 
+            ",", 
+            RowBox[{"{", 
              RowBox[{
-              RowBox[{"Panel", "[", 
-               RowBox[{
-                RowBox[{"Row", "[", 
-                 RowBox[{"{", 
+              RowBox[{"\"\<Symmetric\>\"", "\[RuleDelayed]", 
+               RowBox[{"NotebookWrite", "[", 
+                RowBox[{"nb", ",", 
+                 RowBox[{"Cell", "[", 
                   RowBox[{
-                   RowBox[{"Button", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Symmetric\>\"", ",", "Small"}], "]"}], ",", 
-                    "\[IndentingNewLine]", 
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{
-                    RowBox[{"BoxData", "[", "\n", " ", 
+                   RowBox[{"BoxData", "[", "\n", " ", 
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
@@ -7416,20 +8625,13 @@ Cell[BoxData[
                     "      ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], "]"}], 
                     ",", " ", "\"\<}\>\""}], "}"}], "]"}], "}"}], "]"}], ",", 
                     " ", "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", " ", 
-                    "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}], 
-                    "\[IndentingNewLine]", ",", 
-                    RowBox[{"Appearance", "\[Rule]", "\"\<Palette\>\""}]}], 
-                    "]"}], ",", 
-                   RowBox[{"Button", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Antisymmetric\>\"", ",", "Small"}], "]"}], 
-                    ",", "\[IndentingNewLine]", 
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{
-                    RowBox[{"BoxData", "[", "\n", " ", 
+                   "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}]}], ",", 
+              RowBox[{"\"\<Antisymmetric\>\"", "\[RuleDelayed]", 
+               RowBox[{"NotebookWrite", "[", 
+                RowBox[{"nb", ",", 
+                 RowBox[{"Cell", "[", 
+                  RowBox[{
+                   RowBox[{"BoxData", "[", "\n", " ", 
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
@@ -7464,19 +8666,13 @@ Cell[BoxData[
                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "*)"}], 
                     "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], "]"}], 
                     "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", "After"}],
-                     "]"}], "\[IndentingNewLine]", ",", 
-                    RowBox[{"Appearance", "\[Rule]", "\"\<Palette\>\""}]}], 
-                    "]"}], ",", 
-                   RowBox[{"Button", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<RiemannSymmetric\>\"", ",", "Small"}], "]"}],
-                     ",", "\[IndentingNewLine]", 
-                    RowBox[{"NotebookWrite", "[", 
-                    RowBox[{"nb", ",", 
-                    RowBox[{"Cell", "[", 
-                    RowBox[{
-                    RowBox[{"BoxData", "[", "\n", " ", 
+                 "]"}]}], ",", 
+              RowBox[{"\"\<RiemannSymmetric\>\"", "\[RuleDelayed]", 
+               RowBox[{"NotebookWrite", "[", 
+                RowBox[{"nb", ",", 
+                 RowBox[{"Cell", "[", 
+                  RowBox[{
+                   RowBox[{"BoxData", "[", "\n", " ", 
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
@@ -7520,14 +8716,10 @@ Cell[BoxData[
                     RowBox[{"FrameBox", "[", "\"\<notation\>\"", "]"}], ",", 
                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
                     "]"}], ",", " ", "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", 
-                    " ", "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}], 
-                    "\[IndentingNewLine]", ",", 
-                    RowBox[{"Appearance", "\[Rule]", "\"\<Palette\>\""}]}], 
-                    "]"}]}], "}"}], "]"}], ",", 
-                RowBox[{"FrameMargins", "\[Rule]", "1"}]}], "]"}], ",", 
-              "\"\<Symmetry type\>\""}], "]"}], ",", 
-            RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}], ",", 
-          "SpanFromLeft"}], "}"}], ",", 
+                   " ", "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}]}]}], 
+             "}"}], ",", 
+            RowBox[{"Appearance", "\[Rule]", "\"\<PopupMenu\>\""}]}], "]"}]}],
+          "}"}], ",", 
         RowBox[{"{", 
          RowBox[{"Button", "[", 
           RowBox[{
@@ -7681,20 +8873,19 @@ Cell[BoxData[
                  "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", 
              "After"}], "]"}]}], "\[IndentingNewLine]", "]"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{
-          RowBox[{"Dynamic", "@", 
-           RowBox[{"Button", "[", 
-            RowBox[{
-             RowBox[{"\"\<DefBasis\>\"", "//", "ButtonLabelStyle"}], ",", 
-             "\[IndentingNewLine]", 
-             RowBox[{"Switch", "[", 
-              RowBox[{"indexform", ",", "unprimed", ",", 
-               RowBox[{"NotebookWrite", "[", 
-                RowBox[{"nb", ",", 
-                 RowBox[{"Cell", "[", 
-                  RowBox[{
-                   RowBox[{"BoxData", "[", "\n", " ", 
-                    RowBox[{"RowBox", "[", 
+         RowBox[{"Dynamic", "@", 
+          RowBox[{"Button", "[", 
+           RowBox[{
+            RowBox[{"\"\<DefBasis\>\"", "//", "ButtonLabelStyle"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Switch", "[", 
+             RowBox[{"indexform", ",", "unprimed", ",", 
+              RowBox[{"NotebookWrite", "[", 
+               RowBox[{"nb", ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", "\n", " ", 
+                   RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     "\"\<DefBasis\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n",
@@ -7735,14 +8926,14 @@ Cell[BoxData[
                     RowBox[{"FrameBox", "[", "\"\<color\>\"", "]"}], ",", 
                     "\n", "      ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
                     "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", " ", 
-                   "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}], ",", 
-               "primed", ",", 
-               RowBox[{"NotebookWrite", "[", 
-                RowBox[{"nb", ",", 
-                 RowBox[{"Cell", "[", 
-                  RowBox[{
-                   RowBox[{"BoxData", "[", "\n", " ", 
-                    RowBox[{"RowBox", "[", 
+                  "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}], ",", 
+              "primed", ",", 
+              RowBox[{"NotebookWrite", "[", 
+               RowBox[{"nb", ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", "\n", " ", 
+                   RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     "\"\<DefBasis\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n",
@@ -7784,14 +8975,14 @@ Cell[BoxData[
                     "\n", "      ", "\"\<Placeholder\>\""}], "]"}], ",", 
                     "\"\<,\>\"", ",", "\"\< Primed \[Rule] True\>\"", ",", 
                     " ", "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", " ", 
-                   "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}], ",", 
-               "doubleprimed", ",", 
-               RowBox[{"NotebookWrite", "[", 
-                RowBox[{"nb", ",", 
-                 RowBox[{"Cell", "[", 
-                  RowBox[{
-                   RowBox[{"BoxData", "[", "\n", " ", 
-                    RowBox[{"RowBox", "[", 
+                  "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}], ",", 
+              "doubleprimed", ",", 
+              RowBox[{"NotebookWrite", "[", 
+               RowBox[{"nb", ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", "\n", " ", 
+                   RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     "\"\<DefBasis\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n",
@@ -7833,89 +9024,12 @@ Cell[BoxData[
                     "\n", "      ", "\"\<Placeholder\>\""}], "]"}], ",", 
                     "\"\<,\>\"", ",", "\"\< DoublePrimed \[Rule] True\>\"", 
                     ",", " ", "\"\<]\>\""}], "}"}], "]"}], "]"}], ",", " ", 
-                   "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}]}], "]"}], 
-             ",", 
-             RowBox[{"ImageSize", "\[Rule]", 
-              RowBox[{"{", 
-               RowBox[{"120", ",", "Automatic"}], "}"}]}]}], 
-            "\[IndentingNewLine]", "]"}]}], ",", 
-          RowBox[{"Item", "[", 
-           RowBox[{
-            RowBox[{"Tooltip", "[", 
-             RowBox[{
-              RowBox[{"Panel", "[", 
-               RowBox[{
-                RowBox[{"Row", "[", 
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Red\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Red"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Red"}]}], "]"}], ",", 
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Magenta\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Magenta"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Magenta"}]}], "]"}], 
-                   ",", 
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Green\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Green"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Green"}]}], "]"}], ",", 
-                   "\[IndentingNewLine]", 
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<D.Green\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", 
-                    RowBox[{"N", "@", 
-                    RowBox[{"Darker", "@", "Green"}]}]}], ",", 
-                    RowBox[{"Background", "\[Rule]", 
-                    RowBox[{"Darker", "@", "Green"}]}]}], "]"}], ",", 
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Blue\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Blue"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Blue"}]}], "]"}], ",", 
-                   "\[IndentingNewLine]", 
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Cyan\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Cyan"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Cyan"}]}], "]"}], ",", 
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Purple\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Purple"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Purple"}]}], "]"}], ",", 
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Brown\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Brown"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Brown"}]}], "]"}], ",", 
-                   
-                   RowBox[{"PasteButton", "[", 
-                    RowBox[{
-                    RowBox[{"Style", "[", 
-                    RowBox[{"\"\<Yellow\>\"", ",", "Small"}], "]"}], ",", 
-                    RowBox[{"Defer", "@", "Yellow"}], ",", 
-                    RowBox[{"Background", "\[Rule]", "Yellow"}]}], "]"}]}], 
-                  "}"}], "]"}], ",", 
-                RowBox[{"FrameMargins", "\[Rule]", "1"}]}], "]"}], ",", 
-              "\"\<BasisColor\>\""}], "]"}], ",", 
-            RowBox[{"Alignment", "\[Rule]", 
+                  "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}]}], "]"}], 
+            ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
              RowBox[{"{", 
-              RowBox[{"Left", ",", "Center"}], "}"}]}]}], "]"}], ",", 
-          "SpanFromLeft"}], "}"}], ",", 
+              RowBox[{"120", ",", "Automatic"}], "}"}]}]}], 
+           "\[IndentingNewLine]", "]"}]}], "}"}], ",", 
         RowBox[{"{", 
          RowBox[{
           RowBox[{"Tooltip", "[", 
@@ -7929,22 +9043,58 @@ Cell[BoxData[
                 RowBox[{"primed", "\[Rule]", "\"\<a'\>\""}], ",", 
                 RowBox[{"doubleprimed", "\[Rule]", "\"\<a''\>\""}]}], "}"}]}],
               "]"}], ",", "\"\<unprimed, primed, doubleprimed\>\""}], "]"}], 
-          ",", "SpanFromAbove", ",", "SpanFromBoth"}], "}"}], ",", 
+          ",", 
+          RowBox[{"ActionMenu", "[", 
+           RowBox[{
+            RowBox[{"\"\<       Color       \>\"", "//", "ButtonLabelStyle"}],
+             ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<Red\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Red"}]}]}], ",", 
+              RowBox[{"\"\<Magenta\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Magenta"}]}]}], ",", 
+              RowBox[{"\"\<Green\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Green"}]}]}], ",", 
+              RowBox[{"\"\<D.Green\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", 
+                 RowBox[{"N", "@", 
+                  RowBox[{"Darker", "@", "Green"}]}]}]}]}], ",", 
+              RowBox[{"\"\<Blue\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Blue"}]}]}], ",", 
+              RowBox[{"\"\<Cyan\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Cyan"}]}]}], ",", 
+              RowBox[{"\"\<Purple\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Purple"}]}]}], ",", 
+              RowBox[{"\"\<Brown\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Brown"}]}]}], ",", 
+              RowBox[{"\"\<Yellow\>\"", "\[RuleDelayed]", 
+               RowBox[{"Paste", "@", 
+                RowBox[{"Defer", "@", "Yellow"}]}]}]}], "}"}], ",", 
+            RowBox[{"Appearance", "\[Rule]", "\"\<PopupMenu\>\""}]}], "]"}]}],
+          "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{
-          RowBox[{"Dynamic", "@", 
-           RowBox[{"Button", "[", 
-            RowBox[{
-             RowBox[{"\"\<DefChart\>\"", "//", "ButtonLabelStyle"}], ",", 
-             "\[IndentingNewLine]", 
-             RowBox[{"Switch", "[", 
-              RowBox[{"indexform", ",", "unprimed", ",", 
-               RowBox[{"NotebookWrite", "[", 
-                RowBox[{"nb", ",", 
-                 RowBox[{"Cell", "[", 
-                  RowBox[{
-                   RowBox[{"BoxData", "[", "\n", " ", 
-                    RowBox[{"RowBox", "[", 
+         RowBox[{"Dynamic", "@", 
+          RowBox[{"Button", "[", 
+           RowBox[{
+            RowBox[{"\"\<DefChart\>\"", "//", "ButtonLabelStyle"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Switch", "[", 
+             RowBox[{"indexform", ",", "unprimed", ",", 
+              RowBox[{"NotebookWrite", "[", 
+               RowBox[{"nb", ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", "\n", " ", 
+                   RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     "\"\<DefChart\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n",
@@ -8017,13 +9167,13 @@ Cell[BoxData[
                     "\n", "     ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
                     "]"}]}], "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
                     "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", 
-                 "After"}], "]"}], ",", "primed", ",", 
-               RowBox[{"NotebookWrite", "[", 
-                RowBox[{"nb", ",", 
-                 RowBox[{"Cell", "[", 
-                  RowBox[{
-                   RowBox[{"BoxData", "[", "\n", " ", 
-                    RowBox[{"RowBox", "[", 
+                "After"}], "]"}], ",", "primed", ",", 
+              RowBox[{"NotebookWrite", "[", 
+               RowBox[{"nb", ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", "\n", " ", 
+                   RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     "\"\<DefChart\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n",
@@ -8086,10 +9236,9 @@ Cell[BoxData[
                     "   ", 
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
-                    RowBox[{
-                    "\"\<ChartColor\>\"", ",", " ", "\"\< \>\"", ",", " ", 
-                    "\"\<\[Rule]\>\"", ",", " ", "\"\< \>\"", ",", " ", "\n", 
-                    "    ", 
+                    RowBox[{"\"\<ChartColor\>\"", ",", " ", "\"\< \>\"", ",", 
+                    " ", "\"\<\[Rule]\>\"", ",", " ", "\"\< \>\"", ",", " ", 
+                    "\n", "    ", 
                     RowBox[{"TagBox", "[", "\n", "     ", 
                     RowBox[{
                     RowBox[{"FrameBox", "[", "\"\<color\>\"", "]"}], ",", 
@@ -8097,13 +9246,13 @@ Cell[BoxData[
                     "\"\<,\>\"", ",", "\"\< Primed \[Rule] True\>\""}], "}"}],
                      "]"}]}], "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
                     "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", 
-                 "After"}], "]"}], ",", "doubleprimed", ",", 
-               RowBox[{"NotebookWrite", "[", 
-                RowBox[{"nb", ",", 
-                 RowBox[{"Cell", "[", 
-                  RowBox[{
-                   RowBox[{"BoxData", "[", "\n", " ", 
-                    RowBox[{"RowBox", "[", 
+                "After"}], "]"}], ",", "doubleprimed", ",", 
+              RowBox[{"NotebookWrite", "[", 
+               RowBox[{"nb", ",", 
+                RowBox[{"Cell", "[", 
+                 RowBox[{
+                  RowBox[{"BoxData", "[", "\n", " ", 
+                   RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     "\"\<DefChart\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n",
@@ -8177,12 +9326,11 @@ Cell[BoxData[
                     "\"\<,\>\"", ",", "\"\< DoublePrimed \[Rule] True\>\""}], 
                     "}"}], "]"}]}], "}"}], "]"}], ",", " ", "\"\<]\>\""}], 
                     "}"}], "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], 
-                 ",", "After"}], "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
-             RowBox[{"ImageSize", "\[Rule]", 
-              RowBox[{"{", 
-               RowBox[{"120", ",", "Automatic"}], "}"}]}]}], "]"}]}], ",", 
-          "SpanFromAbove", ",", "SpanFromBoth"}], "}"}], ",", 
-        "\[IndentingNewLine]", 
+                ",", "After"}], "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"120", ",", "Automatic"}], "}"}]}]}], "]"}]}], "}"}], 
+        ",", "\[IndentingNewLine]", 
         RowBox[{"{", 
          RowBox[{
           RowBox[{"Invisible", "[", "\"\<A\>\"", "]"}], ",", 
@@ -8429,17 +9577,36 @@ Cell[BoxData[
      RowBox[{"Column", "[", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{
-         RowBox[{"PasteButton", "[", 
-          RowBox[{"\"\<Load xTerior\>\"", ",", 
-           RowBox[{"Defer", "@", 
-            RowBox[{"(", 
-             RowBox[{"<<", "xAct`xTerior`"}], ")"}]}], ",", 
-           RowBox[{"Background", "\[Rule]", " ", "LightGray"}], ",", 
-           RowBox[{"Appearance", "\[Rule]", "Button"}]}], "]"}], ",", 
+        RowBox[{"\"\<Under development\>\"", ",", 
          RowBox[{"Invisible", "@", "\"\<I\>\""}]}], "}"}], ",", "Center"}], 
       "]"}]}], "\[IndentingNewLine]", "}"}], "]"}]}]], "Input",
- InitializationCell->True]
+ InitializationCell->True],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"old", " ", "with", " ", "load", " ", "button"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"ExteriorFormssection", ":=", "\[IndentingNewLine]", 
+   RowBox[{"OpenerView", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{"\"\<Exterior Forms\>\"", ",", "13"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Column", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"PasteButton", "[", 
+           RowBox[{"\"\<Load xTerior\>\"", ",", 
+            RowBox[{"Defer", "@", 
+             RowBox[{"(", 
+              RowBox[{"<<", "xAct`xTerior`"}], ")"}]}], ",", 
+            RowBox[{"Background", "\[Rule]", " ", "LightGray"}], ",", 
+            RowBox[{"Appearance", "\[Rule]", "Button"}]}], "]"}], ",", 
+          RowBox[{"Invisible", "@", "\"\<I\>\""}]}], "}"}], ",", "Center"}], 
+       "]"}]}], "\[IndentingNewLine]", "}"}], "]"}]}]}]], "Input"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -8476,10 +9643,25 @@ Cell[BoxData[
    RowBox[{"(*", " ", 
     RowBox[{"Initialize", " ", "options"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"space15", "=", "\"\<               \>\""}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"a", " ", "string", " ", "of", " ", "15", " ", "spaces"}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
    RowBox[{"nb", ":=", 
     RowBox[{"If", "[", 
      RowBox[{"LockednbQ", ",", "Lockednb", ",", 
       RowBox[{"InputNotebook", "[", "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"nbtitle", ":=", 
+    RowBox[{"\"\<WindowTitle\>\"", "/.", 
+     RowBox[{"NotebookInformation", "[", "nb", "]"}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"nbtitlepadded", ":=", 
+    RowBox[{"StringJoin", "[", 
+     RowBox[{"nbtitle", ",", "space15"}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"DisplayTargetNb", ":=", 
+    RowBox[{"StringTake", "[", 
+     RowBox[{"nbtitlepadded", ",", "15"}], "]"}]}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"basisreset", "[", "AIndex", "]"}], ";"}], " ", 
    RowBox[{"(*", " ", 
@@ -10218,8 +11400,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", 
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], ",", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
+                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -10378,9 +11561,8 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"IndicesOfVBundle", "@", 
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
-                    ")"}], "[", 
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], ")"}], "[", 
                     RowBox[{"[", "1", "]"}], "]"}], " ", "~", "Join", "~", 
                     RowBox[{"cnumbersof", "[", 
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
@@ -11104,8 +12286,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"IndicesOfVBundle", "@", 
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], ")"}], "[", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
+                    ")"}], "[", 
                     RowBox[{"[", "1", "]"}], "]"}], "//", "First"}]}]}], 
                     "\[IndentingNewLine]", "]"}]}], ")"}], "&"}]}], "]"}], 
                     ",", 
@@ -11174,9 +12357,8 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"IndicesOfVBundle", "@", 
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
-                    ")"}], "[", 
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], ")"}], "[", 
                     RowBox[{"[", "1", "]"}], "]"}], " ", "~", "Join", "~", 
                     RowBox[{"cnumbersof", "[", 
                     RowBox[{"cbasischoice", "[", "kk", "]"}], "]"}]}], ",", 
@@ -11343,9 +12525,8 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", 
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], ",", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -11504,8 +12685,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"IndicesOfVBundle", "@", 
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], ")"}], "[", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
+                    ")"}], "[", 
                     RowBox[{"[", "1", "]"}], "]"}], " ", "~", "Join", "~", 
                     RowBox[{"cnumbersof", "[", 
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
@@ -11870,26 +13052,23 @@ Cell[BoxData[
             RowBox[{"{", 
              RowBox[{
               RowBox[{"Style", "[", 
-               RowBox[{"\"\<   Tensor Input   \>\"", ",", "13"}], 
+               RowBox[{"\"\<   Target nb \[Rule]   \>\"", ",", "13"}], 
                RowBox[{"(*", 
                 RowBox[{",", "Bold"}], "*)"}], "]"}], ",", 
               RowBox[{"Dynamic", "@", 
                RowBox[{"(", 
-                RowBox[{"Panel", "[", 
+                RowBox[{"Tooltip", "[", 
                  RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{"Row", "[", 
+                  RowBox[{"Panel", "[", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Row", "[", 
                     RowBox[{"{", 
-                    RowBox[{
-                    RowBox[{
-                    "\"\<Target \[Rule] \>\"", "//", "ButtonLabelStyle"}], 
-                    ",", 
-                    RowBox[{
-                    RowBox[{"\"\<WindowTitle\>\"", "/.", 
-                    RowBox[{"NotebookInformation", "[", "nb", "]"}]}], "//", 
-                    "ButtonLabelStyle"}]}], "}"}], "]"}], ")"}], ",", 
-                  RowBox[{"FrameMargins", "\[Rule]", "Tiny"}]}], "]"}], 
-                ")"}]}], ",", 
+                    RowBox[{"DisplayTargetNb", "//", "ButtonLabelStyle"}], 
+                    "}"}], "]"}], ")"}], ",", 
+                    RowBox[{"FrameMargins", "\[Rule]", "Tiny"}], ",", 
+                    RowBox[{"ImageSize", "\[Rule]", "100"}]}], "]"}], ",", 
+                  "nbtitle"}], "]"}], ")"}]}], ",", 
               RowBox[{"Invisible", "[", "\"\<A\>\"", "]"}], ",", 
               RowBox[{"Tooltip", "[", 
                RowBox[{
@@ -12294,9 +13473,8 @@ Cell[BoxData[
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
                     
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
-                    "}"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
                     RowBox[{"tensorhead", "===", "Basis"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
@@ -12976,7 +14154,7 @@ Cell[BoxData[
  InitializationCell->True]
 }, Closed]]
 }, Closed]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -13011,8 +14189,8 @@ Cell[BoxData[
 AutoGeneratedPackage->Automatic,
 ScreenStyleEnvironment->"Working",
 WindowToolbars->"EditBar",
-WindowSize->{783, 604},
-WindowMargins->{{305, Automatic}, {Automatic, 311}},
+WindowSize->{919, 606},
+WindowMargins->{{3, Automatic}, {Automatic, 8}},
 Visible->True,
 PrintingCopies->1,
 PrintingPageRange->{Automatic, Automatic},
@@ -13027,7 +14205,7 @@ PrintingOptions->{"Magnification"->1,
 "PrintingMargins"->{{54, 54}, {108, 108}}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
-TrackCellChangeTimes->False,
+Magnification:>1.5 Inherited,
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
 2014)",
 StyleDefinitions->"Default.nb",

@@ -175,7 +175,7 @@ Cell[TextData[{
  " v.0.995, \nyou can quickly look up the newest features of ",
  StyleBox["xPrint",
   FontSlant->"Italic"],
- " v. 1.0, v.1.1 and v. 1.2.\n",
+ " since version 1.0\n",
  StyleBox["First",
   FontColor->GrayLevel[0]],
  ": launch ",
@@ -535,11 +535,11 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPrint`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.4\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2015", ",", "4", ",", "2"}], "}"}]}],
-  SequenceForm["Package xAct`xPrint`  version ", "1.2", ", ", {2015, 4, 2}],
+    RowBox[{"2015", ",", "4", ",", "15"}], "}"}]}],
+  SequenceForm["Package xAct`xPrint`  version ", "1.4", ", ", {2015, 4, 15}],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[1]:="],
 
@@ -671,23 +671,24 @@ Cell[TextData[StyleBox["Target Notebook display",
  CellTags->"Target Notebook Display"],
 
 Cell[TextData[{
- "On the right hand side of the \"Tensor Input\" header, the current Target \
-notebook name is displayed, so it always easy \nto see where the pasted input \
-will go.\nIf you wish to keep the Target notebook fixed, click on the \
-\"Lock\" checkbox once you have selected the desired Target notebook.\nIf you \
-wish later to lock another notebook, first unlock and switch to the other \
-notebook then lock again. \nYou still have to pay attention to the location \
-of the cursor in the locked notebook, as usual, \nbut if you take the habit \
-of clicking on a window frame - instead of the window body- the cursor \
-position \nwill not change from the prior selection of this window.\n\n\
-Suggested work flow:\nSuppose you have a \"working notebook\" and a \
-\"reference notebook\".\n1-select the working nb, lock it and start working \
-on it with xPrint.\n2-whenever you need to look at the reference nb, click on \
-it and read, edit, evaluate cells, etc.\n3-when you are ready to input \
-tensors again into your working nb, ",
+ "On the right hand side of the \"Target nb\" header, the first 15 characters \
+of the current Target notebook name are displayed in a panel, so it always \
+easy to see where the pasted input will go. \nThe full name of the Target nb \
+appears in the tooltip as you hover above the panel.\nIf you wish to keep the \
+Target notebook fixed, click on the \"Lock\" checkbox once you have selected \
+the desired Target notebook.\nIf you wish later to lock another notebook, \
+first unlock and switch to the other notebook then lock again. \nYou still \
+have to pay attention to the location of the cursor in the locked notebook, \
+as usual, \nbut if you take the habit of clicking on a window frame - instead \
+of the window body- the cursor position \nwill not change from the prior \
+selection of this window.\n\nSuggested work flow:\nSuppose you have a \
+\"working notebook\" and a \"reference notebook\".\n1-select the working nb, \
+lock it and start working on it with xPrint.\n2-whenever you need to look at \
+the reference nb, click on it and read, edit, evaluate cells, etc.\n3-when \
+you are ready to input tensors again into your working nb, ",
  StyleBox["click on its frame, ",
   FontColor->RGBColor[1, 0, 0]],
- "and continue working from where you left off."
+ "and continue working exactly from where you left off."
 }], "Text",
  FontWeight->"Bold",
  FontColor->RGBColor[0.5, 0, 0.5]]
@@ -740,7 +741,7 @@ read\n",
  StyleBox["xPrint",
   FontSlant->"Italic",
   FontColor->RGBColor[0, 0, 1]],
- StyleBox[" tutorial folder to see some sample notebooks written with ",
+ StyleBox[" Tutorials folder to see some sample notebooks written with ",
   FontColor->RGBColor[0, 0, 1]],
  StyleBox["xPrint",
   FontSlant->"Italic",
@@ -814,7 +815,7 @@ and voila'... your tensor is inserted in the Target notebook ",
   FontColor->RGBColor[0, 0, 1]],
  ", neatly formatted. \n\n",
  StyleBox["NOTE: some erroneous slot positions generate a \"red box\" in \
-place of the paste button. \nThis happens (rarely and exclusively) with \
+place of the paste button. \nThis might happen (rarely and exclusively) with \
 delta, Basis and Gdelta tensors.\nThis is some kind of uncaught error which \
 has not yet been identified. \nJust proceed with another slot selection and \
 the red box will disappear.",
@@ -902,13 +903,20 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"-", "a"}], ",", 
       RowBox[{"-", "b"}]}], "}"}], "]"}]}], "]"}]}], "Input",
- CellLabel->"In[2]:="],
+ CellLabel->"In[13]:="],
 
 Cell[TextData[{
- "Select Manifold1 from the top drop down menu.\nSelect F from the third drop \
-down menu.\nIndices menus will appear.\nTry to insert wrong indices \
+ StyleBox["Select Manifold1 from the top drop down menu. ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["If you don\[CloseCurlyQuote]t",
+  FontColor->GrayLevel[0]],
+ " select a manifold, xPrint cannot work!\nSelect F from the third drop down \
+menu (Tensor Menu).\nIndices menus will appear.\nTry to insert wrong indices \
 (repeated, etc).\nYou will see that the PasteButton heading says that the \
-input is incorrect\nWhen you finally input a correct index sequence (2 \
+input is incorrect (\[OpenCurlyDoubleQuote]Not a tensor\
+\[CloseCurlyDoubleQuote])\nWhen you finally input a correct index sequence (2 \
 different down indices), place the cursor below (or elsewhere you wish to \
 paste)  and click the PasteButton.\nIn the cells below you can see examples \
 of ",
@@ -955,18 +963,12 @@ Cell[BoxData[
 
 Cell[TextData[{
  "You can keep typing in the same notebook cell and keep adding tensors with \
-the palette, then evaluate everything.\nIf you wish to delete a pasted \
-tensor, place the cursor ",
- StyleBox["after ",
-  FontSlant->"Italic",
+the palette, then evaluate everything.\nIn the tesor manipulation section \
+there are some common ",
+ StyleBox["algebraic operations",
   FontColor->RGBColor[0, 0, 1]],
- StyleBox["the offending tensor and use ",
-  FontColor->GrayLevel[0]],
- StyleBox["backspace",
-  FontSlant->"Italic",
-  FontColor->RGBColor[0, 0, 1]],
- StyleBox[" to erase it.",
-  FontColor->GrayLevel[0]]
+ " buttons. Use them to build a simple multiterm tensor expression using only \
+your mouse, such as"
 }], "Text"],
 
 Cell[CellGroupData[{
@@ -992,40 +994,141 @@ Cell[BoxData[
     SubsuperscriptBox["w", "b", " "],
     AutoSpacing->False],
    $CellContext`w[-$CellContext`b],
-   Editable->False]}]], "Input"],
+   Editable->False]}]], "Input",
+ CellLabel->"In[19]:="],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{
    InterpretationBox[
-    StyleBox[
-     SubsuperscriptBox["F", "ab", "  "],
+    StyleBox[GridBox[{
+       {"F", 
+        StyleBox[GridBox[{
+           {" ", " "},
+           {"a", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
      ShowAutoStyles->False,
      AutoSpacing->False],
     $CellContext`F[-$CellContext`a, -$CellContext`b],
     Editable->False], " ", 
    InterpretationBox[
-    StyleBox[
-     SubsuperscriptBox["v", " ", "a"],
+    StyleBox[GridBox[{
+       {"v", 
+        StyleBox[GridBox[{
+           {"a"},
+           {" "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
      ShowAutoStyles->False,
      AutoSpacing->False],
     $CellContext`v[$CellContext`a],
     Editable->False]}], "+", 
   InterpretationBox[
-   StyleBox[
-    SubsuperscriptBox["w", "b", " "],
+   StyleBox[GridBox[{
+      {"w", 
+       StyleBox[GridBox[{
+          {" "},
+          {"b"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+              Offset[0.]}}, "RowsIndexed" -> {}}],
+        FontSize->9]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
     ShowAutoStyles->False,
     AutoSpacing->False],
    $CellContext`w[-$CellContext`b],
-   Editable->False]}]], "Output"]
+   Editable->False]}]], "Output",
+ CellLabel->"Out[19]="]
 }, Open  ]],
+
+Cell[TextData[{
+ "If you wish to delete a pasted tensor, place the cursor ",
+ StyleBox["after ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["the offending tensor and use ",
+  FontColor->GrayLevel[0]],
+ StyleBox["backspace",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" to erase it completely.",
+  FontColor->GrayLevel[0]]
+}], "Text"],
 
 Cell["If we examine the FullForm, it is as expected", "Text"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"%", "//", "FullForm"}]], "Input"],
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["F", "ab", "  "],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`F[-$CellContext`a, -$CellContext`b],
+     Editable->False], 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["v", " ", "a"],
+      AutoSpacing->False],
+     $CellContext`v[$CellContext`a],
+     Editable->False]}], "+", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w", "b", " "],
+     AutoSpacing->False],
+    $CellContext`w[-$CellContext`b],
+    Editable->False]}], "//", "FullForm"}]], "Input",
+ CellLabel->"In[20]:="],
 
 Cell[BoxData[
  TagBox[
@@ -1050,7 +1153,8 @@ Cell[BoxData[
    ShowSpecialCharacters->False,
    ShowStringCharacters->True,
    NumberMarks->True],
-  FullForm]], "Output"]
+  FullForm]], "Output",
+ CellLabel->"Out[20]//FullForm="]
 }, Open  ]],
 
 Cell["\<\
@@ -1130,6 +1234,8 @@ of ",
  " input"
 }], "Text"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  InterpretationBox[
   StyleBox[
@@ -1137,16 +1243,200 @@ Cell[BoxData[
    ShowAutoStyles->False,
    AutoSpacing->False],
   $CellContext`FF[-$CellContext`\[Gamma], -$CellContext`\[Delta]],
-  Editable->False]], "Input"],
+  Editable->False]], "Input",
+ CellLabel->"In[11]:="],
 
 Cell[BoxData[
  InterpretationBox[
-  StyleBox[
-   SubsuperscriptBox["FF", "\[Beta]\[Alpha]", "  "],
+  StyleBox[GridBox[{
+     {"FF", 
+      StyleBox[GridBox[{
+         {" ", " "},
+         {"\[Gamma]", "\[Delta]"}
+        },
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+             Offset[0.]}}, "RowsIndexed" -> {}}],
+       FontSize->9]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.034999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
    ShowAutoStyles->False,
    AutoSpacing->False],
-  $CellContext`FF[-$CellContext`\[Beta], -$CellContext`\[Alpha]],
-  Editable->False]], "Input"]
+  $CellContext`FF[-$CellContext`\[Gamma], -$CellContext`\[Delta]],
+  Editable->False]], "Output",
+ CellLabel->"Out[11]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["FF", "\[Beta]\[Alpha]", "  "],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`FF[-$CellContext`\[Beta], -$CellContext`\[Alpha]],
+    Editable->False], 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"vv", 
+        StyleBox[GridBox[{
+           {"\[Beta]"},
+           {" "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`vv[$CellContext`\[Beta]],
+    Editable->False]}], " ", "+", " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"vv", 
+       StyleBox[GridBox[{
+          {"\[Alpha]"},
+          {" "}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+              Offset[0.]}}, "RowsIndexed" -> {}}],
+        FontSize->9]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`vv[$CellContext`\[Alpha]],
+   Editable->False]}]], "Input",
+ CellLabel->"In[12]:="],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"vv", 
+       StyleBox[GridBox[{
+          {"\[Alpha]"},
+          {" "}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+              Offset[0.]}}, "RowsIndexed" -> {}}],
+        FontSize->9]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`vv[$CellContext`\[Alpha]],
+   Editable->False], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"FF", 
+        StyleBox[GridBox[{
+           {" ", " "},
+           {"\[Beta]", "\[Alpha]"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`FF[-$CellContext`\[Beta], -$CellContext`\[Alpha]],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"vv", 
+        StyleBox[GridBox[{
+           {"\[Beta]"},
+           {" "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+               Offset[0.]}}, "RowsIndexed" -> {}}],
+         FontSize->9]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`vv[$CellContext`\[Beta]],
+    Editable->False]}]}]], "Output",
+ CellLabel->"Out[12]="]
+}, Open  ]]
 }, Closed]]
 }, Closed]],
 
@@ -1448,7 +1738,7 @@ Cell[TextData[StyleBox["Currently the pasting of derivative operators is made \
 in Prefix notation only, \nbut the evaluated output appears in whatever style \
 one has chosen via the $CovDFormat setting",
  FontColor->RGBColor[1, 0, 0]]], "Text"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -1699,7 +1989,7 @@ In a similar fashion you can input PDs, Brackets and OverDots\
 \>", "Text"],
 
 Cell[TextData[{
- "Example:input ",
+ "Example: input ",
  Cell[BoxData[
   TagBox[
    SuperscriptBox[
@@ -3861,25 +4151,29 @@ Cell["Tensor Manipulation", "Section",
 
 Cell[TextData[{
  "This section offers many convenient buttons to perform common tensor \
-manipulations.\nThe buttons will paste commands in postfix notation, \
-including the double slash (//) command.\nThe checkbox ",
- StyleBox["Simple",
+manipulations.\nAlso present is a small selection of common algebraic \
+operations buttons such as: Plus, Minus, Wedge. \nUsing these buttons, \
+together with the tensor and derivative menus, the user can point-and-click \
+and compose arbitrarily complex tensor expressions.\nThe manipulation buttons \
+are organized in TabView style.\nThe buttons will paste commands in postfix \
+notation, including the double slash (//) command.\nThe checkbox ",
+ StyleBox["Basic",
   FontColor->RGBColor[0, 0, 1]],
  " (automatically checked at the start of the program) selects whether the \
-pasted function will be very basic \n(as shown on the button label) or will \
-be pasted with several options.\nWhen the ",
- StyleBox["Simple",
+pasted function will be very basic \n(exactly as shown on the button label) \
+or will be pasted with several option placeholders.\nWhen the ",
+ StyleBox["Basic",
   FontColor->RGBColor[0, 0, 1]],
  " checkbox is unchecked, the affected buttons will display with a yellow \
-background to remind the user \nthat a yellow template will appear upon \
-pasting.\nSome commands - for example ToCanonical - offer several options and \
-each option can take several values. \nWhen this is the case, the yellow \
-Placeholder in the template will suggest the default value for an option, \
-followed by the other accepted values.\nThe default value is suggested \
-primarily as a mnemonic aid. Obviously it is not necessary to use an optional \
-argument with a default value.\n",
- StyleBox["Checking or unchecking the \"Simple\" checkbox does not produce \
-any output. It is only an xPrint internal status flag.",
+background to remind the user \nthat a  template with yellow placeholders \
+will appear upon pasting.\nSome commands - for example ToCanonical - offer \
+several options and each option can take several values. \nWhen this is the \
+case, the yellow placeholders in the template will suggest the default value \
+for an option, followed by the other accepted values.\nThe default value is \
+suggested primarily as a mnemonic aid. Obviously it is not necessary to use \
+an optional argument with a default value.\n",
+ StyleBox["Checking or unchecking the \"Basic\" checkbox does not produce any \
+output. It is only an xPrint internal status flag.",
   FontColor->RGBColor[1, 0, 0]]
 }], "Text"],
 
@@ -3933,11 +4227,11 @@ $CellContext`cartesian1}],
    Editable->False]}]], "Input"],
 
 Cell[TextData[{
- "Now place the cursor at the right hand side of the expression, that is ",
+ "Now place the cursor at the right hand side of the expression, ie ",
  StyleBox["after ",
   FontColor->RGBColor[0, 0, 1]],
  StyleBox["the expression, and click on the \"ContractBasis\" button.\nIf the \
-checkbox \"Simple\" is checked, then you will get the following postfix \
+checkbox \"Basic\" is checked, then you will get the following postfix \
 function",
   FontColor->GrayLevel[0]]
 }], "Text"],
@@ -4011,7 +4305,7 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["\<\
-while, if you uncheck the \"Simple\" checkbox, you will get a template\
+while, if you uncheck the \"Basic\" checkbox, you will get a template\
 \>", "Text"],
 
 Cell[BoxData[
@@ -4194,7 +4488,7 @@ Cell[TextData[{
  " present in the ",
  StyleBox["Bases and Charts section",
   FontColor->RGBColor[0, 0, 1]],
- " (see below).\nWhen the \"Simple\" checkbox is unchecked, the affected \
+ " (see below).\nWhen the \"Basic\" checkbox is unchecked, the affected \
 buttons will display with a yellow background to remind the user \nthat a \
 yellow template will appear upon pasting."
 }], "Text"]
@@ -4214,8 +4508,15 @@ Cell[TextData[{
  " section by clicking on its OpenerView triangle.\nYou will see various \
 checkboxes.\n",
  StyleBox["Each time you click on a checkbox the corresponding command or \
-switch is pasted and executed on the notebook.\nYou always have in your \
-notebook a written record of any change you have made to your switches.",
+switch is pasted ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["and executed ",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True},
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["on the notebook.\nYou always have in your notebook a written \
+record of any change you have made to your switches.",
   FontSlant->"Italic",
   FontColor->RGBColor[0, 0, 1]]
 }], "Text"],
@@ -4796,8 +5097,9 @@ Cell["Exterior Forms", "Section",
  CellTags->"Perturbations"],
 
 Cell["\<\
-Currently under development.\[LineSeparator]At the moment it only provides a \
-convenience button to load xTerior.m\
+Currently under development.
+Please note that xTerior is already loaded with xPrint and there is some \
+basic support (you can define forms and input wedge products)\
 \>", "Text"]
 }, Closed]],
 
@@ -4997,8 +5299,8 @@ wish, by clicking on the close button on the xPrint palette."
 },
 AutoGeneratedPackage->None,
 Selectable->True,
-WindowSize->{783, 606},
-WindowMargins->{{143, Automatic}, {Automatic, 40}},
+WindowSize->{942, 606},
+WindowMargins->{{14, Automatic}, {31, Automatic}},
 WindowFrame->"Normal",
 Visible->True,
 DockedCells->FEPrivate`FrontEndResource["FEExpressions", "HelpViewerToolbar"],
@@ -5022,7 +5324,6 @@ ShowSelection->True,
 TaggingRules->{
  "SearchTextTranslated" -> "", "SearchText" -> "", "LinkTrails" -> ""},
 ShowCellLabel->False,
-TrackCellChangeTimes->False,
 Magnification:>1.25 Inherited,
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
 2014)",
