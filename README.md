@@ -1,5 +1,5 @@
 # xPrint
-xPrint for xAct: graphical interface for tensor input and manipulation
+xPrint for [xAct](http://xact.es/): graphical interface for tensor input and manipulation
 
 * State-of-the-art palette interface to the xAct suite of Mathematica packages
 * Select manifolds, tensors, indices and derivative operators via pull-down menus
