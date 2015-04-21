@@ -8,3 +8,7 @@ xPrint for [xAct](http://xact.es/): graphical interface for tensor input and man
 * Abstract and b and c indices
 * On-the-fly syntax checking
 * One-click pasting of formatted tensor objects into notebooks
+
+![Screen shot 1](../screenshots/1.jpg?raw=true "Screen shot 1")
+![Screen shot 2](../screenshots/2.jpg?raw=true "Screen shot 2")
+![Screen shot 3](../screenshots/3.jpg?raw=true "Screen shot 3")
