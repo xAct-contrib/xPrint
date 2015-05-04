@@ -62,7 +62,6 @@ Cell[BoxData[
    RowBox[{"Copyright", " ", 
     RowBox[{"(", "C", ")"}], " ", "2010", " ", "Alessandro", " ", 
     "Stecchina"}], " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{
@@ -149,6 +148,8 @@ Vers. 1.4
 \tAll sectons have the same width as the maipulation section
 \tMany new buttons in Tensor manipulation section
 \tTabView in Tensor manipulation section
+Vers. 1.3
+\t8 Apr 2015
 \tHelp menu with access to xPrint tutorials
 \txPrint is now in a single folder with documentation files
 \txTerior is loaded automatically with xPrint
@@ -218,7 +219,9 @@ Vers. 0.50
 \>", "Input",
  PageWidth->PaperWidth,
  CellMargins->{{60, -272}, {Inherited, Inherited}},
- InitializationCell->True]
+ InitializationCell->True,
+ CellChangeTimes->{{3.639767949309535*^9, 3.6397679588340797`*^9}, 
+   3.6397680018345394`*^9}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -497,7 +500,6 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"Unprotect", "[", "DefBasis", "]"}], ";"}], "\[IndentingNewLine]", 
-  
   RowBox[{"(*", 
    RowBox[{"added", " ", "Primed", " ", "and", " ", "DoublePrimed"}], 
    "*)"}]}], "\[IndentingNewLine]", 
@@ -520,7 +522,6 @@ Cell[BoxData[{
       RowBox[{"MetricInBasis", "\[Rule]", 
        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
       RowBox[{"BasisChange", "\[Rule]", "Null"}], ",", "\[IndentingNewLine]", 
-      
       RowBox[{"epsilonOrientationOfMetric", "\[Rule]", 
        RowBox[{"{", 
         RowBox[{"Null", ",", "1"}], "}"}]}], ",", "\[IndentingNewLine]", 
@@ -780,7 +781,6 @@ Cell[BoxData[{
             RowBox[{
              RowBox[{"TangentBundleOfManifold", "@", 
               RowBox[{"BaseOfVBundle", "@", "tanb"}]}], "=!=", "tanb"}], ",", 
-            
             RowBox[{"Throw", "@", 
              RowBox[{"Message", "[", 
               RowBox[{
@@ -1219,10 +1219,10 @@ Cell["Updated to xCoba 0.8.2", "Text"],
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"Unprotect", "[", "DefChart", "]"}], ";"}], "\n", 
+   RowBox[{"Unprotect", "[", "DefChart", "]"}], ";"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"added", " ", "Primed", " ", "and", " ", "DoublePrimed"}], "*)"}], 
-  "\[IndentingNewLine]", 
+  "\n", 
   RowBox[{"(*", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
@@ -1404,7 +1404,6 @@ dimension.\>\""}], "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
           "]"}], ";", "\[IndentingNewLine]", 
          RowBox[{"(*", " ", 
           RowBox[{"Check", " ", "eoom"}], " ", "*)"}], "\[IndentingNewLine]", 
-         
          RowBox[{"If", "[", 
           RowBox[{
            RowBox[{
@@ -1472,7 +1471,6 @@ dimension.\>\""}], "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
          "\[IndentingNewLine]", 
          RowBox[{"prot", "=", 
           RowBox[{"Unprotect", "/@", "heads"}]}], ";", "\[IndentingNewLine]", 
-         
          RowBox[{
           RowBox[{"ServantsOf", "[", "chartname", "]"}], "^=", 
           RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
@@ -1539,7 +1537,6 @@ dimension.\>\""}], "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
            RowBox[{"{", 
             RowBox[{"inv", "=", 
              RowBox[{"InverseMapping", "[", "chartname", "]"}]}], "}"}], ",", 
-           
            RowBox[{
             RowBox[{"ChartIMapQ", "[", "inv", "]"}], "^=", "True"}]}], "]"}], 
          ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -2024,9 +2021,9 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{"--", 
-                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}], "*)"}]}], "\[IndentingNewLine]", 
+                    RowBox[{
+                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"idxdown", "[", 
    RowBox[{"cdown_", ",", "basis_"}], "]"}], ":=", 
@@ -2331,7 +2328,6 @@ Cell[BoxData[{
        RowBox[{"-", "1"}], ",", "gdslots"}], "]"}], ",", 
      RowBox[{"ConstantArray", "[", 
       RowBox[{"1", ",", "gdslots"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
-  
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -2446,7 +2442,6 @@ Cell[BoxData[{
          RowBox[{"cdown", "[", "1", "]"}], "=!=", "\"\<\>\""}], "||", 
         RowBox[{
          RowBox[{"cup", "[", "1", "]"}], "=!=", "\"\<\>\""}]}], ")"}]}], ",", 
-     
      RowBox[{
       RowBox[{"(", 
        RowBox[{"Bracket", "@@", 
@@ -2464,7 +2459,6 @@ Cell[BoxData[{
          RowBox[{"cdown", "[", "1", "]"}], "=!=", "\"\<\>\""}], "||", 
         RowBox[{
          RowBox[{"cup", "[", "1", "]"}], "=!=", "\"\<\>\""}]}], ")"}]}], ",", 
-     
      RowBox[{
       RowBox[{"(", 
        RowBox[{"cdchoice", "@@", 
@@ -2588,7 +2582,6 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"slot", "[", 
          RowBox[{"k", ",", "tensorhead"}], "]"}], ",", "\[IndentingNewLine]", 
-        
         RowBox[{"{", 
          RowBox[{"k", ",", 
           RowBox[{
@@ -2790,7 +2783,6 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{"\"\<\[FilledCircle]\>\"", "<>", "\"\<  \>\"", "<>", 
            RowBox[{"ToString", "@", "#2"}]}], ",", "#1"}], "]"}], "&"}], ",", 
-       
        RowBox[{"{", 
         RowBox[{
          RowBox[{"BasisColor", "/@", 
@@ -3087,7 +3079,7 @@ Cell[BoxData[{
        "\"\<Postfix\>\""}], "\[IndentingNewLine]", "StringTagsListPostfix"}], 
      ":=", 
      RowBox[{"StringTagPostfix", "/@", "$CovDs"}]}]}], "\[IndentingNewLine]", 
-   "*)"}], "\[IndentingNewLine]", 
+   "*)"}], "\n", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -3119,7 +3111,7 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}], "*)"}]}], "\n", 
+}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"ButtonLabelStyle", "[", "x_", "]"}], ":=", 
@@ -3746,7 +3738,6 @@ Cell[BoxData[
      RowBox[{
      "since", " ", "I", " ", "know", " ", "it", " ", "is", " ", "acceptable", 
       " ", "from", " ", "the", " ", "tag"}]}], "*)"}], "\[IndentingNewLine]", 
-   
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{
@@ -3768,7 +3759,6 @@ Cell[BoxData[
           ")"}]}]}], "]"}], ",", "form_"}], "]"}], ":=", 
     RowBox[{
      RowBox[{"HoldComplete", "[", "expr", "]"}], "/.", "\[IndentingNewLine]", 
-     
      RowBox[{
       RowBox[{"RowBox", "[", 
        RowBox[{"{", 
@@ -3804,7 +3794,6 @@ Cell[BoxData[
      RowBox[{
      "since", " ", "I", " ", "know", " ", "it", " ", "is", " ", "acceptable", 
       " ", "from", " ", "the", " ", "tag"}]}], "*)"}], "\[IndentingNewLine]", 
-   
    RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{
@@ -4969,7 +4958,6 @@ under certain conditions. See the General Public License for details.\>\""}],
       "]"}]}], ";", "\[IndentingNewLine]", 
     RowBox[{"Pause", "[", "t", "]"}], ";", "\[IndentingNewLine]", 
     RowBox[{"NotebookClose", "[", "splashnb", "]"}], ";"}], ")"}]}]], "Input",
- 
  InitializationCell->True]
 }, Closed]],
 
@@ -5074,7 +5062,6 @@ Cell[BoxData[
              RowBox[{"Switch", "[", 
               RowBox[{
               "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
-               
                RowBox[{"NotebookWrite", "[", 
                 RowBox[{"nb", ",", 
                  RowBox[{"Cell", "[", 
@@ -5160,7 +5147,6 @@ Cell[BoxData[
              RowBox[{"Switch", "[", 
               RowBox[{
               "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
-               
                RowBox[{"NotebookWrite", "[", 
                 RowBox[{"nb", ",", 
                  RowBox[{"Cell", "[", 
@@ -5213,7 +5199,6 @@ Cell[BoxData[
              RowBox[{"Switch", "[", 
               RowBox[{
               "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
-               
                RowBox[{"NotebookWrite", "[", 
                 RowBox[{"nb", ",", 
                  RowBox[{"Cell", "[", 
@@ -5288,7 +5273,6 @@ Cell[BoxData[
              RowBox[{"Switch", "[", 
               RowBox[{
               "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
-               
                RowBox[{"NotebookWrite", "[", 
                 RowBox[{"nb", ",", 
                  RowBox[{"Cell", "[", 
@@ -5374,7 +5358,6 @@ Cell[BoxData[
              RowBox[{"Switch", "[", 
               RowBox[{
               "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
-               
                RowBox[{"NotebookWrite", "[", 
                 RowBox[{"nb", ",", 
                  RowBox[{"Cell", "[", 
@@ -5397,7 +5380,6 @@ Cell[BoxData[
                     RowBox[{"FrameBox", "[", "\"\<basis\>\"", "]"}], ",", 
                     "\n", "   ", "\"\<Placeholder\>\""}], "]"}], ",", " ", 
                     "\"\<]\>\"", ",", " ", "\"\<[\>\"", ",", " ", "\n", "  ", 
-                    
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", "\n", "   ", 
                     RowBox[{"\"\<#\>\"", ",", " ", "\"\<,\>\"", ",", " ", 
@@ -5423,7 +5405,6 @@ Cell[BoxData[
              RowBox[{"Switch", "[", 
               RowBox[{
               "SimpleManipulationQ", ",", "\[IndentingNewLine]", "True", ",", 
-               
                RowBox[{"NotebookWrite", "[", 
                 RowBox[{"nb", ",", 
                  RowBox[{"Cell", "[", 
@@ -6985,7 +6966,6 @@ Cell[BoxData[
             RowBox[{"PasteButton", "[", 
              RowBox[{
               RowBox[{"\"\<$Parameters\>\"", "//", "ButtonLabelStyle"}], ",", 
-              
               RowBox[{"Defer", "@", "$Parameters"}], ",", 
               RowBox[{"Appearance", "\[Rule]", "Button"}], ",", 
               RowBox[{"ImageSize", "\[Rule]", "95"}]}], "]"}]}], "}"}]}], ",", 
@@ -7903,7 +7883,6 @@ Cell[BoxData[
                     RowBox[{"\"\<Brown\>\"", ",", "Small"}], "]"}], ",", 
                     RowBox[{"Defer", "@", "Brown"}], ",", 
                     RowBox[{"Background", "\[Rule]", "Brown"}]}], "]"}], ",", 
-                   
                    RowBox[{"PasteButton", "[", 
                     RowBox[{
                     RowBox[{"Style", "[", 
@@ -8546,10 +8525,9 @@ Cell[BoxData[
                     RowBox[{"{", " ", "\n", "      ", 
                     RowBox[{"TagBox", "[", "\n", "       ", 
                     RowBox[{
-                    RowBox[{
-                    "FrameBox", "[", "\"\<\[PlusMinus] index1\>\"", "]"}], 
-                    ",", "\n", "       ", "\"\<Placeholder\>\""}], "]"}], 
-                    "}"}], "]"}], ",", " ", "\"\<,\>\"", ",", " ", 
+                    RowBox[{"FrameBox", "[", "\"\<\[PlusMinus] index1\>\"", 
+                    "]"}], ",", "\n", "       ", "\"\<Placeholder\>\""}], 
+                    "]"}], "}"}], "]"}], ",", " ", "\"\<,\>\"", ",", " ", 
                     "\"\< \>\"", ",", " ", "\n", "     ", 
                     RowBox[{"TagBox", "[", "\n", "      ", 
                     RowBox[{
@@ -9236,9 +9214,10 @@ Cell[BoxData[
                     "   ", 
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
-                    RowBox[{"\"\<ChartColor\>\"", ",", " ", "\"\< \>\"", ",", 
-                    " ", "\"\<\[Rule]\>\"", ",", " ", "\"\< \>\"", ",", " ", 
-                    "\n", "    ", 
+                    RowBox[{
+                    "\"\<ChartColor\>\"", ",", " ", "\"\< \>\"", ",", " ", 
+                    "\"\<\[Rule]\>\"", ",", " ", "\"\< \>\"", ",", " ", "\n", 
+                    "    ", 
                     RowBox[{"TagBox", "[", "\n", "     ", 
                     RowBox[{
                     RowBox[{"FrameBox", "[", "\"\<color\>\"", "]"}], ",", 
@@ -9414,7 +9393,6 @@ Cell[BoxData[
              RowBox[{"FrameStyle", "\[Rule]", 
               RowBox[{"Directive", "[", 
                RowBox[{"Black", ",", "Thick"}], "]"}]}]}], "]"}], "]"}], ",", 
-          
           RowBox[{"Grid", "[", 
            RowBox[{
             RowBox[{
@@ -10289,7 +10267,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -10299,7 +10276,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -10386,7 +10362,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -10396,7 +10371,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -11177,7 +11151,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"cbasischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11236,7 +11209,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"cbasischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11258,7 +11230,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"{", 
                     RowBox[{"1", ",", "1"}], "}"}]}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11294,7 +11265,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"Append", "[", 
                     RowBox[{"$Parameters", ",", "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"Automatic", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11348,7 +11318,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     ",", 
                     RowBox[{"Alignment", "\[Rule]", "Right"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11392,7 +11361,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -11402,7 +11370,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -11467,7 +11434,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11493,7 +11459,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -11503,7 +11468,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -11561,14 +11525,14 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"IndicesOfVBundle", "@", 
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], ")"}], "[", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
+                    ")"}], "[", 
                     RowBox[{"[", "1", "]"}], "]"}], " ", "~", "Join", "~", 
                     RowBox[{"cnumbersof", "[", 
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11591,7 +11555,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"{", 
                     RowBox[{"1", ",", "1"}], "}"}]}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -11900,9 +11863,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
+                    RowBox[{"--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]
+                    }]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
+      "\[IndentingNewLine]", "}"}], ",", 
      RowBox[{"Alignment", "\[Rule]", "Left"}], ",", 
      RowBox[{"Dividers", "\[Rule]", 
       RowBox[{"{", 
@@ -12306,7 +12269,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"cbasischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12357,14 +12319,14 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"IndicesOfVBundle", "@", 
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], ")"}], "[", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
+                    ")"}], "[", 
                     RowBox[{"[", "1", "]"}], "]"}], " ", "~", "Join", "~", 
                     RowBox[{"cnumbersof", "[", 
                     RowBox[{"cbasischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12383,7 +12345,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"abstractandbasesdisks", "[", "manifold", "]"}]}],
                      "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12419,7 +12380,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"Append", "[", 
                     RowBox[{"$Parameters", ",", "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"Automatic", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12473,7 +12433,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     ",", 
                     RowBox[{"Alignment", "\[Rule]", "Right"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12517,7 +12476,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -12525,8 +12483,8 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", 
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], ",", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -12591,7 +12549,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12617,7 +12574,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -12627,7 +12583,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -12693,7 +12648,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12713,7 +12667,6 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"abstractandbasesdisks", "[", "manifold", "]"}]}],
                      "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -12819,9 +12772,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                    RowBox[{"--", 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
        RowBox[{"{", "GeneralSettingssection", "}"}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"(*", 
@@ -13260,7 +13213,6 @@ Cell[BoxData[
                     RowBox[{"cbasischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -13319,7 +13271,6 @@ Cell[BoxData[
                     RowBox[{"cbasischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -13338,7 +13289,6 @@ Cell[BoxData[
                     RowBox[{"abstractandbasesdisks", "[", "manifold", "]"}]}],
                      "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -13374,7 +13324,6 @@ Cell[BoxData[
                     RowBox[{"Append", "[", 
                     RowBox[{"$Parameters", ",", "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"Automatic", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -13434,7 +13383,6 @@ Cell[BoxData[
                     "]"}], ",", 
                     RowBox[{"Alignment", "\[Rule]", "Right"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -13472,16 +13420,15 @@ Cell[BoxData[
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
+                    "}"}], ",", "\[IndentingNewLine]", 
                     RowBox[{"tensorhead", "===", "Basis"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -13498,7 +13445,6 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{
                     RowBox[{"linput", "[", "kk", "]"}], "===", "Null"}], ",", 
-                    
                     RowBox[{"Invisible", "@", "\"\<AA\>\""}], ",", 
                     RowBox[{"linput", "[", "kk", "]"}]}], "]"}], "]"}], ",", 
                     "\[IndentingNewLine]", 
@@ -13549,7 +13495,6 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{
                     RowBox[{"linput", "[", "kk", "]"}], "===", "Null"}], ",", 
-                    
                     RowBox[{"Invisible", "@", "\"\<AA\>\""}], ",", 
                     RowBox[{"linput", "[", "kk", "]"}]}], "]"}], "]"}], ",", 
                     "\[IndentingNewLine]", 
@@ -13600,16 +13545,14 @@ Cell[BoxData[
                     RowBox[{"tensorhead", "===", "Gdelta"}], ",", 
                     RowBox[{
                     RowBox[{"GdeltaSlots", "[", "gdslots", "]"}], 
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    "\[IndentingNewLine]", 
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], ",", "\[IndentingNewLine]", 
                     RowBox[{"tensorhead", "===", "delta"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -13619,7 +13562,6 @@ Cell[BoxData[
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -13684,7 +13626,6 @@ Cell[BoxData[
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -13710,7 +13651,6 @@ Cell[BoxData[
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", 
@@ -13720,7 +13660,6 @@ Cell[BoxData[
                     RowBox[{"-", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -13786,7 +13725,6 @@ Cell[BoxData[
                     RowBox[{"basischoice", "[", "kk", "]"}], "]"}]}], ",", 
                     "\"\<\>\""}], "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -13806,7 +13744,6 @@ Cell[BoxData[
                     RowBox[{"abstractandbasesdisks", "[", "manifold", "]"}]}],
                      "]"}], ",", 
                     RowBox[{"Appearance", "\[Rule]", "\"\<Button\>\""}], ",", 
-                    
                     RowBox[{"ImageSize", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"20", ",", "20"}], "}"}]}]}], "]"}], ",", 
@@ -14032,9 +13969,9 @@ Cell[BoxData[
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                    RowBox[{"--", 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
        RowBox[{"{", "BasesandChartssection", "}"}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"(*", 
@@ -14154,7 +14091,7 @@ Cell[BoxData[
  InitializationCell->True]
 }, Closed]]
 }, Closed]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -14206,8 +14143,8 @@ PrintingOptions->{"Magnification"->1,
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 Magnification:>1.5 Inherited,
-FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
-2014)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
 StyleDefinitions->"Default.nb",
 IndexCreationOptions -> {"Format" -> "PageReferences"}
 ]
+

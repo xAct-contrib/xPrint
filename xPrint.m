@@ -70,6 +70,8 @@ Vers. 1.4
 	All sectons have the same width as the maipulation section
 	Many new buttons in Tensor manipulation section
 	TabView in Tensor manipulation section
+Vers. 1.3
+	8 Apr 2015
 	Help menu with access to xPrint tutorials
 	xPrint is now in a single folder with documentation files
 	xTerior is loaded automatically with xPrint
