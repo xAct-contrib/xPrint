@@ -1,8 +1,8 @@
 # xPrint
-xPrint for [xAct](http://xact.es/): graphical interface for tensor input and manipulation 
 
+xPrint for [xAct](http://xact.es/): graphical interface for tensor input and manipulation
 
-To download  the latest stable release go to ([web site](https://sites.google.com/site/xprintforxact/))
+To download the latest stable release go to ([web site](https://sites.google.com/site/xprintforxact/))
 
 
 * State-of-the-art palette interface to the xAct suite of Mathematica packages
