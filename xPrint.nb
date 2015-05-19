@@ -32,17 +32,19 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"xAct`xPrint`$Version", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<1.4\>\"", ",", 
+    RowBox[{"\"\<1.45\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2015", ",", "4", ",", "15"}], "}"}]}], "}"}]}], ";"}], "\n", 
+      RowBox[{"2015", ",", "5", ",", "19"}], "}"}]}], "}"}]}], ";"}], "\n", 
  RowBox[{
   RowBox[{"xAct`xPrint`$xPermVersionExpected", "=", 
    RowBox[{"{", 
     RowBox[{"\"\<1.0.3\>\"", ",", 
      RowBox[{"{", 
       RowBox[{"2009", ",", "9", ",", "9"}], "}"}]}], "}"}]}], ";"}]}], "Input",
- InitializationCell->True]
-}, Closed]],
+ InitializationCell->True,
+ CellChangeTimes->{{3.639769893874758*^9, 3.6397699009421625`*^9}, {
+  3.6410138272739983`*^9, 3.6410138321012745`*^9}}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -143,6 +145,10 @@ menus
 (* :Copyright: Alessandro Stecchina (2010-2015) *)
 
 (* :History:
+Vers. 1.45
+\t19 May 2015
+\txPrint is on GitHub
+\tButtons labels reduced to 9
 Vers. 1.4
 \t17 Apr 2015
 \tAll sectons have the same width as the maipulation section
@@ -221,7 +227,9 @@ Vers. 0.50
  CellMargins->{{60, -272}, {Inherited, Inherited}},
  InitializationCell->True,
  CellChangeTimes->{{3.639767949309535*^9, 3.6397679588340797`*^9}, 
-   3.6397680018345394`*^9}]
+   3.6397680018345394`*^9, {3.639769805887726*^9, 3.639769860999878*^9}, {
+   3.6410136216532373`*^9, 3.6410136421574106`*^9}, {3.6410136801245823`*^9, 
+   3.641013712488433*^9}}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -1222,7 +1230,7 @@ Cell[BoxData[{
    RowBox[{"Unprotect", "[", "DefChart", "]"}], ";"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"added", " ", "Primed", " ", "and", " ", "DoublePrimed"}], "*)"}], 
-  "\n", 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
@@ -1239,7 +1247,7 @@ Cell[BoxData[{
         RowBox[{"{", "}"}]}], ",", 
        RowBox[{"Primed", "\[Rule]", "False"}], ",", "\[IndentingNewLine]", 
        RowBox[{"DoublePrimed", "\[Rule]", "False"}]}], "}"}]}], ";"}], 
-   "\[IndentingNewLine]", "*)"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "*)"}]}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -3068,7 +3076,7 @@ Cell[BoxData[{
     RowBox[{"Outer", "[", 
      RowBox[{
      "StringTagPrefixDown", ",", "$CovDs", ",", "abstractandbasesall"}], 
-     "]"}], "//", "Flatten"}]}], "\n", 
+     "]"}], "//", "Flatten"}]}], "\[IndentingNewLine]", 
   RowBox[{"(*", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"StringTagPostfix", "[", "cdchoice_", "]"}], ":=", 
@@ -3111,12 +3119,12 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+}]}]}]}]}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"ButtonLabelStyle", "[", "x_", "]"}], ":=", 
    RowBox[{"Style", "[", 
-    RowBox[{"x", ",", "10"}], "]"}]}], "\[IndentingNewLine]", 
+    RowBox[{"x", ",", "9"}], "]"}]}], "\n", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -3148,7 +3156,7 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}], "*)"}]}], "\n", 
+}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"PrimedIndexForm", "[", "basis_", "]"}], ":=", 
@@ -3380,7 +3388,9 @@ Cell[BoxData[{
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
 }]}]}]}]}], "*)"}]}]}], "Input",
- InitializationCell->True]
+ InitializationCell->True,
+ CellChangeTimes->{3.6410126157787046`*^9, 3.641013455987762*^9, 
+  3.641013569927279*^9}]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -6146,8 +6156,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
-                    RowBox[{
-                    "\"\<All\>\"", ",", " ", "\"\</\>\"", ",", " ", 
+                    RowBox[{"\"\<All\>\"", ",", " ", "\"\</\>\"", ",", " ", 
                     "\"\<none\>\""}], "}"}], "]"}], ",", " ", "\"\</\>\"", 
                     ",", " ", "\"\<VBundleList\>\""}], "}"}], "]"}], "]"}], 
                     ",", "\n", "       ", "\"\<Placeholder\>\""}], "]"}]}], 
@@ -8525,9 +8534,10 @@ Cell[BoxData[
                     RowBox[{"{", " ", "\n", "      ", 
                     RowBox[{"TagBox", "[", "\n", "       ", 
                     RowBox[{
-                    RowBox[{"FrameBox", "[", "\"\<\[PlusMinus] index1\>\"", 
-                    "]"}], ",", "\n", "       ", "\"\<Placeholder\>\""}], 
-                    "]"}], "}"}], "]"}], ",", " ", "\"\<,\>\"", ",", " ", 
+                    RowBox[{
+                    "FrameBox", "[", "\"\<\[PlusMinus] index1\>\"", "]"}], 
+                    ",", "\n", "       ", "\"\<Placeholder\>\""}], "]"}], 
+                    "}"}], "]"}], ",", " ", "\"\<,\>\"", ",", " ", 
                     "\"\< \>\"", ",", " ", "\n", "     ", 
                     RowBox[{"TagBox", "[", "\n", "      ", 
                     RowBox[{
@@ -10353,9 +10363,8 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"tensorhead", "===", "Gdelta"}], ",", 
                     RowBox[{
                     RowBox[{"GdeltaSlots", "[", "gdslots", "]"}], 
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
-                    "\[IndentingNewLine]", 
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], ",", "\[IndentingNewLine]", 
                     RowBox[{"tensorhead", "===", "delta"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
@@ -10639,9 +10648,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                    RowBox[{"--", 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
        RowBox[{"{", "Definitionssection", "}"}], ",", "\[IndentingNewLine]", 
        RowBox[{"(*", 
         RowBox[{"--", 
@@ -11376,8 +11385,8 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"SlotsOfTensor", "[", "tensorhead", "]"}]}], 
                     "]"}], "[", 
                     RowBox[{"[", "kk", "]"}], "]"}], "===", 
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], "||", 
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], "||", 
                     RowBox[{"MetricEndowedQ", "[", 
                     RowBox[{"TangentBundleOfManifold", "[", "manifold", "]"}],
                      "]"}]}], ",", 
@@ -11863,9 +11872,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{"--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]
-                    }]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
-      "\[IndentingNewLine]", "}"}], ",", 
+                    RowBox[{
+                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
      RowBox[{"Alignment", "\[Rule]", "Left"}], ",", 
      RowBox[{"Dividers", "\[Rule]", 
       RowBox[{"{", 
@@ -12115,6 +12124,7 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"\"\<xAct group\>\"", ":>", 
                     RowBox[{
                     "SystemOpen", "[", 
+                    
                     "\"\<http://groups.google.com/group/xact/topics?hl=en\>\"\
 ", "]"}]}], ",", "\[IndentingNewLine]", "Delimiter", ",", 
                     "\[IndentingNewLine]", 
@@ -12581,8 +12591,8 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", 
-                    RowBox[{
-                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
+                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
+                    "]"}]}], ",", 
                     RowBox[{
                     "TangentBundleOfManifold", "[", "manifold", "]"}]}], 
                     "}"}], ",", "\[IndentingNewLine]", "True", ",", 
@@ -12772,9 +12782,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{"--", 
-                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                    RowBox[{
+                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
        RowBox[{"{", "GeneralSettingssection", "}"}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"(*", 
@@ -12975,9 +12985,9 @@ html\>\"", "]"}]}], ",", "\[IndentingNewLine]", " ",
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
+                    RowBox[{"--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]
+                    }]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
+      "\[IndentingNewLine]", "}"}], ",", 
      RowBox[{"Alignment", "\[Rule]", "Left"}], ",", 
      RowBox[{"Dividers", "\[Rule]", 
       RowBox[{"{", 
@@ -13545,8 +13555,9 @@ Cell[BoxData[
                     RowBox[{"tensorhead", "===", "Gdelta"}], ",", 
                     RowBox[{
                     RowBox[{"GdeltaSlots", "[", "gdslots", "]"}], 
-                    RowBox[{"TangentBundleOfManifold", "[", "manifold", 
-                    "]"}]}], ",", "\[IndentingNewLine]", 
+                    RowBox[{
+                    "TangentBundleOfManifold", "[", "manifold", "]"}]}], ",", 
+                    "\[IndentingNewLine]", 
                     RowBox[{"tensorhead", "===", "delta"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
@@ -13969,9 +13980,9 @@ Cell[BoxData[
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{"--", 
-                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                    RowBox[{
+                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
        RowBox[{"{", "BasesandChartssection", "}"}], ",", 
        "\[IndentingNewLine]", 
        RowBox[{"(*", 
@@ -14090,7 +14101,7 @@ Cell[BoxData[
   RowBox[{"NotebookClose", "[", "xPrintPalette", "]"}]}]], "Input",
  InitializationCell->True]
 }, Closed]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -14126,8 +14137,8 @@ Cell[BoxData[
 AutoGeneratedPackage->Automatic,
 ScreenStyleEnvironment->"Working",
 WindowToolbars->"EditBar",
-WindowSize->{919, 606},
-WindowMargins->{{3, Automatic}, {Automatic, 8}},
+WindowSize->{1366, 726},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
 Visible->True,
 PrintingCopies->1,
 PrintingPageRange->{Automatic, Automatic},

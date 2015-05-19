@@ -19,7 +19,7 @@
 
 
 
-xAct`xPrint`$Version={"1.4",{2015,4,15}};
+xAct`xPrint`$Version={"1.45",{2015,5,19}};
 xAct`xPrint`$xPermVersionExpected={"1.0.3",{2009,9,9}};
 
 
@@ -65,6 +65,10 @@ You should have received a copy of the GNU General Public License
 (* :Copyright: Alessandro Stecchina (2010-2015) *)
 
 (* :History:
+Vers. 1.45
+	19 May 2015
+	xPrint is on GitHub
+	Buttons labels reduced to 9
 Vers. 1.4
 	17 Apr 2015
 	All sectons have the same width as the maipulation section
@@ -577,7 +581,7 @@ StringTagPostfix[cdchoice_]:=ToString[cdchoice]<>"Tag"<>"Postfix"
 StringTagsListPostfix:=StringTagPostfix/@$CovDs
 *)
 (*------------------------------------------------------------*)
-ButtonLabelStyle[x_]:=Style[x,10]
+ButtonLabelStyle[x_]:=Style[x,9]
 (*------------------------------------------------------------*)
 PrimedIndexForm[basis_]:=(Unprotect[IndexForm];
 IndexForm[{ind_Integer,basis}]:=ColorString[StringJoin[CIndexForm[ind,basis],"'"],BasisColor[basis]];
