@@ -19,7 +19,7 @@
 
 
 
-xAct`xPrint`$Version={"1.45",{2015,5,19}};
+xAct`xPrint`$Version={"1.46",{2015,7,3}};
 xAct`xPrint`$xPermVersionExpected={"1.0.3",{2009,9,9}};
 
 
@@ -65,6 +65,9 @@ You should have received a copy of the GNU General Public License
 (* :Copyright: Alessandro Stecchina (2010-2015) *)
 
 (* :History:
+Vers. 1.46
+	3 July 2015
+	Fixed variable leak in DefBasis and DefChart
 Vers. 1.45
 	19 May 2015
 	xPrint is on GitHub
@@ -186,6 +189,14 @@ xPrintPalette::usage = "palette object";
 
 xAct`xCoba`Primed::usage="Primed is an option of DefBasis and DefChart. If True, basis or chart indices are printed with a prime. Default is False";
 xAct`xCoba`DoublePrimed::usage="DoublePrimed is an option of DefBasis and DefChart. If True, basis or chart indices are printed with a double-prime. Default is False";
+
+
+Unprotect[Basis];
+SlotsOfTensor[Basis]^:={-All,All};
+Protect[Basis];
+
+
+Begin["`Private`"]
 
 
 Unprotect[DefBasis];
@@ -436,14 +447,6 @@ If[dpr,xAct`xPrint`Private`DoublePrimedIndexForm[chartname]];
 ];
 SetNumberOfArguments[DefChart,{4,Infinity}];
 Protect[DefChart];
-
-
-Unprotect[Basis];
-SlotsOfTensor[Basis]^:={-All,All};
-Protect[Basis];
-
-
-Begin["`Private`"]
 
 
 (* If you do not like these initial settings, just comment-out any of the following 6 lines of code *)

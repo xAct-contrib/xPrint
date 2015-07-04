@@ -32,9 +32,9 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"xAct`xPrint`$Version", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<1.45\>\"", ",", 
+    RowBox[{"\"\<1.46\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2015", ",", "5", ",", "19"}], "}"}]}], "}"}]}], ";"}], "\n", 
+      RowBox[{"2015", ",", "7", ",", "3"}], "}"}]}], "}"}]}], ";"}], "\n", 
  RowBox[{
   RowBox[{"xAct`xPrint`$xPermVersionExpected", "=", 
    RowBox[{"{", 
@@ -43,8 +43,9 @@ Cell[BoxData[{
       RowBox[{"2009", ",", "9", ",", "9"}], "}"}]}], "}"}]}], ";"}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.639769893874758*^9, 3.6397699009421625`*^9}, {
-  3.6410138272739983`*^9, 3.6410138321012745`*^9}}]
-}, Open  ]],
+  3.6410138272739983`*^9, 3.6410138321012745`*^9}, {3.6450022687810974`*^9, 
+  3.6450022796427183`*^9}}]
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -145,6 +146,9 @@ menus
 (* :Copyright: Alessandro Stecchina (2010-2015) *)
 
 (* :History:
+Vers. 1.46
+\t3 July 2015
+\tFixed variable leak in DefBasis and DefChart
 Vers. 1.45
 \t19 May 2015
 \txPrint is on GitHub
@@ -229,8 +233,8 @@ Vers. 0.50
  CellChangeTimes->{{3.639767949309535*^9, 3.6397679588340797`*^9}, 
    3.6397680018345394`*^9, {3.639769805887726*^9, 3.639769860999878*^9}, {
    3.6410136216532373`*^9, 3.6410136421574106`*^9}, {3.6410136801245823`*^9, 
-   3.641013712488433*^9}}]
-}, Closed]],
+   3.641013712488433*^9}, {3.644923627578768*^9, 3.644923679306946*^9}}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -391,7 +395,7 @@ details.\"\>"], "Print"],
 Cell[BoxData["\<\"------------------------------------------------------------\
 \"\>"], "Print"]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -497,6 +501,56 @@ indices are printed with a prime. Default is False\>\""}],
 chart indices are printed with a double-prime. Default is False\>\""}], 
   ";"}]}], "Input",
  InitializationCell->True],
+
+Cell["\<\
+Modifying DefBasis and DefChart were here.  Transferred in the private section\
+\>", "Text",
+ CellChangeTimes->{{3.6449224277599936`*^9, 3.6449224724569387`*^9}, {
+  3.644923562952237*^9, 3.6449235878163304`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.4.7 SlotOfTensor[Basis] problem fix (patch to xTensor)", "Subsection"],
+
+Cell["\<\
+This is necessary to fix the SlotsOfTensor[Basis] problem.
+ With the newer version of xTensor this patch to the xTensor code will be no \
+longer necessary.\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Unprotect", "[", "Basis", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SlotsOfTensor", "[", "Basis", "]"}], "^:=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "All"}], ",", "All"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "Basis", "]"}], ";"}]}], "Input",
+ InitializationCell->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["1.5. Private section", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["Begin Private", "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData["\<\"xAct`xPrint`Private`\"\>"], "Output"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1227,7 +1281,7 @@ Cell["Updated to xCoba 0.8.2", "Text"],
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"Unprotect", "[", "DefChart", "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Unprotect", "[", "DefChart", "]"}], ";"}], "\n", 
   RowBox[{"(*", 
    RowBox[{"added", " ", "Primed", " ", "and", " ", "DoublePrimed"}], "*)"}], 
   "\[IndentingNewLine]", 
@@ -1247,7 +1301,7 @@ Cell[BoxData[{
         RowBox[{"{", "}"}]}], ",", 
        RowBox[{"Primed", "\[Rule]", "False"}], ",", "\[IndentingNewLine]", 
        RowBox[{"DoublePrimed", "\[Rule]", "False"}]}], "}"}]}], ";"}], 
-   "\[IndentingNewLine]", "*)"}]}], "\n", 
+   "\[IndentingNewLine]", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -1699,50 +1753,6 @@ dimension.\>\""}], "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
  RowBox[{
   RowBox[{"Protect", "[", "DefChart", "]"}], ";"}]}], "Input",
  InitializationCell->True]
-}, Closed]]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["1.4.7 SlotOfTensor[Basis] problem fix (patch to xTensor)", "Subsection"],
-
-Cell["\<\
-This is necessary to fix the SlotsOfTensor[Basis] problem.
- With the newer version of xTensor this patch to the xTensor code will be no \
-longer necessary.\
-\>", "Text"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"Unprotect", "[", "Basis", "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"SlotsOfTensor", "[", "Basis", "]"}], "^:=", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"-", "All"}], ",", "All"}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Protect", "[", "Basis", "]"}], ";"}]}], "Input",
- InitializationCell->True]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["1.5. Private section", "Subsection"],
-
-Cell[CellGroupData[{
-
-Cell["Begin Private", "Subsubsection"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]], "Input",
- InitializationCell->True],
-
-Cell[BoxData["\<\"xAct`xPrint`Private`\"\>"], "Output"]
-}, Open  ]]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -1841,8 +1851,9 @@ Cell[BoxData[
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{
-                    "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
-]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                    "--", 
+                    "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
+]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"PostfixStyleQ", ":=", 
      RowBox[{"$CovDFormat", "==", "\"\<Postfix\>\""}]}], ";"}], " ", 
@@ -3076,7 +3087,7 @@ Cell[BoxData[{
     RowBox[{"Outer", "[", 
      RowBox[{
      "StringTagPrefixDown", ",", "$CovDs", ",", "abstractandbasesall"}], 
-     "]"}], "//", "Flatten"}]}], "\[IndentingNewLine]", 
+     "]"}], "//", "Flatten"}]}], "\n", 
   RowBox[{"(*", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"StringTagPostfix", "[", "cdchoice_", "]"}], ":=", 
@@ -3087,7 +3098,7 @@ Cell[BoxData[{
        "\"\<Postfix\>\""}], "\[IndentingNewLine]", "StringTagsListPostfix"}], 
      ":=", 
      RowBox[{"StringTagPostfix", "/@", "$CovDs"}]}]}], "\[IndentingNewLine]", 
-   "*)"}], "\n", 
+   "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -5132,8 +5143,8 @@ Cell[BoxData[
                     "]"}], ",", " ", "\"\<,\>\"", ",", " ", "\n", "     ", 
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
-                    RowBox[{
-                    "\"\<Method\>\"", ",", " ", "\"\<->\>\"", ",", " ", 
+                    RowBox[{"\"\<Method\>\"", ",", " ", "\"\<->\>\"", ",", 
+                    " ", 
                     RowBox[{"TagBox", "[", "\n", "    ", 
                     RowBox[{
                     RowBox[{
@@ -5303,9 +5314,8 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
-                    RowBox[{
-                    "\"\<Simplification\>\"", ",", " ", "\"\<[\>\"", ",", " ",
-                     "\n", "    ", 
+                    RowBox[{"\"\<Simplification\>\"", ",", " ", "\"\<[\>\"", 
+                    ",", " ", "\n", "    ", 
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
                     RowBox[{
@@ -5347,13 +5357,13 @@ Cell[BoxData[
                     "\"\<Method\>\"", ",", " ", "\"\<->\>\"", ",", " ", 
                     RowBox[{"TagBox", "[", "\n", "    ", 
                     RowBox[{
-                    RowBox[{
-                    "FrameBox", "[", "\"\<ChangeCovD/Implode\>\"", "]"}], ",",
-                     "\n", "    ", "\"\<Placeholder\>\""}], "]"}]}], "}"}], 
-                    "]"}]}], "}"}], "]"}], ",", " ", "\"\<]\>\""}], "}"}], 
-                    "]"}], ",", " ", "\"\<&\>\""}], "}"}], "]"}]}], "}"}], 
-                    "]"}], "]"}], ",", " ", "\"\<Input\>\""}], "]"}], ",", 
-                 "After"}], "]"}]}], "]"}], "\[IndentingNewLine]", ",", 
+                    RowBox[{"FrameBox", "[", "\"\<ChangeCovD/Implode\>\"", 
+                    "]"}], ",", "\n", "    ", "\"\<Placeholder\>\""}], 
+                    "]"}]}], "}"}], "]"}]}], "}"}], "]"}], ",", " ", 
+                    "\"\<]\>\""}], "}"}], "]"}], ",", " ", "\"\<&\>\""}], 
+                    "}"}], "]"}]}], "}"}], "]"}], "]"}], ",", " ", 
+                   "\"\<Input\>\""}], "]"}], ",", "After"}], "]"}]}], "]"}], 
+             "\[IndentingNewLine]", ",", 
              RowBox[{"ImageSize", "\[Rule]", "85"}], ",", 
              "\[IndentingNewLine]", 
              RowBox[{"Background", "->", 
@@ -6156,7 +6166,8 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"RowBox", "[", 
                     RowBox[{"{", 
-                    RowBox[{"\"\<All\>\"", ",", " ", "\"\</\>\"", ",", " ", 
+                    RowBox[{
+                    "\"\<All\>\"", ",", " ", "\"\</\>\"", ",", " ", 
                     "\"\<none\>\""}], "}"}], "]"}], ",", " ", "\"\</\>\"", 
                     ",", " ", "\"\<VBundleList\>\""}], "}"}], "]"}], "]"}], 
                     ",", "\n", "       ", "\"\<Placeholder\>\""}], "]"}]}], 
@@ -6922,8 +6933,8 @@ Cell[BoxData[
                     RowBox[{"nb", ",", 
                     RowBox[{"Cell", "[", 
                     RowBox[{
-                    "\"\<$CVVerbose = True\>\"", ",", "\"\<Input\>\""}], 
-                    "]"}], ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
+                    "\"\<$CVVerbose = True\>\"", ",", "\"\<Input\>\""}], "]"}]
+                    , ",", "All"}], "]"}], ";", "\[IndentingNewLine]", 
                     RowBox[{"SelectionEvaluateCreateCell", "[", "nb", "]"}]}],
                      ",", 
                     RowBox[{
@@ -14138,7 +14149,7 @@ AutoGeneratedPackage->Automatic,
 ScreenStyleEnvironment->"Working",
 WindowToolbars->"EditBar",
 WindowSize->{1366, 726},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+WindowMargins->{{37, Automatic}, {60, Automatic}},
 Visible->True,
 PrintingCopies->1,
 PrintingPageRange->{Automatic, Automatic},
